@@ -1,0 +1,17 @@
+C:\Users\kerem\source\repos\Flico\ApiConsume\FlicoProject.DataAccessLayer\bin\Debug\net6.0\FlicoProject.DataAccessLayer.deps.json
+C:\Users\kerem\source\repos\Flico\ApiConsume\FlicoProject.DataAccessLayer\bin\Debug\net6.0\FlicoProject.DataAccessLayer.runtimeconfig.json
+C:\Users\kerem\source\repos\Flico\ApiConsume\FlicoProject.DataAccessLayer\bin\Debug\net6.0\FlicoProject.DataAccessLayer.dll
+C:\Users\kerem\source\repos\Flico\ApiConsume\FlicoProject.DataAccessLayer\bin\Debug\net6.0\FlicoProject.DataAccessLayer.pdb
+C:\Users\kerem\source\repos\Flico\ApiConsume\FlicoProject.DataAccessLayer\bin\Debug\net6.0\FlicoProject.EntityLayer.dll
+C:\Users\kerem\source\repos\Flico\ApiConsume\FlicoProject.DataAccessLayer\bin\Debug\net6.0\FlicoProject.EntityLayer.pdb
+C:\Users\kerem\source\repos\Flico\ApiConsume\FlicoProject.DataAccessLayer\obj\Debug\net6.0\FlicoProject.DataAccessLayer.csproj.AssemblyReference.cache
+C:\Users\kerem\source\repos\Flico\ApiConsume\FlicoProject.DataAccessLayer\obj\Debug\net6.0\FlicoProject.DataAccessLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kerem\source\repos\Flico\ApiConsume\FlicoProject.DataAccessLayer\obj\Debug\net6.0\FlicoProject.DataAccessLayer.AssemblyInfoInputs.cache
+C:\Users\kerem\source\repos\Flico\ApiConsume\FlicoProject.DataAccessLayer\obj\Debug\net6.0\FlicoProject.DataAccessLayer.AssemblyInfo.cs
+C:\Users\kerem\source\repos\Flico\ApiConsume\FlicoProject.DataAccessLayer\obj\Debug\net6.0\FlicoProject.DataAccessLayer.csproj.CoreCompileInputs.cache
+C:\Users\kerem\source\repos\Flico\ApiConsume\FlicoProject.DataAccessLayer\obj\Debug\net6.0\FlicoProject.DataAccessLayer.csproj.CopyComplete
+C:\Users\kerem\source\repos\Flico\ApiConsume\FlicoProject.DataAccessLayer\obj\Debug\net6.0\FlicoProject.DataAccessLayer.dll
+C:\Users\kerem\source\repos\Flico\ApiConsume\FlicoProject.DataAccessLayer\obj\Debug\net6.0\refint\FlicoProject.DataAccessLayer.dll
+C:\Users\kerem\source\repos\Flico\ApiConsume\FlicoProject.DataAccessLayer\obj\Debug\net6.0\FlicoProject.DataAccessLayer.pdb
+C:\Users\kerem\source\repos\Flico\ApiConsume\FlicoProject.DataAccessLayer\obj\Debug\net6.0\FlicoProject.DataAccessLayer.genruntimeconfig.cache
+C:\Users\kerem\source\repos\Flico\ApiConsume\FlicoProject.DataAccessLayer\obj\Debug\net6.0\ref\FlicoProject.DataAccessLayer.dll
