@@ -71,3 +71,9 @@ C:\Users\kerem\source\repos\Flico\ApiConsume\FlicoProject.WebApi\obj\Debug\net6.
 C:\Users\kerem\source\repos\Flico\ApiConsume\FlicoProject.WebApi\obj\Debug\net6.0\FlicoProject.WebApi.pdb
 C:\Users\kerem\source\repos\Flico\ApiConsume\FlicoProject.WebApi\obj\Debug\net6.0\FlicoProject.WebApi.genruntimeconfig.cache
 C:\Users\kerem\source\repos\Flico\ApiConsume\FlicoProject.WebApi\obj\Debug\net6.0\ref\FlicoProject.WebApi.dll
+C:\Users\kerem\source\repos\Flico\ApiConsume\FlicoProject.WebApi\bin\Debug\net6.0\System.Web.Cors.dll
+C:\Users\kerem\source\repos\Flico\ApiConsume\FlicoProject.WebApi\bin\Debug\net6.0\System.Net.Http.Formatting.dll
+C:\Users\kerem\source\repos\Flico\ApiConsume\FlicoProject.WebApi\bin\Debug\net6.0\System.Web.Http.dll
+C:\Users\kerem\source\repos\Flico\ApiConsume\FlicoProject.WebApi\bin\Debug\net6.0\System.Web.Http.Cors.dll
+C:\Users\kerem\source\repos\Flico\ApiConsume\FlicoProject.WebApi\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\kerem\source\repos\Flico\ApiConsume\FlicoProject.WebApi\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll

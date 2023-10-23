@@ -8,10 +8,17 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddDbContext<Context>();
-builder.Services.AddScoped<IAirportDal,EFAirportDal>();
-builder.Services.AddScoped<IAirportService,AirportManager>();
+builder.Services.AddScoped<IAirportDal, EFAirportDal>();
+builder.Services.AddScoped<IAirportService, AirportManager>();
 builder.Services.AddScoped<IWarehouseDal, EFWarehouseDal>();
 builder.Services.AddScoped<IWarehouseService, WarehouseManager>();
+builder.Services.AddCors(opt =>
+{
+    opt.AddPolicy("FlicoApiCors", opts =>
+    {
+        opts.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
+    });
+});
 builder.Services.AddControllers();
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -26,7 +33,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-
+app.UseCors("FlicoApiCors");
 app.UseAuthorization();
 
 app.MapControllers();

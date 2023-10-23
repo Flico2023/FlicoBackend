@@ -11,6 +11,7 @@ namespace FlicoProject.WebApi.Controllers
     [ApiController]
     public class AirportController : ControllerBase
     {
+        
         private readonly IAirportService _airportservice;
 
         public AirportController(IAirportService airportservice)
@@ -26,6 +27,7 @@ namespace FlicoProject.WebApi.Controllers
         [HttpPost]
         public IActionResult AddAirport(Airport airport)
         {
+
             if (_airportservice.TInsert(airport) == 1)
             {
                 return Created("", new ResultDTO<Airport>(airport));
