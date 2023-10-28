@@ -12,6 +12,8 @@ builder.Services.AddScoped<IAirportDal, EFAirportDal>();
 builder.Services.AddScoped<IAirportService, AirportManager>();
 builder.Services.AddScoped<IWarehouseDal, EFWarehouseDal>();
 builder.Services.AddScoped<IWarehouseService, WarehouseManager>();
+builder.Services.AddScoped<IProductDal, EFProductDal>();
+builder.Services.AddScoped<IProductService, ProductManager>();
 builder.Services.AddCors(opt =>
 {
     opt.AddPolicy("FlicoApiCors", opts =>

@@ -26,3 +26,17 @@ C:\Users\kerem\OneDrive\Desktop\itudbmaster\itudb2211\FlicoBackend\ApiConsume\Fl
 C:\Users\kerem\OneDrive\Desktop\itudbmaster\itudb2211\FlicoBackend\ApiConsume\FlicoProject.EntityLayer\obj\Debug\net6.0\FlicoProject.EntityLayer.pdb
 C:\Users\kerem\OneDrive\Desktop\itudbmaster\itudb2211\FlicoBackend\ApiConsume\FlicoProject.EntityLayer\obj\Debug\net6.0\FlicoProject.EntityLayer.genruntimeconfig.cache
 C:\Users\kerem\OneDrive\Desktop\itudbmaster\itudb2211\FlicoBackend\ApiConsume\FlicoProject.EntityLayer\obj\Debug\net6.0\ref\FlicoProject.EntityLayer.dll
+C:\Users\Bilge\Desktop\Flico\FlicoBackend\ApiConsume\FlicoProject.EntityLayer\bin\Debug\net6.0\FlicoProject.EntityLayer.deps.json
+C:\Users\Bilge\Desktop\Flico\FlicoBackend\ApiConsume\FlicoProject.EntityLayer\bin\Debug\net6.0\FlicoProject.EntityLayer.runtimeconfig.json
+C:\Users\Bilge\Desktop\Flico\FlicoBackend\ApiConsume\FlicoProject.EntityLayer\bin\Debug\net6.0\FlicoProject.EntityLayer.dll
+C:\Users\Bilge\Desktop\Flico\FlicoBackend\ApiConsume\FlicoProject.EntityLayer\bin\Debug\net6.0\FlicoProject.EntityLayer.pdb
+C:\Users\Bilge\Desktop\Flico\FlicoBackend\ApiConsume\FlicoProject.EntityLayer\obj\Debug\net6.0\FlicoProject.EntityLayer.csproj.AssemblyReference.cache
+C:\Users\Bilge\Desktop\Flico\FlicoBackend\ApiConsume\FlicoProject.EntityLayer\obj\Debug\net6.0\FlicoProject.EntityLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Bilge\Desktop\Flico\FlicoBackend\ApiConsume\FlicoProject.EntityLayer\obj\Debug\net6.0\FlicoProject.EntityLayer.AssemblyInfoInputs.cache
+C:\Users\Bilge\Desktop\Flico\FlicoBackend\ApiConsume\FlicoProject.EntityLayer\obj\Debug\net6.0\FlicoProject.EntityLayer.AssemblyInfo.cs
+C:\Users\Bilge\Desktop\Flico\FlicoBackend\ApiConsume\FlicoProject.EntityLayer\obj\Debug\net6.0\FlicoProject.EntityLayer.csproj.CoreCompileInputs.cache
+C:\Users\Bilge\Desktop\Flico\FlicoBackend\ApiConsume\FlicoProject.EntityLayer\obj\Debug\net6.0\FlicoProject.EntityLayer.dll
+C:\Users\Bilge\Desktop\Flico\FlicoBackend\ApiConsume\FlicoProject.EntityLayer\obj\Debug\net6.0\refint\FlicoProject.EntityLayer.dll
+C:\Users\Bilge\Desktop\Flico\FlicoBackend\ApiConsume\FlicoProject.EntityLayer\obj\Debug\net6.0\FlicoProject.EntityLayer.pdb
+C:\Users\Bilge\Desktop\Flico\FlicoBackend\ApiConsume\FlicoProject.EntityLayer\obj\Debug\net6.0\FlicoProject.EntityLayer.genruntimeconfig.cache
+C:\Users\Bilge\Desktop\Flico\FlicoBackend\ApiConsume\FlicoProject.EntityLayer\obj\Debug\net6.0\ref\FlicoProject.EntityLayer.dll
