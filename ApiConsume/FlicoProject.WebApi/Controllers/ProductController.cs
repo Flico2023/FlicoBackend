@@ -18,10 +18,21 @@ namespace FlicoProject.WebApi.Controllers
             _productService = productService;
         }
         [HttpGet]
-        public IActionResult ProductList()
+
+        public IActionResult ProductList(int PageIndex, int PageSize)
         {
             var products = _productService.TGetList();
-            return Ok(new ResultDTO<List<Product>>(products));
+            var total = products.Count;
+            var chunked = products.Skip((PageIndex - 1) * PageSize).Take(PageSize).ToList();
+            var productListDTO = new ProductListDTO
+            {
+                Products = chunked,
+                PageIndex = PageIndex,
+                PageSize = PageSize,
+                Total = total
+            };
+
+            return Ok(new ResultDTO<ProductListDTO>(productListDTO));
         }
         [HttpPost]
         public IActionResult AddProduct(Product product)
@@ -39,7 +50,8 @@ namespace FlicoProject.WebApi.Controllers
         public IActionResult DeleteProduct(int id)
         {
             var productid = _productService.TDelete(id);
-            if (productid == 0) {
+            if (productid == 0)
+            {
                 return BadRequest(new ResultDTO<Product>("The id to be deleted was not found."));
             }
             else
@@ -50,7 +62,7 @@ namespace FlicoProject.WebApi.Controllers
             }
         }
         [HttpPut("{id}")]
-        public IActionResult UpdateProduct(int id, Product product) 
+        public IActionResult UpdateProduct(int id, Product product)
         {
             product.ProductID = id;
             int result = _productService.TUpdate(product);
@@ -74,6 +86,6 @@ namespace FlicoProject.WebApi.Controllers
             }
             return Ok(new ResultDTO<Product>(product));
         }
-        
+
     }
 }

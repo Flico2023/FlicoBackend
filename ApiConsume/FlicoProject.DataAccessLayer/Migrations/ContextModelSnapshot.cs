@@ -88,6 +88,43 @@ namespace FlicoProject.DataAccessLayer.Migrations
                     b.ToTable("Products");
                 });
 
+            modelBuilder.Entity("FlicoProject.EntityLayer.Concrete.StockDetail", b =>
+                {
+                    b.Property<int>("StockDetailID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("StockDetailID"), 1L, 1);
+
+                    b.Property<string>("Color")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("ProductID")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Size")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("VariationActiveAmount")
+                        .HasColumnType("int");
+
+                    b.Property<int>("VariationAmount")
+                        .HasColumnType("int");
+
+                    b.Property<int>("WarehouseID")
+                        .HasColumnType("int");
+
+                    b.HasKey("StockDetailID");
+
+                    b.HasIndex("ProductID");
+
+                    b.HasIndex("WarehouseID");
+
+                    b.ToTable("StockDetails");
+                });
+
             modelBuilder.Entity("FlicoProject.EntityLayer.Concrete.Warehouse", b =>
                 {
                     b.Property<int>("WarehouseID")
@@ -107,6 +144,25 @@ namespace FlicoProject.DataAccessLayer.Migrations
                     b.HasKey("WarehouseID");
 
                     b.ToTable("Warehouses");
+                });
+
+            modelBuilder.Entity("FlicoProject.EntityLayer.Concrete.StockDetail", b =>
+                {
+                    b.HasOne("FlicoProject.EntityLayer.Concrete.Product", "Product")
+                        .WithMany()
+                        .HasForeignKey("ProductID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("FlicoProject.EntityLayer.Concrete.Warehouse", "Warehouse")
+                        .WithMany()
+                        .HasForeignKey("WarehouseID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Product");
+
+                    b.Navigation("Warehouse");
                 });
 #pragma warning restore 612, 618
         }

@@ -14,6 +14,8 @@ builder.Services.AddScoped<IWarehouseDal, EFWarehouseDal>();
 builder.Services.AddScoped<IWarehouseService, WarehouseManager>();
 builder.Services.AddScoped<IProductDal, EFProductDal>();
 builder.Services.AddScoped<IProductService, ProductManager>();
+builder.Services.AddScoped<IStockDetailDal, EFStockDEtailDal>();
+builder.Services.AddScoped<IStockDetailService, StockDetailManager>();
 builder.Services.AddCors(opt =>
 {
     opt.AddPolicy("FlicoApiCors", opts =>
@@ -37,7 +39,7 @@ if (app.Environment.IsDevelopment())
 }
 app.UseCors("FlicoApiCors");
 app.UseAuthorization();
-
+app.UseStaticFiles();
 app.MapControllers();
 
 app.Run();

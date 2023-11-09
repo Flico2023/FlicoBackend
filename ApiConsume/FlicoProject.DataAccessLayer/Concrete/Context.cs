@@ -17,6 +17,7 @@ namespace FlicoProject.DataAccessLayer.Concrete
         public DbSet<Airport> Airports { get; set; }
         public DbSet<Warehouse> Warehouses { get; set; }
         public DbSet<Product> Products { get; set; }
+        public DbSet<StockDetail> StockDetails { get; set; }
 
     }
 }

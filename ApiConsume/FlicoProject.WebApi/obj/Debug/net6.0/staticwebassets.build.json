@@ -1,11 +1,37 @@
 {
   "Version": 1,
-  "Hash": "K5heL4inikHPLJBGNUdq5vXZC5TV0ZqZmpQ+mBKhcf8=",
+  "Hash": "ExeYKNKilk0Cg9jVaGY02/W5UuzdRwCVLky9ej/OcnQ=",
   "Source": "FlicoProject.WebApi",
   "BasePath": "_content/FlicoProject.WebApi",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
-  "Assets": []
+  "DiscoveryPatterns": [
+    {
+      "Name": "FlicoProject.WebApi\\wwwroot",
+      "Source": "FlicoProject.WebApi",
+      "ContentRoot": "C:\\Users\\kerem\\OneDrive\\Desktop\\FlicoBackend-main\\FlicoBackend-main\\ApiConsume\\FlicoProject.WebApi\\wwwroot\\",
+      "BasePath": "_content/FlicoProject.WebApi",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\kerem\\OneDrive\\Desktop\\FlicoBackend-main\\FlicoBackend-main\\ApiConsume\\FlicoProject.WebApi\\wwwroot\\product_images\\cmtqkvl2.jpg",
+      "SourceId": "FlicoProject.WebApi",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\kerem\\OneDrive\\Desktop\\FlicoBackend-main\\FlicoBackend-main\\ApiConsume\\FlicoProject.WebApi\\wwwroot\\",
+      "BasePath": "_content/FlicoProject.WebApi",
+      "RelativePath": "product_images/cmtqkvl2.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\product_images\\cmtqkvl2.jpg"
+    }
+  ]
 }
