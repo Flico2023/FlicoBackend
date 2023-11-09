@@ -315,3 +315,4 @@ C:\Users\kerem\OneDrive\Desktop\FlicoBackend-main\FlicoBackend-main\ApiConsume\F
 C:\Users\kerem\OneDrive\Desktop\FlicoBackend-main\FlicoBackend-main\ApiConsume\FlicoProject.WebApi\obj\Debug\net6.0\FlicoProject.WebApi.genruntimeconfig.cache
 C:\Users\kerem\OneDrive\Desktop\FlicoBackend-main\FlicoBackend-main\ApiConsume\FlicoProject.WebApi\obj\Debug\net6.0\ref\FlicoProject.WebApi.dll
 C:\Users\kerem\OneDrive\Desktop\FlicoBackend-main\FlicoBackend-main\ApiConsume\FlicoProject.WebApi\bin\Debug\net6.0\FlicoProject.WebApi.staticwebassets.runtime.json
+C:\Users\Bilge\Desktop\Flico\FlicoBackend\ApiConsume\FlicoProject.WebApi\bin\Debug\net6.0\FlicoProject.WebApi.staticwebassets.runtime.json

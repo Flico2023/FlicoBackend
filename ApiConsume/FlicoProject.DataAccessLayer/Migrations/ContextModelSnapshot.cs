@@ -42,6 +42,37 @@ namespace FlicoProject.DataAccessLayer.Migrations
                     b.ToTable("Airports");
                 });
 
+            modelBuilder.Entity("FlicoProject.EntityLayer.Concrete.Closet", b =>
+                {
+                    b.Property<int>("ClosetID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ClosetID"), 1L, 1);
+
+                    b.Property<int>("AirportID")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ClosetNo")
+                        .HasColumnType("int");
+
+                    b.Property<string>("IsEmpty")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("OrderID")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Password")
+                        .HasColumnType("int");
+
+                    b.HasKey("ClosetID");
+
+                    b.HasIndex("AirportID");
+
+                    b.ToTable("Closets");
+                });
+
             modelBuilder.Entity("FlicoProject.EntityLayer.Concrete.Product", b =>
                 {
                     b.Property<int>("ProductID")
@@ -146,6 +177,17 @@ namespace FlicoProject.DataAccessLayer.Migrations
                     b.ToTable("Warehouses");
                 });
 
+            modelBuilder.Entity("FlicoProject.EntityLayer.Concrete.Closet", b =>
+                {
+                    b.HasOne("FlicoProject.EntityLayer.Concrete.Airport", "Airport")
+                        .WithMany("Closets")
+                        .HasForeignKey("AirportID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Airport");
+                });
+
             modelBuilder.Entity("FlicoProject.EntityLayer.Concrete.StockDetail", b =>
                 {
                     b.HasOne("FlicoProject.EntityLayer.Concrete.Product", "Product")
@@ -163,6 +205,11 @@ namespace FlicoProject.DataAccessLayer.Migrations
                     b.Navigation("Product");
 
                     b.Navigation("Warehouse");
+                });
+
+            modelBuilder.Entity("FlicoProject.EntityLayer.Concrete.Airport", b =>
+                {
+                    b.Navigation("Closets");
                 });
 #pragma warning restore 612, 618
         }

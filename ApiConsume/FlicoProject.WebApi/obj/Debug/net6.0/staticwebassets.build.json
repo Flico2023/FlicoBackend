@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "ExeYKNKilk0Cg9jVaGY02/W5UuzdRwCVLky9ej/OcnQ=",
+  "Hash": "wAnnFdqyT04+Z7eQ00K1g+A4W4Uz16yi78WIqGZ+2dY=",
   "Source": "FlicoProject.WebApi",
   "BasePath": "_content/FlicoProject.WebApi",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "FlicoProject.WebApi\\wwwroot",
       "Source": "FlicoProject.WebApi",
-      "ContentRoot": "C:\\Users\\kerem\\OneDrive\\Desktop\\FlicoBackend-main\\FlicoBackend-main\\ApiConsume\\FlicoProject.WebApi\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Bilge\\Desktop\\Flico\\FlicoBackend\\ApiConsume\\FlicoProject.WebApi\\wwwroot\\",
       "BasePath": "_content/FlicoProject.WebApi",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\kerem\\OneDrive\\Desktop\\FlicoBackend-main\\FlicoBackend-main\\ApiConsume\\FlicoProject.WebApi\\wwwroot\\product_images\\cmtqkvl2.jpg",
+      "Identity": "C:\\Users\\Bilge\\Desktop\\Flico\\FlicoBackend\\ApiConsume\\FlicoProject.WebApi\\wwwroot\\product_images\\cmtqkvl2.jpg",
       "SourceId": "FlicoProject.WebApi",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\kerem\\OneDrive\\Desktop\\FlicoBackend-main\\FlicoBackend-main\\ApiConsume\\FlicoProject.WebApi\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Bilge\\Desktop\\Flico\\FlicoBackend\\ApiConsume\\FlicoProject.WebApi\\wwwroot\\",
       "BasePath": "_content/FlicoProject.WebApi",
       "RelativePath": "product_images/cmtqkvl2.jpg",
       "AssetKind": "All",
