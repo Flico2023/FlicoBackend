@@ -4,7 +4,7 @@
 
 namespace FlicoProject.DataAccessLayer.Migrations
 {
-    public partial class mig2 : Migration
+    public partial class bilge1 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -32,11 +32,46 @@ namespace FlicoProject.DataAccessLayer.Migrations
                     AirportID = table.Column<int>(type: "int", nullable: false),
                     OrderID = table.Column<int>(type: "int", nullable: false),
                     Password = table.Column<int>(type: "int", nullable: false),
-                    IsEmpty = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    Status = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Closets", x => x.ClosetID);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "OutsourceProducts",
+                columns: table => new
+                {
+                    OutsourceProductID = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    OutsourceID = table.Column<int>(type: "int", nullable: false),
+                    StockDetailID = table.Column<int>(type: "int", nullable: false),
+                    Amount = table.Column<int>(type: "int", nullable: false),
+                    AirportID = table.Column<int>(type: "int", nullable: false),
+                    Status = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_OutsourceProducts", x => x.OutsourceProductID);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Outsources",
+                columns: table => new
+                {
+                    OutsourceId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    CompanyName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    City = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Address = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Phone = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    ContactPerson = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Outsources", x => x.OutsourceId);
                 });
 
             migrationBuilder.CreateTable(
@@ -54,7 +89,8 @@ namespace FlicoProject.DataAccessLayer.Migrations
                     ProductDetail = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     CurrentPrice = table.Column<float>(type: "real", nullable: false),
                     Gender = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Color = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    Color = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    ImagePath = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -100,6 +136,12 @@ namespace FlicoProject.DataAccessLayer.Migrations
 
             migrationBuilder.DropTable(
                 name: "Closets");
+
+            migrationBuilder.DropTable(
+                name: "OutsourceProducts");
+
+            migrationBuilder.DropTable(
+                name: "Outsources");
 
             migrationBuilder.DropTable(
                 name: "Products");

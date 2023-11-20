@@ -13,7 +13,7 @@ namespace FlicoProject.EntityLayer.Concrete
         public int AirportID { get; set; }
         public int OrderID { get; set; }
         public int Password { get; set; }
-        public string IsEmpty { get; set; }
+        public string Status { get; set; }
 
     }
 }

@@ -19,6 +19,9 @@ namespace FlicoProject.DataAccessLayer.Concrete
         public DbSet<Product> Products { get; set; }
         public DbSet<StockDetail> StockDetails { get; set; }
         public DbSet<Closet> Closets { get; set; }
+        public DbSet<Outsource> Outsources { get; set; }
+        public DbSet<OutsourceProduct> OutsourceProducts { get; set; }
+
 
     }
 }

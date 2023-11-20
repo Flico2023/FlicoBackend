@@ -18,6 +18,10 @@ builder.Services.AddScoped<IStockDetailDal, EFStockDEtailDal>();
 builder.Services.AddScoped<IStockDetailService, StockDetailManager>();
 builder.Services.AddScoped<IClosetDal, EFClosetDal>();
 builder.Services.AddScoped<IClosetService, ClosetManager>();
+builder.Services.AddScoped<IOutsourceDal, EFOutsourceDal>();
+builder.Services.AddScoped<IOutsourceService, OutsourceManager>();
+builder.Services.AddScoped<IOutsourceProductDal, EFOutsourceProductDal>();
+builder.Services.AddScoped<IOutsourceProductService, OutsourceProductManager>();
 builder.Services.AddCors(opt =>
 {
     opt.AddPolicy("FlicoApiCors", opts =>

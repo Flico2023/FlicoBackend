@@ -56,19 +56,85 @@ namespace FlicoProject.DataAccessLayer.Migrations
                     b.Property<int>("ClosetNo")
                         .HasColumnType("int");
 
-                    b.Property<string>("IsEmpty")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<int>("OrderID")
                         .HasColumnType("int");
 
                     b.Property<int>("Password")
                         .HasColumnType("int");
 
+                    b.Property<string>("Status")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("ClosetID");
 
                     b.ToTable("Closets");
+                });
+
+            modelBuilder.Entity("FlicoProject.EntityLayer.Concrete.Outsource", b =>
+                {
+                    b.Property<int>("OutsourceId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("OutsourceId"), 1L, 1);
+
+                    b.Property<string>("Address")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("City")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CompanyName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ContactPerson")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Phone")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("OutsourceId");
+
+                    b.ToTable("Outsources");
+                });
+
+            modelBuilder.Entity("FlicoProject.EntityLayer.Concrete.OutsourceProduct", b =>
+                {
+                    b.Property<int>("OutsourceProductID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("OutsourceProductID"), 1L, 1);
+
+                    b.Property<int>("AirportID")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Amount")
+                        .HasColumnType("int");
+
+                    b.Property<int>("OutsourceID")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Status")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("StockDetailID")
+                        .HasColumnType("int");
+
+                    b.HasKey("OutsourceProductID");
+
+                    b.ToTable("OutsourceProducts");
                 });
 
             modelBuilder.Entity("FlicoProject.EntityLayer.Concrete.Product", b =>
