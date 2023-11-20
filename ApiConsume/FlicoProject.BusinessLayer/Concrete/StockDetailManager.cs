@@ -47,16 +47,15 @@ namespace FlicoProject.BusinessLayer.Concrete
         public int TInsert(StockDetail t)
         {
             var stockDetail1 = _StockDetailDal.GetList().FindAll(x => x.ProductID == t.ProductID);
-            var stockDetail2 = stockDetail1.FindAll(x => x.Color == t.Color);
-            var stockDetail = stockDetail2.Find(x => x.Size == t.Size);
-            if (IsNullOrWhiteSpace(t.Color) || IsNullOrWhiteSpace(t.Size) || stockDetail != null)
+            var stockDetail = stockDetail1.Find(x => x.Size == t.Size);
+            if (IsNullOrWhiteSpace(t.Size) || stockDetail != null)
             {
                 return 0;
             }
-            /*else if (_StockDetailDal.GetList().Count == 0) {
+            else if (_StockDetailDal.GetList().Count == 0) {
                 _StockDetailDal.Insert(t);
                 return 1;
-            }*/
+            }
             else
             {
                 _StockDetailDal.Insert(t);
@@ -67,11 +66,10 @@ namespace FlicoProject.BusinessLayer.Concrete
         public int TUpdate(StockDetail t)
         {
             var isused1 = _StockDetailDal.GetList().FindAll(x => x.ProductID == t.ProductID);
-            var isused2 = isused1.FindAll(x => x.Color == t.Color);
-            var isused = isused2.Find(x => x.Size == t.Size);
+            var isused = isused1.Find(x => x.Size == t.Size);
             var isvalid = _StockDetailDal.GetList().FirstOrDefault(x => x.StockDetailID == t.StockDetailID);
 
-            if (IsNullOrWhiteSpace(t.Color) || IsNullOrWhiteSpace(t.Size) || isused != null || isvalid == null)
+            if (IsNullOrWhiteSpace(t.Size) || isused != null || isvalid == null)
             {
                 return 0;
             }

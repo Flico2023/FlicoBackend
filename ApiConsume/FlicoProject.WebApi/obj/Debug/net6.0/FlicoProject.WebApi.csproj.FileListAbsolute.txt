@@ -316,3 +316,14 @@ C:\Users\kerem\OneDrive\Desktop\FlicoBackend-main\FlicoBackend-main\ApiConsume\F
 C:\Users\kerem\OneDrive\Desktop\FlicoBackend-main\FlicoBackend-main\ApiConsume\FlicoProject.WebApi\obj\Debug\net6.0\ref\FlicoProject.WebApi.dll
 C:\Users\kerem\OneDrive\Desktop\FlicoBackend-main\FlicoBackend-main\ApiConsume\FlicoProject.WebApi\bin\Debug\net6.0\FlicoProject.WebApi.staticwebassets.runtime.json
 C:\Users\Bilge\Desktop\Flico\FlicoBackend\ApiConsume\FlicoProject.WebApi\bin\Debug\net6.0\FlicoProject.WebApi.staticwebassets.runtime.json
+C:\Users\kerem\OneDrive\Desktop\FlicoBackend-main (1)\FlicoBackend-main\ApiConsume\FlicoProject.WebApi\obj\Debug\net6.0\FlicoProject.WebApi.csproj.AssemblyReference.cache
+C:\Users\kerem\OneDrive\Desktop\FlicoBackend-main (1)\FlicoBackend-main\ApiConsume\FlicoProject.WebApi\obj\Debug\net6.0\FlicoProject.WebApi.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kerem\OneDrive\Desktop\FlicoBackend-main (1)\FlicoBackend-main\ApiConsume\FlicoProject.WebApi\obj\Debug\net6.0\FlicoProject.WebApi.AssemblyInfoInputs.cache
+C:\Users\kerem\OneDrive\Desktop\FlicoBackend-main (1)\FlicoBackend-main\ApiConsume\FlicoProject.WebApi\obj\Debug\net6.0\FlicoProject.WebApi.AssemblyInfo.cs
+C:\Users\kerem\OneDrive\Desktop\FlicoBackend-main (1)\FlicoBackend-main\ApiConsume\FlicoProject.WebApi\obj\Debug\net6.0\FlicoProject.WebApi.csproj.CoreCompileInputs.cache
+C:\Users\kerem\OneDrive\Desktop\FlicoBackend-main (1)\FlicoBackend-main\ApiConsume\FlicoProject.WebApi\obj\Debug\net6.0\FlicoProject.WebApi.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\kerem\OneDrive\Desktop\FlicoBackend-main (1)\FlicoBackend-main\ApiConsume\FlicoProject.WebApi\obj\Debug\net6.0\FlicoProject.WebApi.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\kerem\OneDrive\Desktop\FlicoBackend-main (1)\FlicoBackend-main\ApiConsume\FlicoProject.WebApi\obj\Debug\net6.0\FlicoProject.WebApi.dll
+C:\Users\kerem\OneDrive\Desktop\FlicoBackend-main (1)\FlicoBackend-main\ApiConsume\FlicoProject.WebApi\obj\Debug\net6.0\refint\FlicoProject.WebApi.dll
+C:\Users\kerem\OneDrive\Desktop\FlicoBackend-main (1)\FlicoBackend-main\ApiConsume\FlicoProject.WebApi\obj\Debug\net6.0\FlicoProject.WebApi.pdb
+C:\Users\kerem\OneDrive\Desktop\itudbmaster\itudb2211\FlicoBackend\ApiConsume\FlicoProject.WebApi\bin\Debug\net6.0\FlicoProject.WebApi.staticwebassets.runtime.json

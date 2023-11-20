@@ -11,7 +11,6 @@ namespace FlicoProject.EntityLayer.Concrete
         public int ClosetID { get; set; }
         public int ClosetNo { get; set; }
         public int AirportID { get; set; }
-        public Airport Airport { get; set; }
         public int OrderID { get; set; }
         public int Password { get; set; }
         public string IsEmpty { get; set; }

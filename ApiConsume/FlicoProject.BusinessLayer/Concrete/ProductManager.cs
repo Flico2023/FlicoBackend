@@ -44,8 +44,10 @@ namespace FlicoProject.BusinessLayer.Concrete
 
         public int TInsert(Product t)
         {
-            var product = _ProductDal.GetList().Find(x => x.ProductName == t.ProductName);
-            if (IsNullOrWhiteSpace(t.ProductName) || IsNullOrWhiteSpace(t.Category) || IsNullOrWhiteSpace(t.Subcategory) || IsNullOrWhiteSpace(t.Gender) || IsNullOrWhiteSpace(t.Brand) || IsNullOrWhiteSpace(t.ProductDetail) || t.Price < 0 || t.CurrentPrice < 0 || t.Amount < 0 ||   product != null)
+            var product1 = _ProductDal.GetList().FindAll(x => x.ProductName == t.ProductName);
+            var product = product1.FindAll(x => x.Color == t.Color);
+            var count = product.Count();
+            if (IsNullOrWhiteSpace(t.ProductName) || IsNullOrWhiteSpace(t.Category) || IsNullOrWhiteSpace(t.Subcategory) || IsNullOrWhiteSpace(t.Gender) || IsNullOrWhiteSpace(t.Brand) || IsNullOrWhiteSpace(t.ProductDetail) || t.Price < 0 || t.CurrentPrice < 0 || t.Amount < 0 ||   count >0)
             {
                 return 0;
             }
@@ -58,7 +60,8 @@ namespace FlicoProject.BusinessLayer.Concrete
 
         public int TUpdate(Product t)
         {
-            var isused = _ProductDal.GetList().FirstOrDefault(x => x.ProductName == t.ProductName);
+            var isused1 = _ProductDal.GetList().FindAll(x => x.ProductName == t.ProductName);
+            var isused = isused1.FindAll(x => x.Color == t.Color);
             var isvalid = _ProductDal.GetList().FirstOrDefault(x => x.ProductID == t.ProductID);
 
             if (IsNullOrWhiteSpace(t.ProductName) || IsNullOrWhiteSpace(t.Category) || IsNullOrWhiteSpace(t.Subcategory) || IsNullOrWhiteSpace(t.Gender) || IsNullOrWhiteSpace(t.Brand) || IsNullOrWhiteSpace(t.ProductDetail) || t.Price < 0 || t.CurrentPrice < 0 || t.Amount < 0 || isused != null || isvalid == null)

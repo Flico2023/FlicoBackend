@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FlicoProject.DataAccessLayer.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20231109181601_mig1")]
-    partial class mig1
+    [Migration("20231120171243_mig3")]
+    partial class mig3
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -70,8 +70,6 @@ namespace FlicoProject.DataAccessLayer.Migrations
 
                     b.HasKey("ClosetID");
 
-                    b.HasIndex("AirportID");
-
                     b.ToTable("Closets");
                 });
 
@@ -94,10 +92,18 @@ namespace FlicoProject.DataAccessLayer.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Color")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<float>("CurrentPrice")
                         .HasColumnType("real");
 
                     b.Property<string>("Gender")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ImagePath")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -129,10 +135,6 @@ namespace FlicoProject.DataAccessLayer.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("StockDetailID"), 1L, 1);
 
-                    b.Property<string>("Color")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<int>("ProductID")
                         .HasColumnType("int");
 
@@ -150,10 +152,6 @@ namespace FlicoProject.DataAccessLayer.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("StockDetailID");
-
-                    b.HasIndex("ProductID");
-
-                    b.HasIndex("WarehouseID");
 
                     b.ToTable("StockDetails");
                 });
@@ -177,41 +175,6 @@ namespace FlicoProject.DataAccessLayer.Migrations
                     b.HasKey("WarehouseID");
 
                     b.ToTable("Warehouses");
-                });
-
-            modelBuilder.Entity("FlicoProject.EntityLayer.Concrete.Closet", b =>
-                {
-                    b.HasOne("FlicoProject.EntityLayer.Concrete.Airport", "Airport")
-                        .WithMany("Closets")
-                        .HasForeignKey("AirportID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Airport");
-                });
-
-            modelBuilder.Entity("FlicoProject.EntityLayer.Concrete.StockDetail", b =>
-                {
-                    b.HasOne("FlicoProject.EntityLayer.Concrete.Product", "Product")
-                        .WithMany()
-                        .HasForeignKey("ProductID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("FlicoProject.EntityLayer.Concrete.Warehouse", "Warehouse")
-                        .WithMany()
-                        .HasForeignKey("WarehouseID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Product");
-
-                    b.Navigation("Warehouse");
-                });
-
-            modelBuilder.Entity("FlicoProject.EntityLayer.Concrete.Airport", b =>
-                {
-                    b.Navigation("Closets");
                 });
 #pragma warning restore 612, 618
         }

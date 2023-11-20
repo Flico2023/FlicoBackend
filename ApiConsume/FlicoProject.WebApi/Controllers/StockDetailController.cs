@@ -27,7 +27,7 @@ namespace FlicoProject.WebApi.Controllers
             var stockDetails = _stockDetailservice.TGetList();
             return Ok(new ResultDTO<List<StockDetail>>(stockDetails));
         }
-        [HttpPost]
+        /*[HttpPost]
         public async Task<IActionResult> AddStockDetail([FromForm] StockDetail stockDetail)
         {
             if (stockDetail.Image != null && stockDetail.Image.Length > 0)
@@ -61,7 +61,7 @@ namespace FlicoProject.WebApi.Controllers
             {
                 return BadRequest(new ResultDTO<StockDetail>("Form values are not valid."));
             }
-        }
+        }*/
         /*[HttpPost]
         public IActionResult AddStockDetail(StockDetail stockDetail)
         {

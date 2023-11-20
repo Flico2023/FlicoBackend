@@ -54,3 +54,17 @@ C:\Users\kerem\OneDrive\Desktop\FlicoBackend-main\FlicoBackend-main\ApiConsume\F
 C:\Users\kerem\OneDrive\Desktop\FlicoBackend-main\FlicoBackend-main\ApiConsume\FlicoProject.EntityLayer\obj\Debug\net6.0\FlicoProject.EntityLayer.pdb
 C:\Users\kerem\OneDrive\Desktop\FlicoBackend-main\FlicoBackend-main\ApiConsume\FlicoProject.EntityLayer\obj\Debug\net6.0\FlicoProject.EntityLayer.genruntimeconfig.cache
 C:\Users\kerem\OneDrive\Desktop\FlicoBackend-main\FlicoBackend-main\ApiConsume\FlicoProject.EntityLayer\obj\Debug\net6.0\ref\FlicoProject.EntityLayer.dll
+C:\Users\kerem\OneDrive\Desktop\FlicoBackend-main (1)\FlicoBackend-main\ApiConsume\FlicoProject.EntityLayer\bin\Debug\net6.0\FlicoProject.EntityLayer.deps.json
+C:\Users\kerem\OneDrive\Desktop\FlicoBackend-main (1)\FlicoBackend-main\ApiConsume\FlicoProject.EntityLayer\bin\Debug\net6.0\FlicoProject.EntityLayer.runtimeconfig.json
+C:\Users\kerem\OneDrive\Desktop\FlicoBackend-main (1)\FlicoBackend-main\ApiConsume\FlicoProject.EntityLayer\bin\Debug\net6.0\FlicoProject.EntityLayer.dll
+C:\Users\kerem\OneDrive\Desktop\FlicoBackend-main (1)\FlicoBackend-main\ApiConsume\FlicoProject.EntityLayer\bin\Debug\net6.0\FlicoProject.EntityLayer.pdb
+C:\Users\kerem\OneDrive\Desktop\FlicoBackend-main (1)\FlicoBackend-main\ApiConsume\FlicoProject.EntityLayer\obj\Debug\net6.0\FlicoProject.EntityLayer.csproj.AssemblyReference.cache
+C:\Users\kerem\OneDrive\Desktop\FlicoBackend-main (1)\FlicoBackend-main\ApiConsume\FlicoProject.EntityLayer\obj\Debug\net6.0\FlicoProject.EntityLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kerem\OneDrive\Desktop\FlicoBackend-main (1)\FlicoBackend-main\ApiConsume\FlicoProject.EntityLayer\obj\Debug\net6.0\FlicoProject.EntityLayer.AssemblyInfoInputs.cache
+C:\Users\kerem\OneDrive\Desktop\FlicoBackend-main (1)\FlicoBackend-main\ApiConsume\FlicoProject.EntityLayer\obj\Debug\net6.0\FlicoProject.EntityLayer.AssemblyInfo.cs
+C:\Users\kerem\OneDrive\Desktop\FlicoBackend-main (1)\FlicoBackend-main\ApiConsume\FlicoProject.EntityLayer\obj\Debug\net6.0\FlicoProject.EntityLayer.csproj.CoreCompileInputs.cache
+C:\Users\kerem\OneDrive\Desktop\FlicoBackend-main (1)\FlicoBackend-main\ApiConsume\FlicoProject.EntityLayer\obj\Debug\net6.0\FlicoProject.EntityLayer.dll
+C:\Users\kerem\OneDrive\Desktop\FlicoBackend-main (1)\FlicoBackend-main\ApiConsume\FlicoProject.EntityLayer\obj\Debug\net6.0\refint\FlicoProject.EntityLayer.dll
+C:\Users\kerem\OneDrive\Desktop\FlicoBackend-main (1)\FlicoBackend-main\ApiConsume\FlicoProject.EntityLayer\obj\Debug\net6.0\FlicoProject.EntityLayer.pdb
+C:\Users\kerem\OneDrive\Desktop\FlicoBackend-main (1)\FlicoBackend-main\ApiConsume\FlicoProject.EntityLayer\obj\Debug\net6.0\FlicoProject.EntityLayer.genruntimeconfig.cache
+C:\Users\kerem\OneDrive\Desktop\FlicoBackend-main (1)\FlicoBackend-main\ApiConsume\FlicoProject.EntityLayer\obj\Debug\net6.0\ref\FlicoProject.EntityLayer.dll
