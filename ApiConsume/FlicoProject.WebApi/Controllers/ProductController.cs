@@ -135,16 +135,16 @@ public async Task<IActionResult> AddProduct(ProductWithDetails productWithDetail
         {
             var product = _productService.TGetByID(id);
             var variations = _stockDetailservice.TGetList().FindAll(x=>x.ProductID == id);
-            var PtoS = new ProductToStock
+            var PtoS = new ProductWithDetails
             {
-                Products = product,
+                Product = product,
                 StockDetails = variations,
             };
             if (product == null)
             {
                 return BadRequest(new ResultDTO<Product>("The id to be looking for was not found."));
             }
-            return Ok(new ResultDTO<ProductToStock>(PtoS));
+            return Ok(new ResultDTO<ProductWithDetails>(PtoS));
         }
 
     }
