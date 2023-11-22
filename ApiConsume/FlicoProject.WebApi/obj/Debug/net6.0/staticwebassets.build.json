@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "m9ml7/hCZBlN0zQ67Tn6e2YjmoUziFkOoq4KZGQloVU=",
+  "Hash": "EeCw6L5JMUX/n0rsvogiXPc2mi4UsyCue3LXyHn+rlM=",
   "Source": "FlicoProject.WebApi",
   "BasePath": "_content/FlicoProject.WebApi",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "FlicoProject.WebApi\\wwwroot",
       "Source": "FlicoProject.WebApi",
-      "ContentRoot": "C:\\Users\\Bilge\\Desktop\\Flico\\FlicoBackend\\ApiConsume\\FlicoProject.WebApi\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\kerem\\OneDrive\\Desktop\\itudbmaster\\itudb2211\\FlicoBackend\\ApiConsume\\FlicoProject.WebApi\\wwwroot\\",
       "BasePath": "_content/FlicoProject.WebApi",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\Bilge\\Desktop\\Flico\\FlicoBackend\\ApiConsume\\FlicoProject.WebApi\\wwwroot\\product_images\\0u5t2pjc.jpg",
+      "Identity": "C:\\Users\\kerem\\OneDrive\\Desktop\\itudbmaster\\itudb2211\\FlicoBackend\\ApiConsume\\FlicoProject.WebApi\\wwwroot\\product_images\\0u5t2pjc.jpg",
       "SourceId": "FlicoProject.WebApi",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Bilge\\Desktop\\Flico\\FlicoBackend\\ApiConsume\\FlicoProject.WebApi\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\kerem\\OneDrive\\Desktop\\itudbmaster\\itudb2211\\FlicoBackend\\ApiConsume\\FlicoProject.WebApi\\wwwroot\\",
       "BasePath": "_content/FlicoProject.WebApi",
       "RelativePath": "product_images/0u5t2pjc.jpg",
       "AssetKind": "All",
@@ -34,10 +34,44 @@
       "OriginalItemSpec": "wwwroot\\product_images\\0u5t2pjc.jpg"
     },
     {
-      "Identity": "C:\\Users\\Bilge\\Desktop\\Flico\\FlicoBackend\\ApiConsume\\FlicoProject.WebApi\\wwwroot\\product_images\\cmtqkvl2.jpg",
+      "Identity": "C:\\Users\\kerem\\OneDrive\\Desktop\\itudbmaster\\itudb2211\\FlicoBackend\\ApiConsume\\FlicoProject.WebApi\\wwwroot\\product_images\\31j3rsdc.jpg",
       "SourceId": "FlicoProject.WebApi",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Bilge\\Desktop\\Flico\\FlicoBackend\\ApiConsume\\FlicoProject.WebApi\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\kerem\\OneDrive\\Desktop\\itudbmaster\\itudb2211\\FlicoBackend\\ApiConsume\\FlicoProject.WebApi\\wwwroot\\",
+      "BasePath": "_content/FlicoProject.WebApi",
+      "RelativePath": "product_images/31j3rsdc.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\product_images\\31j3rsdc.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\kerem\\OneDrive\\Desktop\\itudbmaster\\itudb2211\\FlicoBackend\\ApiConsume\\FlicoProject.WebApi\\wwwroot\\product_images\\bqraulyi.jpg",
+      "SourceId": "FlicoProject.WebApi",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\kerem\\OneDrive\\Desktop\\itudbmaster\\itudb2211\\FlicoBackend\\ApiConsume\\FlicoProject.WebApi\\wwwroot\\",
+      "BasePath": "_content/FlicoProject.WebApi",
+      "RelativePath": "product_images/bqraulyi.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\product_images\\bqraulyi.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\kerem\\OneDrive\\Desktop\\itudbmaster\\itudb2211\\FlicoBackend\\ApiConsume\\FlicoProject.WebApi\\wwwroot\\product_images\\cmtqkvl2.jpg",
+      "SourceId": "FlicoProject.WebApi",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\kerem\\OneDrive\\Desktop\\itudbmaster\\itudb2211\\FlicoBackend\\ApiConsume\\FlicoProject.WebApi\\wwwroot\\",
       "BasePath": "_content/FlicoProject.WebApi",
       "RelativePath": "product_images/cmtqkvl2.jpg",
       "AssetKind": "All",
@@ -51,10 +85,10 @@
       "OriginalItemSpec": "wwwroot\\product_images\\cmtqkvl2.jpg"
     },
     {
-      "Identity": "C:\\Users\\Bilge\\Desktop\\Flico\\FlicoBackend\\ApiConsume\\FlicoProject.WebApi\\wwwroot\\product_images\\cxkxqlxp.jpg",
+      "Identity": "C:\\Users\\kerem\\OneDrive\\Desktop\\itudbmaster\\itudb2211\\FlicoBackend\\ApiConsume\\FlicoProject.WebApi\\wwwroot\\product_images\\cxkxqlxp.jpg",
       "SourceId": "FlicoProject.WebApi",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Bilge\\Desktop\\Flico\\FlicoBackend\\ApiConsume\\FlicoProject.WebApi\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\kerem\\OneDrive\\Desktop\\itudbmaster\\itudb2211\\FlicoBackend\\ApiConsume\\FlicoProject.WebApi\\wwwroot\\",
       "BasePath": "_content/FlicoProject.WebApi",
       "RelativePath": "product_images/cxkxqlxp.jpg",
       "AssetKind": "All",
@@ -68,10 +102,10 @@
       "OriginalItemSpec": "wwwroot\\product_images\\cxkxqlxp.jpg"
     },
     {
-      "Identity": "C:\\Users\\Bilge\\Desktop\\Flico\\FlicoBackend\\ApiConsume\\FlicoProject.WebApi\\wwwroot\\product_images\\d0pediro.jpg",
+      "Identity": "C:\\Users\\kerem\\OneDrive\\Desktop\\itudbmaster\\itudb2211\\FlicoBackend\\ApiConsume\\FlicoProject.WebApi\\wwwroot\\product_images\\d0pediro.jpg",
       "SourceId": "FlicoProject.WebApi",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Bilge\\Desktop\\Flico\\FlicoBackend\\ApiConsume\\FlicoProject.WebApi\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\kerem\\OneDrive\\Desktop\\itudbmaster\\itudb2211\\FlicoBackend\\ApiConsume\\FlicoProject.WebApi\\wwwroot\\",
       "BasePath": "_content/FlicoProject.WebApi",
       "RelativePath": "product_images/d0pediro.jpg",
       "AssetKind": "All",
@@ -85,10 +119,10 @@
       "OriginalItemSpec": "wwwroot\\product_images\\d0pediro.jpg"
     },
     {
-      "Identity": "C:\\Users\\Bilge\\Desktop\\Flico\\FlicoBackend\\ApiConsume\\FlicoProject.WebApi\\wwwroot\\product_images\\f2kox5co.jpg",
+      "Identity": "C:\\Users\\kerem\\OneDrive\\Desktop\\itudbmaster\\itudb2211\\FlicoBackend\\ApiConsume\\FlicoProject.WebApi\\wwwroot\\product_images\\f2kox5co.jpg",
       "SourceId": "FlicoProject.WebApi",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Bilge\\Desktop\\Flico\\FlicoBackend\\ApiConsume\\FlicoProject.WebApi\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\kerem\\OneDrive\\Desktop\\itudbmaster\\itudb2211\\FlicoBackend\\ApiConsume\\FlicoProject.WebApi\\wwwroot\\",
       "BasePath": "_content/FlicoProject.WebApi",
       "RelativePath": "product_images/f2kox5co.jpg",
       "AssetKind": "All",
@@ -102,10 +136,10 @@
       "OriginalItemSpec": "wwwroot\\product_images\\f2kox5co.jpg"
     },
     {
-      "Identity": "C:\\Users\\Bilge\\Desktop\\Flico\\FlicoBackend\\ApiConsume\\FlicoProject.WebApi\\wwwroot\\product_images\\fau4haeh.jpg",
+      "Identity": "C:\\Users\\kerem\\OneDrive\\Desktop\\itudbmaster\\itudb2211\\FlicoBackend\\ApiConsume\\FlicoProject.WebApi\\wwwroot\\product_images\\fau4haeh.jpg",
       "SourceId": "FlicoProject.WebApi",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Bilge\\Desktop\\Flico\\FlicoBackend\\ApiConsume\\FlicoProject.WebApi\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\kerem\\OneDrive\\Desktop\\itudbmaster\\itudb2211\\FlicoBackend\\ApiConsume\\FlicoProject.WebApi\\wwwroot\\",
       "BasePath": "_content/FlicoProject.WebApi",
       "RelativePath": "product_images/fau4haeh.jpg",
       "AssetKind": "All",
@@ -119,10 +153,27 @@
       "OriginalItemSpec": "wwwroot\\product_images\\fau4haeh.jpg"
     },
     {
-      "Identity": "C:\\Users\\Bilge\\Desktop\\Flico\\FlicoBackend\\ApiConsume\\FlicoProject.WebApi\\wwwroot\\product_images\\mfl4v3ph.jpg",
+      "Identity": "C:\\Users\\kerem\\OneDrive\\Desktop\\itudbmaster\\itudb2211\\FlicoBackend\\ApiConsume\\FlicoProject.WebApi\\wwwroot\\product_images\\irrebcbx.png",
       "SourceId": "FlicoProject.WebApi",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Bilge\\Desktop\\Flico\\FlicoBackend\\ApiConsume\\FlicoProject.WebApi\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\kerem\\OneDrive\\Desktop\\itudbmaster\\itudb2211\\FlicoBackend\\ApiConsume\\FlicoProject.WebApi\\wwwroot\\",
+      "BasePath": "_content/FlicoProject.WebApi",
+      "RelativePath": "product_images/irrebcbx.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\product_images\\irrebcbx.png"
+    },
+    {
+      "Identity": "C:\\Users\\kerem\\OneDrive\\Desktop\\itudbmaster\\itudb2211\\FlicoBackend\\ApiConsume\\FlicoProject.WebApi\\wwwroot\\product_images\\mfl4v3ph.jpg",
+      "SourceId": "FlicoProject.WebApi",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\kerem\\OneDrive\\Desktop\\itudbmaster\\itudb2211\\FlicoBackend\\ApiConsume\\FlicoProject.WebApi\\wwwroot\\",
       "BasePath": "_content/FlicoProject.WebApi",
       "RelativePath": "product_images/mfl4v3ph.jpg",
       "AssetKind": "All",
@@ -136,10 +187,10 @@
       "OriginalItemSpec": "wwwroot\\product_images\\mfl4v3ph.jpg"
     },
     {
-      "Identity": "C:\\Users\\Bilge\\Desktop\\Flico\\FlicoBackend\\ApiConsume\\FlicoProject.WebApi\\wwwroot\\product_images\\nbjclc21.jpg",
+      "Identity": "C:\\Users\\kerem\\OneDrive\\Desktop\\itudbmaster\\itudb2211\\FlicoBackend\\ApiConsume\\FlicoProject.WebApi\\wwwroot\\product_images\\nbjclc21.jpg",
       "SourceId": "FlicoProject.WebApi",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Bilge\\Desktop\\Flico\\FlicoBackend\\ApiConsume\\FlicoProject.WebApi\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\kerem\\OneDrive\\Desktop\\itudbmaster\\itudb2211\\FlicoBackend\\ApiConsume\\FlicoProject.WebApi\\wwwroot\\",
       "BasePath": "_content/FlicoProject.WebApi",
       "RelativePath": "product_images/nbjclc21.jpg",
       "AssetKind": "All",
@@ -153,10 +204,10 @@
       "OriginalItemSpec": "wwwroot\\product_images\\nbjclc21.jpg"
     },
     {
-      "Identity": "C:\\Users\\Bilge\\Desktop\\Flico\\FlicoBackend\\ApiConsume\\FlicoProject.WebApi\\wwwroot\\product_images\\nsrofwxn.jpg",
+      "Identity": "C:\\Users\\kerem\\OneDrive\\Desktop\\itudbmaster\\itudb2211\\FlicoBackend\\ApiConsume\\FlicoProject.WebApi\\wwwroot\\product_images\\nsrofwxn.jpg",
       "SourceId": "FlicoProject.WebApi",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Bilge\\Desktop\\Flico\\FlicoBackend\\ApiConsume\\FlicoProject.WebApi\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\kerem\\OneDrive\\Desktop\\itudbmaster\\itudb2211\\FlicoBackend\\ApiConsume\\FlicoProject.WebApi\\wwwroot\\",
       "BasePath": "_content/FlicoProject.WebApi",
       "RelativePath": "product_images/nsrofwxn.jpg",
       "AssetKind": "All",
@@ -170,10 +221,10 @@
       "OriginalItemSpec": "wwwroot\\product_images\\nsrofwxn.jpg"
     },
     {
-      "Identity": "C:\\Users\\Bilge\\Desktop\\Flico\\FlicoBackend\\ApiConsume\\FlicoProject.WebApi\\wwwroot\\product_images\\oxdrwi3s.jpg",
+      "Identity": "C:\\Users\\kerem\\OneDrive\\Desktop\\itudbmaster\\itudb2211\\FlicoBackend\\ApiConsume\\FlicoProject.WebApi\\wwwroot\\product_images\\oxdrwi3s.jpg",
       "SourceId": "FlicoProject.WebApi",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Bilge\\Desktop\\Flico\\FlicoBackend\\ApiConsume\\FlicoProject.WebApi\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\kerem\\OneDrive\\Desktop\\itudbmaster\\itudb2211\\FlicoBackend\\ApiConsume\\FlicoProject.WebApi\\wwwroot\\",
       "BasePath": "_content/FlicoProject.WebApi",
       "RelativePath": "product_images/oxdrwi3s.jpg",
       "AssetKind": "All",
@@ -187,10 +238,10 @@
       "OriginalItemSpec": "wwwroot\\product_images\\oxdrwi3s.jpg"
     },
     {
-      "Identity": "C:\\Users\\Bilge\\Desktop\\Flico\\FlicoBackend\\ApiConsume\\FlicoProject.WebApi\\wwwroot\\product_images\\pjeqttdg.jpg",
+      "Identity": "C:\\Users\\kerem\\OneDrive\\Desktop\\itudbmaster\\itudb2211\\FlicoBackend\\ApiConsume\\FlicoProject.WebApi\\wwwroot\\product_images\\pjeqttdg.jpg",
       "SourceId": "FlicoProject.WebApi",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Bilge\\Desktop\\Flico\\FlicoBackend\\ApiConsume\\FlicoProject.WebApi\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\kerem\\OneDrive\\Desktop\\itudbmaster\\itudb2211\\FlicoBackend\\ApiConsume\\FlicoProject.WebApi\\wwwroot\\",
       "BasePath": "_content/FlicoProject.WebApi",
       "RelativePath": "product_images/pjeqttdg.jpg",
       "AssetKind": "All",
@@ -204,10 +255,27 @@
       "OriginalItemSpec": "wwwroot\\product_images\\pjeqttdg.jpg"
     },
     {
-      "Identity": "C:\\Users\\Bilge\\Desktop\\Flico\\FlicoBackend\\ApiConsume\\FlicoProject.WebApi\\wwwroot\\product_images\\rkfji2rx.jpg",
+      "Identity": "C:\\Users\\kerem\\OneDrive\\Desktop\\itudbmaster\\itudb2211\\FlicoBackend\\ApiConsume\\FlicoProject.WebApi\\wwwroot\\product_images\\ptla5urc.jpg",
       "SourceId": "FlicoProject.WebApi",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Bilge\\Desktop\\Flico\\FlicoBackend\\ApiConsume\\FlicoProject.WebApi\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\kerem\\OneDrive\\Desktop\\itudbmaster\\itudb2211\\FlicoBackend\\ApiConsume\\FlicoProject.WebApi\\wwwroot\\",
+      "BasePath": "_content/FlicoProject.WebApi",
+      "RelativePath": "product_images/ptla5urc.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\product_images\\ptla5urc.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\kerem\\OneDrive\\Desktop\\itudbmaster\\itudb2211\\FlicoBackend\\ApiConsume\\FlicoProject.WebApi\\wwwroot\\product_images\\rkfji2rx.jpg",
+      "SourceId": "FlicoProject.WebApi",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\kerem\\OneDrive\\Desktop\\itudbmaster\\itudb2211\\FlicoBackend\\ApiConsume\\FlicoProject.WebApi\\wwwroot\\",
       "BasePath": "_content/FlicoProject.WebApi",
       "RelativePath": "product_images/rkfji2rx.jpg",
       "AssetKind": "All",
@@ -221,10 +289,10 @@
       "OriginalItemSpec": "wwwroot\\product_images\\rkfji2rx.jpg"
     },
     {
-      "Identity": "C:\\Users\\Bilge\\Desktop\\Flico\\FlicoBackend\\ApiConsume\\FlicoProject.WebApi\\wwwroot\\product_images\\snluhs12.jpg",
+      "Identity": "C:\\Users\\kerem\\OneDrive\\Desktop\\itudbmaster\\itudb2211\\FlicoBackend\\ApiConsume\\FlicoProject.WebApi\\wwwroot\\product_images\\snluhs12.jpg",
       "SourceId": "FlicoProject.WebApi",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Bilge\\Desktop\\Flico\\FlicoBackend\\ApiConsume\\FlicoProject.WebApi\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\kerem\\OneDrive\\Desktop\\itudbmaster\\itudb2211\\FlicoBackend\\ApiConsume\\FlicoProject.WebApi\\wwwroot\\",
       "BasePath": "_content/FlicoProject.WebApi",
       "RelativePath": "product_images/snluhs12.jpg",
       "AssetKind": "All",
@@ -238,10 +306,10 @@
       "OriginalItemSpec": "wwwroot\\product_images\\snluhs12.jpg"
     },
     {
-      "Identity": "C:\\Users\\Bilge\\Desktop\\Flico\\FlicoBackend\\ApiConsume\\FlicoProject.WebApi\\wwwroot\\product_images\\sxm3bcpw.jpg",
+      "Identity": "C:\\Users\\kerem\\OneDrive\\Desktop\\itudbmaster\\itudb2211\\FlicoBackend\\ApiConsume\\FlicoProject.WebApi\\wwwroot\\product_images\\sxm3bcpw.jpg",
       "SourceId": "FlicoProject.WebApi",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Bilge\\Desktop\\Flico\\FlicoBackend\\ApiConsume\\FlicoProject.WebApi\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\kerem\\OneDrive\\Desktop\\itudbmaster\\itudb2211\\FlicoBackend\\ApiConsume\\FlicoProject.WebApi\\wwwroot\\",
       "BasePath": "_content/FlicoProject.WebApi",
       "RelativePath": "product_images/sxm3bcpw.jpg",
       "AssetKind": "All",
@@ -255,10 +323,10 @@
       "OriginalItemSpec": "wwwroot\\product_images\\sxm3bcpw.jpg"
     },
     {
-      "Identity": "C:\\Users\\Bilge\\Desktop\\Flico\\FlicoBackend\\ApiConsume\\FlicoProject.WebApi\\wwwroot\\product_images\\whrhzr2r.jpg",
+      "Identity": "C:\\Users\\kerem\\OneDrive\\Desktop\\itudbmaster\\itudb2211\\FlicoBackend\\ApiConsume\\FlicoProject.WebApi\\wwwroot\\product_images\\whrhzr2r.jpg",
       "SourceId": "FlicoProject.WebApi",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Bilge\\Desktop\\Flico\\FlicoBackend\\ApiConsume\\FlicoProject.WebApi\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\kerem\\OneDrive\\Desktop\\itudbmaster\\itudb2211\\FlicoBackend\\ApiConsume\\FlicoProject.WebApi\\wwwroot\\",
       "BasePath": "_content/FlicoProject.WebApi",
       "RelativePath": "product_images/whrhzr2r.jpg",
       "AssetKind": "All",
@@ -272,10 +340,10 @@
       "OriginalItemSpec": "wwwroot\\product_images\\whrhzr2r.jpg"
     },
     {
-      "Identity": "C:\\Users\\Bilge\\Desktop\\Flico\\FlicoBackend\\ApiConsume\\FlicoProject.WebApi\\wwwroot\\product_images\\yrwqstdr.jpg",
+      "Identity": "C:\\Users\\kerem\\OneDrive\\Desktop\\itudbmaster\\itudb2211\\FlicoBackend\\ApiConsume\\FlicoProject.WebApi\\wwwroot\\product_images\\yrwqstdr.jpg",
       "SourceId": "FlicoProject.WebApi",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Bilge\\Desktop\\Flico\\FlicoBackend\\ApiConsume\\FlicoProject.WebApi\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\kerem\\OneDrive\\Desktop\\itudbmaster\\itudb2211\\FlicoBackend\\ApiConsume\\FlicoProject.WebApi\\wwwroot\\",
       "BasePath": "_content/FlicoProject.WebApi",
       "RelativePath": "product_images/yrwqstdr.jpg",
       "AssetKind": "All",
