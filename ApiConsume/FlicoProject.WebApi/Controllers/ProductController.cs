@@ -94,8 +94,12 @@ public async Task<IActionResult> AddProduct([FromForm] productDTO2 productWithDe
                 }
 
                 var details = _stockDetailservice.TGetList().FindAll(x => x.ProductID == pList.ProductID);
-                var details2 = details.Select(b => _mapper.Map<StockDetailDTO>(b)).ToList();
-
+                var details2 = new List<StockDetailDTO>();
+                int i = 0;
+                foreach (StockDetail b in details)
+                {
+                    details2[i] = _mapper.Map<StockDetailDTO>(b);
+                }
                 product.ProductID = pList.ProductID;
                 var a = _mapper.Map<productDTO2>(product);
                 a.StockDetail = details2;
