@@ -1,4 +1,5 @@
-﻿using FlicoProject.BusinessLayer.Abstract;
+﻿using AutoMapper;
+using FlicoProject.BusinessLayer.Abstract;
 using FlicoProject.DtoLayer;
 using FlicoProject.EntityLayer.Concrete;
 using Microsoft.AspNetCore.Http;
@@ -12,10 +13,14 @@ namespace FlicoProject.WebApi.Controllers
     public class ClosetController : ControllerBase
     {
         private readonly IClosetService _closetService;
+        private readonly IMapper _mapper;
+        private readonly IAirportService _airportService;
 
-        public ClosetController(IClosetService closetService)
+        public ClosetController(IClosetService closetService, IMapper mapper, IAirportService airportService)
         {
             _closetService = closetService;
+            _mapper = mapper;
+            _airportService = airportService;
         }
         [HttpGet]
         public IActionResult ClosetList() 
@@ -24,9 +29,12 @@ namespace FlicoProject.WebApi.Controllers
             return Ok(new ResultDTO<List<Closet>>(closets));
         }
         [HttpPost]
-        public IActionResult AddCloset(Closet closet)
+        public IActionResult AddCloset(ClosetDto closetdto)
         {
-            if(_closetService.TInsert(closet) == 1)
+            Closet closet = _mapper.Map<Closet>(closetdto);
+            Airport airport = _airportService.TGetByID(closet.AirportID);
+            closet.Airport = airport;
+            if (_closetService.TInsert(closet) == 1)
             {
                 return Created("", new ResultDTO<Closet>(closet));
             }
@@ -64,6 +72,26 @@ namespace FlicoProject.WebApi.Controllers
             {
                 return Ok(new ResultDTO<Closet>(closet));
             }
+        }
+        [HttpGet("{id}")]
+        public IActionResult GetCloset(int id)
+        {
+            var closet = _closetService.TGetByID(id);
+            var airport = _airportService.TGetByID(closet.AirportID);
+            var closetWithAirport = new ClosetWithAirportDto
+            {
+                ClosetNo = closet.ClosetNo,
+                AirportID = closet.AirportID,
+                OrderID = closet.OrderID,
+                Status = closet.Status,
+                AirportName = airport.AirportName
+            };
+
+            if (closet == null)
+            {
+                return BadRequest(new ResultDTO<Closet>("The id to be looking for was not found."));
+            }
+            return Ok(new ResultDTO<ClosetWithAirportDto>(closetWithAirport));
         }
 
     }

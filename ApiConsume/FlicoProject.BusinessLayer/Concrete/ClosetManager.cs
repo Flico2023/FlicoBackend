@@ -18,6 +18,8 @@ namespace FlicoProject.BusinessLayer.Concrete
         public ClosetManager(IClosetDal closetDal) {
             _ClosetDal = closetDal;
         }
+
+
         public int TDelete(int id)
         {
             var closet = _ClosetDal.GetByID(id);
@@ -31,14 +33,10 @@ namespace FlicoProject.BusinessLayer.Concrete
                 return 1; 
             }
         }
-        public Closet TGetbyID(int id)
-        {
-            return _ClosetDal.GetByID(id);
-        }
 
         public Closet TGetByID(int id)
         {
-            throw new NotImplementedException();
+            return _ClosetDal.GetByID(id);
         }
 
         public List<Closet> TGetList() 

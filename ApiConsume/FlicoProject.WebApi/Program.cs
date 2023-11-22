@@ -3,6 +3,7 @@ using FlicoProject.BusinessLayer.Concrete;
 using FlicoProject.DataAccessLayer.Abstract;
 using FlicoProject.DataAccessLayer.Concrete;
 using FlicoProject.DataAccessLayer.EntityFramework;
+using FlicoProject.WebApi.Mappers;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -34,6 +35,8 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddAutoMapper(typeof(ClosetProfile));
 
 var app = builder.Build();
 

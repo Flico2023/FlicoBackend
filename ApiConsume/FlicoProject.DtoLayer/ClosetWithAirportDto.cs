@@ -4,18 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FlicoProject.EntityLayer.Concrete
+namespace FlicoProject.DtoLayer
 {
-    public class Closet
+    public class ClosetWithAirportDto
     {
-        public int ClosetID { get; set; }
         public int ClosetNo { get; set; }
         public int AirportID { get; set; }
         public int OrderID { get; set; }
         public int Password { get; set; }
         public string Status { get; set; }
-
-        public Airport Airport { get; set; }    
-
+        public string AirportName { get; set; }
     }
 }
