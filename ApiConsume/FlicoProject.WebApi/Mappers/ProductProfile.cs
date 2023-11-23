@@ -18,6 +18,8 @@ namespace FlicoProject.WebApi.Mappers
             CreateMap<ProductDto3, productDTO2>();
             CreateMap<Product, ProductDto3>();
             CreateMap<ProductDto3, Product>();
+            CreateMap<Product, ProductDTO4>();
+            CreateMap<ProductDTO4, Product>();
 
         }
     }

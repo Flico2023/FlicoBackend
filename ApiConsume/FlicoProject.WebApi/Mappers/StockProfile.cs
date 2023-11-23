@@ -11,6 +11,8 @@ namespace FlicoProject.WebApi.Mappers
         {
             CreateMap<StockDetail, StockDetailDTO>();
             CreateMap<StockDetailDTO, StockDetail>();
+            CreateMap<StockDetail, ListStockDetails>();
+            CreateMap<ListStockDetails, StockDetail>();
         }
     }
 }

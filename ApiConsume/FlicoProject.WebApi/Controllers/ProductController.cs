@@ -44,31 +44,26 @@ namespace FlicoProject.WebApi.Controllers
             return Ok(new ResultDTO<ProductListDTO>(productListDTO));
         }
         [HttpPost]
-public async Task<IActionResult> AddProduct([FromForm] productDTO2 productWithDetails)
-{
+        public async Task<IActionResult> AddProduct([FromForm] productDTO2 productWithDetails)
+        {
             var product = _mapper.Map<Product>(productWithDetails);
-
-            var stockDetails = productWithDetails.StockDetail;
 
     if (product.Image != null && product.Image.Length > 0)
     {
         var fileExtension = Path.GetExtension(product.Image.FileName).ToLower();
-        if (fileExtension != ".png" || fileExtension != ".jpg")
+        if (fileExtension != ".png" && fileExtension != ".jpg")
         {
             return BadRequest(new ResultDTO<productDTO2>("Only PNG and JPG files are allowed."));
         }
-        // Güvenli bir dosya adı oluşturun ve dosya yolu oluşturun
         var fileName = Path.GetFileNameWithoutExtension(Path.GetRandomFileName()) + Path.GetExtension(product.Image.FileName);
         var filePath = Path.Combine(_environment.WebRootPath, "product_images", fileName);
 
-        // Klasör yoksa oluştur
         var directoryPath = Path.GetDirectoryName(filePath);
         if (!Directory.Exists(directoryPath))
         {
             Directory.CreateDirectory(directoryPath);
         }
 
-        // Dosyayı kaydet
         using (var stream = new FileStream(filePath, FileMode.Create))
         {
             await product.Image.CopyToAsync(stream);
@@ -79,31 +74,7 @@ public async Task<IActionResult> AddProduct([FromForm] productDTO2 productWithDe
 
             if (_productService.TInsert(product) == 1)
             {
-                var list = _productService.TGetList().FindAll(x => x.ProductName == product.ProductName);
-                var pList = list.Find(x => x.Color == product.Color);
-
-                foreach (var stockDetailDto in stockDetails)
-                {
-                    var stock = _mapper.Map<StockDetail>(stockDetailDto);
-                    stock.ProductID = pList.ProductID;
-                    var ok = _stockDetailservice.TInsert(stock);
-                    if (ok == 0)
-                    {
-                        return BadRequest(new ResultDTO<productDTO2>("Form values are not valid."));
-                    }
-                }
-
-                var details = _stockDetailservice.TGetList().FindAll(x => x.ProductID == pList.ProductID);
-                var details2 = new List<StockDetailDTO>();
-                int i = 0;
-                foreach (StockDetail b in details)
-                {
-                    details2[i] = _mapper.Map<StockDetailDTO>(b);
-                }
-                product.ProductID = pList.ProductID;
-                var a = _mapper.Map<productDTO2>(product);
-                a.StockDetail = details2;
-                return Created("", new ResultDTO<productDTO2>(a));
+                return Created("", new ResultDTO<productDTO2>(productWithDetails));
             }
             else
             {
@@ -133,17 +104,19 @@ public async Task<IActionResult> AddProduct([FromForm] productDTO2 productWithDe
             }
         }
         [HttpPut("{id}")]
-        public IActionResult UpdateProduct(int id, Product product)
+        public IActionResult UpdateProduct(int id, ProductDTO4 product)
         {
-            product.ProductID = id;
-            int result = _productService.TUpdate(product);
+            var a = new Product();
+            a = _mapper.Map<Product>(product);
+            a.ProductID = id;
+            int result = _productService.TUpdate(a);
             if (result == 0)
             {
                 return BadRequest(new ResultDTO<Product>(("The product wanted to update could not be updated.")));
             }
             else
             {
-                return Ok(new ResultDTO<Product>(product));
+                return Ok(new ResultDTO<Product>(a));
 
             }
         }

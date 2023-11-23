@@ -14,10 +14,12 @@ namespace FlicoProject.WebApi.Controllers
     public class WarehouseController : ControllerBase
     {
         private readonly IWarehouseService _warehouseservice;
+        private readonly IStockDetailService _stockDetailservice;
 
-        public WarehouseController(IWarehouseService warehouseservice)
+        public WarehouseController(IWarehouseService warehouseservice, IStockDetailService stockDetailservice)
         {
             _warehouseservice = warehouseservice;
+            _stockDetailservice = stockDetailservice;
         }
         [HttpGet]
         public IActionResult WarehouseList()
@@ -40,6 +42,11 @@ namespace FlicoProject.WebApi.Controllers
         public IActionResult DeleteWarehouse(int id)
         {
             var warehouseid = _warehouseservice.TDelete(id);
+            var details = _stockDetailservice.TGetList().FindAll(x => x.WarehouseID == id);
+            if (details.Count > 0)
+            {
+                return BadRequest(new ResultDTO<Warehouse>("The deletion failed because there are products in the warehouse you want to delete."));
+            }
             if (warehouseid == 0)
             {
                 return BadRequest(new ResultDTO<Warehouse>("The id to be deleted was not found."));

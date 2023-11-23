@@ -63,8 +63,49 @@ namespace FlicoProject.BusinessLayer.Concrete
             var isused1 = _ProductDal.GetList().FindAll(x => x.ProductName == t.ProductName);
             var isused = isused1.FindAll(x => x.Color == t.Color);
             var isvalid = _ProductDal.GetList().FirstOrDefault(x => x.ProductID == t.ProductID);
+            t.ImagePath = isvalid.ImagePath;
 
-            if (IsNullOrWhiteSpace(t.ProductName) || IsNullOrWhiteSpace(t.Category) || IsNullOrWhiteSpace(t.Subcategory) || IsNullOrWhiteSpace(t.Gender) || IsNullOrWhiteSpace(t.Brand) || IsNullOrWhiteSpace(t.ProductDetail) || t.Price < 0 || t.CurrentPrice < 0 || t.Amount < 0 || isused != null || isvalid == null)
+            if (IsNullOrWhiteSpace(t.ProductName))
+            {
+                return 0;
+            }
+            else if (IsNullOrWhiteSpace(t.Category))
+            {
+                return 0;
+            }
+            else if (IsNullOrWhiteSpace(t.Subcategory))
+            {
+                return 0;
+            }
+            else if (IsNullOrWhiteSpace(t.Gender))
+            {
+                return 0;
+            }
+            else if (IsNullOrWhiteSpace(t.Brand))
+            {
+                return 0;
+            }
+            else if (IsNullOrWhiteSpace(t.ProductDetail))
+            {
+                return 0;
+            }
+            else if (t.Price < 0)
+            {
+                return 0;
+            }
+            else if (t.CurrentPrice < 0) 
+            {
+                return 0;
+            }
+            else if ( t.Amount < 0)
+            {
+                return 0;
+            }
+            else if(isused.Count() > 0)
+            {
+                return 0;
+            }
+            else if(isvalid == null)
             {
                 return 0;
             }

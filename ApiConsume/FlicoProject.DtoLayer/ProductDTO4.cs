@@ -1,14 +1,12 @@
-﻿using Microsoft.AspNetCore.Http;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace FlicoProject.DtoLayer
 {
-    public class productDTO2
+    public class ProductDTO4
     {
         public string ProductName { get; set; }
         public string Category { get; set; }
@@ -20,8 +18,5 @@ namespace FlicoProject.DtoLayer
         public float CurrentPrice { get; set; }
         public string Gender { get; set; }
         public string Color { get; set; }
-
-        [NotMapped]
-        public IFormFile Image { get; set; }
     }
 }
