@@ -61,7 +61,7 @@ namespace FlicoProject.BusinessLayer.Concrete
             var isused = _ClosetDal.GetList().FirstOrDefault(x => x.ClosetNo == t.ClosetNo);
             var isvalid = _ClosetDal.GetList().FirstOrDefault(x => x.ClosetID == t.ClosetID);
 
-            if (IsNullOrWhiteSpace(t.Status) || t.ClosetNo < 0 || t.AirportID < 0 || t.OrderID < 0 || t.Password < 0 || isused != null || isvalid == null)
+            if (IsNullOrWhiteSpace(t.Status) || t.ClosetNo < 0 || t.AirportID < 0 || t.OrderID < 0 || t.Password < 0 || isvalid == null || isused != null)
             {
                 return 0;
             }

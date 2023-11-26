@@ -26,7 +26,18 @@ namespace FlicoProject.WebApi.Controllers
         public IActionResult ClosetList() 
         { 
             var closets = _closetService.TGetList();
-            return Ok(new ResultDTO<List<Closet>>(closets));
+            var closetWithAirport = new List<ClosetWithAirportDto>();
+            int i = 0;
+            foreach (var closet in closets)
+            {
+                var airport = _airportService.TGetByID(closet.AirportID);
+                var addlist = new ClosetWithAirportDto();
+                addlist = _mapper.Map<ClosetWithAirportDto>(closet);
+                closetWithAirport.Add(addlist);
+                closetWithAirport[i].AirportName = airport.AirportName;
+                i++;
+            };
+            return Ok(new ResultDTO<List<ClosetWithAirportDto>>(closetWithAirport));
         }
         [HttpPost]
         public IActionResult AddCloset(ClosetDto closetdto)
@@ -34,7 +45,7 @@ namespace FlicoProject.WebApi.Controllers
             Closet closet = _mapper.Map<Closet>(closetdto);
             Airport airport = _airportService.TGetByID(closet.AirportID);
             closet.Airport = airport;
-            if (_closetService.TInsert(closet) == 1)
+            if (_closetService.TInsert(closet) == 1 && airport != null)
             {
                 return Created("", new ResultDTO<Closet>(closet));
             }
@@ -60,11 +71,22 @@ namespace FlicoProject.WebApi.Controllers
             }
         }
         [HttpPut("{id}")]
-        public IActionResult UpdateCloset(int id, Closet closet)
+        public IActionResult UpdateCloset(int id, ClosetDto closetDto)
         {
+            var closet = new Closet();
+            closet = _mapper.Map<Closet>(closetDto);
             closet.ClosetID = id;
+            var airport = _airportService.TGetByID(closet.AirportID);
+            if (airport == null)
+            {
+                return BadRequest(new ResultDTO<Closet>("Enter valid an airport id."));
+            }
+            var closetWithAirport = new ClosetWithAirportDto();
+            closetWithAirport = _mapper.Map<ClosetWithAirportDto>(closet);
+            closetWithAirport.AirportName = airport.AirportName;
+            closet.Airport = airport;
             int result = _closetService.TUpdate(closet);
-            if(result == 0)
+            if (result == 0)
             {
                 return BadRequest(new ResultDTO<Closet>("The closet wanted to update could not be updated."));
             }
@@ -77,21 +99,18 @@ namespace FlicoProject.WebApi.Controllers
         public IActionResult GetCloset(int id)
         {
             var closet = _closetService.TGetByID(id);
-            var airport = _airportService.TGetByID(closet.AirportID);
-            var closetWithAirport = new ClosetWithAirportDto
-            {
-                ClosetNo = closet.ClosetNo,
-                AirportID = closet.AirportID,
-                OrderID = closet.OrderID,
-                Status = closet.Status,
-                AirportName = airport.AirportName
-            };
-
             if (closet == null)
             {
                 return BadRequest(new ResultDTO<Closet>("The id to be looking for was not found."));
+            } else
+            {
+                var airport = _airportService.TGetByID(closet.AirportID);
+                var closetWithAirport = new ClosetWithAirportDto();
+                closetWithAirport = _mapper.Map<ClosetWithAirportDto>(closet);
+                closetWithAirport.AirportName = airport.AirportName;
+                return Ok(new ResultDTO<ClosetWithAirportDto>(closetWithAirport));
             }
-            return Ok(new ResultDTO<ClosetWithAirportDto>(closetWithAirport));
+          
         }
 
     }

@@ -1,4 +1,5 @@
-﻿using FlicoProject.BusinessLayer.Abstract;
+﻿using AutoMapper;
+using FlicoProject.BusinessLayer.Abstract;
 using FlicoProject.DtoLayer;
 using FlicoProject.EntityLayer.Concrete;
 using Microsoft.AspNetCore.Http;
@@ -13,10 +14,12 @@ namespace FlicoProject.WebApi.Controllers
     {
         
         private readonly IAirportService _airportservice;
+        private readonly IMapper _mapper;
 
-        public AirportController(IAirportService airportservice)
+        public AirportController(IAirportService airportservice, IMapper mapper)
         {
             _airportservice = airportservice;
+            _mapper = mapper;
         }
         [HttpGet]
         public IActionResult AirportList()
@@ -25,9 +28,10 @@ namespace FlicoProject.WebApi.Controllers
             return Ok(new ResultDTO<List<Airport>>(airports));
         }
         [HttpPost]
-        public IActionResult AddAirport(Airport airport)
+        public IActionResult AddAirport(AirportDto airportdto)
         {
-
+            var airport = new Airport();
+            airport = _mapper.Map<Airport>(airportdto);
             if (_airportservice.TInsert(airport) == 1)
             {
                 return Created("", new ResultDTO<Airport>(airport));
