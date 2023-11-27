@@ -44,8 +44,12 @@ namespace FlicoProject.WebApi.Controllers
         {
             Closet closet = _mapper.Map<Closet>(closetdto);
             Airport airport = _airportService.TGetByID(closet.AirportID);
+            if (airport == null)
+            {
+                return BadRequest(new ResultDTO<Closet>("Enter a valid airport id."));
+            }
             closet.Airport = airport;
-            if (_closetService.TInsert(closet) == 1 && airport != null)
+            if (_closetService.TInsert(closet) == 1)
             {
                 return Created("", new ResultDTO<Closet>(closet));
             }

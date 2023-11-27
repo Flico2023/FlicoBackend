@@ -58,10 +58,10 @@ namespace FlicoProject.BusinessLayer.Concrete
         }
         public int TUpdate(Closet t )
         {
-            var isused = _ClosetDal.GetList().FirstOrDefault(x => x.ClosetNo == t.ClosetNo);
+           // var isused = _ClosetDal.GetList().FirstOrDefault(x => x.ClosetNo == t.ClosetNo);
             var isvalid = _ClosetDal.GetList().FirstOrDefault(x => x.ClosetID == t.ClosetID);
 
-            if (IsNullOrWhiteSpace(t.Status) || t.ClosetNo < 0 || t.AirportID < 0 || t.OrderID < 0 || t.Password < 0 || isvalid == null || isused != null)
+            if (IsNullOrWhiteSpace(t.Status) || t.ClosetNo < 0 || t.AirportID < 0 || t.OrderID < 0 || t.Password < 0 || isvalid == null )
             {
                 return 0;
             }

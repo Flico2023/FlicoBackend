@@ -10,6 +10,9 @@ namespace FlicoProject.WebApi.Mappers
         {
             CreateMap<Outsource, OutsourceDto>();
             CreateMap<OutsourceDto, Outsource>();
+            CreateMap<Outsource, GetOutsourceDto>();
+            CreateMap<OutsourceDto, Outsource>();
+
         }
     }
 }

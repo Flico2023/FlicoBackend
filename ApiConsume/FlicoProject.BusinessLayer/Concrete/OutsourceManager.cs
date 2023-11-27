@@ -61,10 +61,10 @@ namespace FlicoProject.BusinessLayer.Concrete
 
         public int TUpdate(Outsource t)
         {
-            var isused = _OutserviceDal.GetList().FirstOrDefault(x => x.CompanyName == t.CompanyName);
+            //var isused = _OutserviceDal.GetList().FirstOrDefault(x => x.CompanyName == t.CompanyName);
             var isvalid = _OutserviceDal.GetList().FirstOrDefault(x => x.OutsourceId == t.OutsourceId);
 
-            if (IsNullOrWhiteSpace(t.CompanyName) || IsNullOrWhiteSpace(t.City) || IsNullOrWhiteSpace(t.Address) || IsNullOrWhiteSpace(t.Email) || IsNullOrWhiteSpace(t.Phone) || IsNullOrWhiteSpace(t.ContactPerson) || isused != null || isvalid == null )
+            if (IsNullOrWhiteSpace(t.CompanyName) || IsNullOrWhiteSpace(t.City) || IsNullOrWhiteSpace(t.Address) || IsNullOrWhiteSpace(t.Email) || IsNullOrWhiteSpace(t.Phone) || IsNullOrWhiteSpace(t.ContactPerson) || isvalid == null )
             {
                 return 0;
             }

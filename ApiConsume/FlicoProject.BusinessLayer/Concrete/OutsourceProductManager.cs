@@ -59,9 +59,9 @@ namespace FlicoProject.BusinessLayer.Concrete
         }
         public int TUpdate(OutsourceProduct t)
         {
-            var isused = _OutsourceProductDal.GetList().Find(x => x.OutsourceID == t.OutsourceID && x.StockDetailID == t.StockDetailID);
+            //var isused = _OutsourceProductDal.GetList().Find(x => x.OutsourceID == t.OutsourceID && x.StockDetailID == t.StockDetailID);
             var isvalid = _OutsourceProductDal.GetList().FirstOrDefault(x => x.OutsourceProductID == t.OutsourceProductID);
-            if(t.OutsourceID < 0 || t.StockDetailID < 0 || t.Amount < 0 || t.AirportID < 0 || IsNullOrWhiteSpace(t.Status) || isused !=null || isvalid == null )
+            if(t.OutsourceID < 0 || t.StockDetailID < 0 || t.Amount < 0 || t.AirportID < 0 || IsNullOrWhiteSpace(t.Status) ||  isvalid == null )
             {
                 return 0;
             }

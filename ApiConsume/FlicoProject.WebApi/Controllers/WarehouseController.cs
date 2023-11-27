@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using System;
 using static System.String;
 using Microsoft.EntityFrameworkCore;
+using AutoMapper;
 
 namespace FlicoProject.WebApi.Controllers
 {
@@ -15,11 +16,13 @@ namespace FlicoProject.WebApi.Controllers
     {
         private readonly IWarehouseService _warehouseservice;
         private readonly IStockDetailService _stockDetailservice;
+        private readonly IMapper _mapper;
 
-        public WarehouseController(IWarehouseService warehouseservice, IStockDetailService stockDetailservice)
+        public WarehouseController(IWarehouseService warehouseservice, IStockDetailService stockDetailservice, IMapper mapper)
         {
             _warehouseservice = warehouseservice;
             _stockDetailservice = stockDetailservice;
+            _mapper = mapper;
         }
         [HttpGet]
         public IActionResult WarehouseList()
@@ -28,8 +31,10 @@ namespace FlicoProject.WebApi.Controllers
             return Ok(new ResultDTO<List<Warehouse>>(warehouses));
         }
         [HttpPost]
-        public IActionResult AddWarehouse(Warehouse warehouse)
+        public IActionResult AddWarehouse(WarehouseDto warehousedto)
         {
+            var warehouse = new Warehouse();
+            warehouse = _mapper.Map<Warehouse>(warehousedto);
             if (_warehouseservice.TInsert(warehouse) == 1)
             {
                 return Created("", new ResultDTO<Warehouse>(warehouse));
