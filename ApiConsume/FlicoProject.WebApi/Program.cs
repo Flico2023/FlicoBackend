@@ -23,6 +23,9 @@ builder.Services.AddScoped<IOutsourceDal, EFOutsourceDal>();
 builder.Services.AddScoped<IOutsourceService, OutsourceManager>();
 builder.Services.AddScoped<IOutsourceProductDal, EFOutsourceProductDal>();
 builder.Services.AddScoped<IOutsourceProductService, OutsourceProductManager>();
+builder.Services.AddScoped<IUserDal, EFUserDal>();
+builder.Services.AddScoped<IUserService, UserManager>();
+
 builder.Services.AddCors(opt =>
 {
     opt.AddPolicy("FlicoApiCors", opts =>
@@ -39,6 +42,11 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddAutoMapper(typeof(ClosetProfile));
 builder.Services.AddAutoMapper(typeof(ProductProfile));
 builder.Services.AddAutoMapper(typeof(StockProfile));
+builder.Services.AddAutoMapper(typeof(WarehouseProfile));
+builder.Services.AddAutoMapper(typeof(OutsourceProfile));
+builder.Services.AddAutoMapper(typeof(OutsourceProductProfile));
+builder.Services.AddAutoMapper(typeof(UserProfile));
+
 
 var app = builder.Build();
 

@@ -68,6 +68,8 @@ namespace FlicoProject.DataAccessLayer.Migrations
 
                     b.HasKey("ClosetID");
 
+                    b.HasIndex("AirportID");
+
                     b.ToTable("Closets");
                 });
 
@@ -220,6 +222,39 @@ namespace FlicoProject.DataAccessLayer.Migrations
                     b.ToTable("StockDetails");
                 });
 
+            modelBuilder.Entity("FlicoProject.EntityLayer.Concrete.User", b =>
+                {
+                    b.Property<int>("UserId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("UserId"), 1L, 1);
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Phone")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Surname")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("UserId");
+
+                    b.ToTable("Users");
+                });
+
             modelBuilder.Entity("FlicoProject.EntityLayer.Concrete.Warehouse", b =>
                 {
                     b.Property<int>("WarehouseID")
@@ -239,6 +274,17 @@ namespace FlicoProject.DataAccessLayer.Migrations
                     b.HasKey("WarehouseID");
 
                     b.ToTable("Warehouses");
+                });
+
+            modelBuilder.Entity("FlicoProject.EntityLayer.Concrete.Closet", b =>
+                {
+                    b.HasOne("FlicoProject.EntityLayer.Concrete.Airport", "Airport")
+                        .WithMany()
+                        .HasForeignKey("AirportID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Airport");
                 });
 #pragma warning restore 612, 618
         }
