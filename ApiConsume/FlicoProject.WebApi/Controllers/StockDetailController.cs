@@ -33,7 +33,6 @@ namespace FlicoProject.WebApi.Controllers
         [HttpPost]
         public IActionResult AddStockDetail(ListStockDetails stockDetail)
         {
-            // Veritabanı işlemi
             var a = new List<StockDetail>();
             foreach(var b in stockDetail.StockDetails)
             {
@@ -50,19 +49,6 @@ namespace FlicoProject.WebApi.Controllers
             return Created("", new ResultDTO<List<StockDetail>>(a));
 
         }
-        /*[HttpPost]
-        public IActionResult AddStockDetail(StockDetail stockDetail)
-        {
-
-            if (_stockDetailservice.TInsert(stockDetail) == 1)
-            {
-                return Created("", new ResultDTO<StockDetail>(stockDetail));
-            }
-            else
-            {
-                return BadRequest(new ResultDTO<StockDetail>("Form values are not valid."));
-            }
-        }*/
         [HttpDelete("{id}")]
         public IActionResult DeleteStockDetail(int id)
         {
@@ -83,8 +69,7 @@ namespace FlicoProject.WebApi.Controllers
         public IActionResult UpdateStockDetail(int id, List<StockDetail> stockDetail)
         {
 
-            
-            //stockDetail.StockDetailID = id;
+           
             foreach (var item in stockDetail)
             {
 
