@@ -233,14 +233,15 @@ namespace FlicoProject.WebApi.Controllers
 
         product.ImagePath = filePath;
     }
+        var aa = _mapper.Map<LastProductdto>(productWithDetails);
 
             if (_productService.TInsert(product) == 1)
             {
-                return Created("", new ResultDTO<productDTO2>(productWithDetails));
+                return Created("", new ResultDTO<LastProductdto>(aa));
             }
             else
             {
-                return BadRequest(new ResultDTO<productDTO2>("Form values are not valid."));
+                return BadRequest(new ResultDTO<LastProductdto>("Form values are not valid."));
             }
         }
 
