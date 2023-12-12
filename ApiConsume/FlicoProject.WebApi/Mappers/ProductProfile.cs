@@ -22,6 +22,8 @@ namespace FlicoProject.WebApi.Mappers
             CreateMap<ProductDTO4, Product>();
             CreateMap<LastProductdto, productDTO2>();
             CreateMap<productDTO2, LastProductdto>();
+            CreateMap<LastProductdto, Product>();
+            CreateMap<Product, LastProductdto>();
 
         }
     }

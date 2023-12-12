@@ -29,11 +29,13 @@ namespace FlicoProject.WebApi.Controllers
 
         [HttpGet()]
 
-        public IActionResult ProductList(int PageIndex, int PageSize,string? sizes,string? brand,string? color,string? gender,int? min,int? max)
+        public IActionResult ProductList(int PageIndex, int PageSize, string? category, string? subcategory, string? sizes,string? brand,string? color,string? gender,int? min,int? max)
         {
             var sizes_list = new List<string>();
             var brand_list = new List<string>();
             var color_list = new List<string>();
+            var category_list = new List<string>();
+            var subcategory_list = new List<string>();
             int i = 0;
             string totalsize="";
             if (sizes != null)
@@ -90,6 +92,44 @@ namespace FlicoProject.WebApi.Controllers
                     i3++;
                 }
                 color_list.Add(totalcolor);
+            }
+            int i4 = 0;
+            string totalcategory = "";
+            if (category != null)
+            {
+                while (i4 < category.Count())
+                {
+                    if (category[i4] == ',')
+                    {
+                        category_list.Add(totalcategory);
+                        totalcategory = "";
+                    }
+                    else
+                    {
+                        totalcategory = totalcategory + category[i4];
+                    }
+                    i4++;
+                }
+                category_list.Add(totalcategory);
+            }
+            int i5 = 0;
+            string totalsubcategory = "";
+            if (subcategory != null)
+            {
+                while (i5 < subcategory.Count())
+                {
+                    if (subcategory[i5] == ',')
+                    {
+                        subcategory_list.Add(totalsubcategory);
+                        totalsubcategory = "";
+                    }
+                    else
+                    {
+                        totalsubcategory = totalsubcategory + subcategory[i5];
+                    }
+                    i5++;
+                }
+                subcategory_list.Add(totalsubcategory);
             }
             var products = _productService.TGetList();
             var plist = new List<ProductDto3>();
@@ -174,6 +214,8 @@ namespace FlicoProject.WebApi.Controllers
             }
             var products6 = new List<ProductDto3>();
             var products7 = new List<ProductDto3>();
+            var products8 = new List<ProductDto3>();
+            var products9 = new List<ProductDto3>();
             if (max > 0)
             {
                 products6 = products5.FindAll(x => x.Price < max);
@@ -190,10 +232,38 @@ namespace FlicoProject.WebApi.Controllers
             { 
                 products7= products6;
             }
+            int be4 = 0;
+            if (category != null)
+            {
+                while (be4 < category_list.Count())
+                {
+                    products8.AddRange(products7.FindAll(x => x.Category == category_list[be4]));
 
-            var total = products6.Count();
+                    be4++;
+                }
+            }
+            else
+            {
+                products8 = products7;
+            }
+            int be5 = 0;
+            if (subcategory != null)
+            {
+                while (be5 < subcategory_list.Count())
+                {
+                    products9.AddRange(products8.FindAll(x => x.Subcategory == subcategory_list[be5]));
 
-            var chunked = products7.Skip((PageIndex - 1) * PageSize).Take(PageSize).ToList();
+                    be5++;
+                }
+            }
+            else
+            {
+                products9 = products8;
+            }
+
+            var total = products9.Count();
+
+            var chunked = products9.Skip((PageIndex - 1) * PageSize).Take(PageSize).ToList();
 
             var productListDTO = new ProductListDTO
             {
@@ -233,10 +303,12 @@ namespace FlicoProject.WebApi.Controllers
 
         product.ImagePath = filePath;
     }
-        var aa = _mapper.Map<LastProductdto>(productWithDetails);
+        var aa = _mapper.Map<LastProductdto>(product);
 
             if (_productService.TInsert(product) == 1)
             {
+                var aaa =_productService.TGetList().Find(x=>x.ProductName == product.ProductName && x.Color == product.Color);
+                aa.ProductID = aaa.ProductID;
                 return Created("", new ResultDTO<LastProductdto>(aa));
             }
             else

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "sSM43mcSGTjKxmgTJ5bl4Hu6wxVQeJoO+XsU+jpyU/0=",
+  "Hash": "o4dvONO+zR3NWWBFseXP/1gJLDvQC73ePTFWBGdyMGY=",
   "Source": "FlicoProject.WebApi",
   "BasePath": "_content/FlicoProject.WebApi",
   "Mode": "Default",
@@ -474,6 +474,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\product_images\\snluhs12.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\kerem\\OneDrive\\Desktop\\itudbmaster\\itudb2211\\FlicoBackend\\ApiConsume\\FlicoProject.WebApi\\wwwroot\\product_images\\sur0qxnu.jpg",
+      "SourceId": "FlicoProject.WebApi",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\kerem\\OneDrive\\Desktop\\itudbmaster\\itudb2211\\FlicoBackend\\ApiConsume\\FlicoProject.WebApi\\wwwroot\\",
+      "BasePath": "_content/FlicoProject.WebApi",
+      "RelativePath": "product_images/sur0qxnu.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\product_images\\sur0qxnu.jpg"
     },
     {
       "Identity": "C:\\Users\\kerem\\OneDrive\\Desktop\\itudbmaster\\itudb2211\\FlicoBackend\\ApiConsume\\FlicoProject.WebApi\\wwwroot\\product_images\\sxm3bcpw.jpg",
