@@ -42,6 +42,28 @@ namespace FlicoProject.DataAccessLayer.Migrations
                     b.ToTable("Airports");
                 });
 
+            modelBuilder.Entity("FlicoProject.EntityLayer.Concrete.Cart", b =>
+                {
+                    b.Property<int>("CartID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CartID"), 1L, 1);
+
+                    b.Property<int>("Amount")
+                        .HasColumnType("int");
+
+                    b.Property<int>("StockDetailsID")
+                        .HasColumnType("int");
+
+                    b.Property<int>("UserID")
+                        .HasColumnType("int");
+
+                    b.HasKey("CartID");
+
+                    b.ToTable("Carts");
+                });
+
             modelBuilder.Entity("FlicoProject.EntityLayer.Concrete.Closet", b =>
                 {
                     b.Property<int>("ClosetID")
@@ -224,11 +246,11 @@ namespace FlicoProject.DataAccessLayer.Migrations
 
             modelBuilder.Entity("FlicoProject.EntityLayer.Concrete.User", b =>
                 {
-                    b.Property<int>("UserId")
+                    b.Property<int>("UserID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("UserId"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("UserID"), 1L, 1);
 
                     b.Property<string>("Email")
                         .IsRequired()
@@ -250,7 +272,7 @@ namespace FlicoProject.DataAccessLayer.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("UserId");
+                    b.HasKey("UserID");
 
                     b.ToTable("Users");
                 });

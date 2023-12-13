@@ -32,6 +32,7 @@ namespace FlicoProject.WebApi.Controllers
         {
             var airport = new Airport();
             airport = _mapper.Map<Airport>(airportdto);
+
             if (_airportservice.TInsert(airport) == 1)
             {
                 return Created("", new ResultDTO<Airport>(airport));

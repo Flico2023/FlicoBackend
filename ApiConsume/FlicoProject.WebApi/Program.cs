@@ -25,6 +25,8 @@ builder.Services.AddScoped<IOutsourceProductDal, EFOutsourceProductDal>();
 builder.Services.AddScoped<IOutsourceProductService, OutsourceProductManager>();
 builder.Services.AddScoped<IUserDal, EFUserDal>();
 builder.Services.AddScoped<IUserService, UserManager>();
+builder.Services.AddScoped<ICartDal, EFCartDal>();
+builder.Services.AddScoped<ICartService, CartManager>();
 
 builder.Services.AddCors(opt =>
 {
@@ -46,6 +48,7 @@ builder.Services.AddAutoMapper(typeof(WarehouseProfile));
 builder.Services.AddAutoMapper(typeof(OutsourceProfile));
 builder.Services.AddAutoMapper(typeof(OutsourceProductProfile));
 builder.Services.AddAutoMapper(typeof(UserProfile));
+builder.Services.AddAutoMapper(typeof(CartProfile));
 
 
 var app = builder.Build();
