@@ -36,7 +36,7 @@ namespace FlicoProject.WebApi.Controllers
             if (_cartservice.TInsert(cart) == 1)
             {
 
-                var a = _cartservice.TGetList().Find(x => x.UserID == cart.UserID && x.StockDetailsID == cart.StockDetailsID);
+                var a = _cartservice.TGetList().Find(x => x.UserID == cart.UserID && x.ProductID == cart.ProductID && x.Size == cart.Size);
                 cart.CartID = a.CartID;
                 return Created("", new ResultDTO<Cart>(cart));
             }
@@ -48,31 +48,35 @@ namespace FlicoProject.WebApi.Controllers
         [HttpDelete("{id}")]
         public IActionResult DeleteCart(int id)
         {
-            var cartid = _cartservice.TDelete(id);
+            var cart = _cartservice.TGetList().Find(x => x.CartID == id);
+            
+                int cartid=_cartservice.TDelete(cart.CartID);
+         
+            
             if (cartid == 0)
             {
                 return BadRequest(new ResultDTO<Cart>("The id to be deleted was not found."));
             }
             else
             {
-                var cart = _cartservice.TGetByID(id);
-                _cartservice.TDelete(id);
 
                 return Ok(new ResultDTO<Cart>(cart));
             }
         }
         [HttpPut("{id}")]
-        public IActionResult UpdateCart(int id, Cart cart)
+        public IActionResult UpdateCart(int id)
         {
-            cart.CartID = id;
-            int result = _cartservice.TUpdate(cart);
-            if (result == 0)
+
+            var result = _cartservice.TGetList().Find(x => x.CartID == id);
+            if (result == null)
             {
                 return BadRequest(new ResultDTO<Cart>("The cart wanted to update could not be updated."));
             }
             else
             {
-                return Ok(new ResultDTO<Cart>(cart));
+                result.Amount--;
+                _cartservice.TUpdate(result);
+                return Ok(new ResultDTO<Cart>(result));
             }
 
         }
@@ -84,7 +88,7 @@ namespace FlicoProject.WebApi.Controllers
             {
                 return BadRequest(new ResultDTO<Cart>("The id to be looking for was not found."));
             }
-            return Ok(new ResultDTO<Cart>(cart));
+            return Ok(new ResultDTO<List<Cart>>(cart));
         }
     }
 }

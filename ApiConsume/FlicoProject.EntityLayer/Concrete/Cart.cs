@@ -10,7 +10,8 @@ namespace FlicoProject.EntityLayer.Concrete
     public class Cart
     {
         public int CartID { get; set; }
-        public int StockDetailsID { get; set; }
+        public int ProductID { get; set; }
+        public string Size { get; set; }
         public int Amount { get; set; }
         public int UserID { get; set; }
 

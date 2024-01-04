@@ -34,9 +34,9 @@ namespace FlicoProject.BusinessLayer.Concrete
             }
         }
 
-        public Cart TGetByID(int id)
+        public List<Cart> TGetByID(int id)
         {
-            return _CartDal.GetByID(id);
+            return _CartDal.GetList().FindAll(x => x.UserID == id);
         }
 
         public List<Cart> TGetList()
@@ -46,10 +46,16 @@ namespace FlicoProject.BusinessLayer.Concrete
 
         public int TInsert(Cart t)
         {
-            var a = _CartDal.GetList().Find(x=>x.UserID == t.UserID && x.StockDetailsID == t.StockDetailsID);
-            if (0>t.UserID || 0>t.StockDetailsID||a !=null)
+            var a = _CartDal.GetList().Find(x=>x.UserID == t.UserID && x.ProductID == t.ProductID && x.Size == t.Size);
+            if (0 > t.UserID || 0 > t.ProductID)
             {
                 return 0;
+            }
+            else if (a != null) {
+                a.Amount=a.Amount + t.Amount;
+                _CartDal.Update(a);
+                
+                return 1;
             }
             /*else if (_CartDal.GetList().Count == 0) {
                 _CartDal.Insert(t);
@@ -66,7 +72,7 @@ namespace FlicoProject.BusinessLayer.Concrete
         {
             var isvalid = _CartDal.GetList().FirstOrDefault(x => x.CartID == t.CartID);
 
-            if (0 > t.UserID || 0 > t.StockDetailsID)
+            if (0 > t.UserID || 0 > t.ProductID)
             {
                 return 0;
             }
