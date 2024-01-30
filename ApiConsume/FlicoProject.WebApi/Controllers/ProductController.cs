@@ -275,10 +275,17 @@ namespace FlicoProject.WebApi.Controllers
 
             return Ok(new ResultDTO<ProductListDTO>(productListDTO));
         }
+        
+        
         [HttpPost]
         public async Task<IActionResult> AddProduct([FromForm] productDTO2 productWithDetails)
         {
             var product = _mapper.Map<Product>(productWithDetails);
+
+            if(product.Image == null)
+            {
+                return BadRequest(new ResultDTO<productDTO2>("Image is required."));
+            }
 
     if (product.Image != null && product.Image.Length > 0)
     {
@@ -317,8 +324,6 @@ namespace FlicoProject.WebApi.Controllers
             }
         }
 
-
-        
         [HttpDelete("{id}")]
         public IActionResult DeleteProduct(int id)
         {
@@ -371,5 +376,140 @@ namespace FlicoProject.WebApi.Controllers
             return Ok(new ResultDTO<ProductDto3>(PtoS));
         }
 
+        [HttpPost("load")]
+        public IActionResult LoadProducts(int numOfProducts)
+        {
+            var loaders = new Loaders();
+            var random = new Random();
+            var products = loaders.GenerateProducts(numOfProducts);
+
+            foreach (var product in products)
+            {
+                if (_productService.TInsert(product) != 1)
+                {
+                    return BadRequest(new ResultDTO<Product>("Product Failed"));
+                }
+
+                var productID = _productService.TGetList().Find(x => x.ProductName == product.ProductName && x.Color == product.Color).ProductID;
+                
+                var stockDetails = loaders.GenerateStockDetail(productID);
+
+                foreach (var stockDetail in stockDetails)
+                {
+                    if(_stockDetailservice.TInsert(stockDetail) != 1)
+                    {
+                        return BadRequest(new ResultDTO<StockDetail>("StockDetail Failed"));
+                    }
+                }
+
+
+            }
+
+            return Ok();
+        }
+
+
+
     }
+
+  
+    public class Loaders
+    {
+
+        public List<Product> GenerateProducts(int numOfProducts)
+        {
+            var categories = new List<string>() { "man", "woman" };
+            List<string> colors = new List<string>() { "Red", "Blue", "Green", "Yellow", "Black" };
+            var subcategories = new List<string>() { "shirt", "pants", "shorts", "jogger", "pajamas" };
+            List<string> brands = new List<string>() { "nike", "lcw", "koton", "mavi", "colins" };
+            var genders = new List<string>() { "man", "woman" };
+            List<string> womanImagePaths = new List<string>()
+            {
+                "https://img-lcwaikiki.mncdn.com/mnresize/1200/1600/mpsellerportal/v0/img_114224834v0_db585d0a-ded1-40e8-8c0d-8657885b854e.jpg",
+                "https://img-lcwaikiki.mncdn.com/mnresize/1020/1360/mpsellerportal/v1/img_082207404v1_cca4563c-c289-4f3d-996a-b8f45bb176f4.jpg",
+                "https://img-lcwaikiki.mncdn.com/mnresize/1020/1360/pim/productimages/20232/6794573/v2/l_20232-w3g740z8-cvl-83-61-89-179_a.jpg",
+                "https://img-lcwaikiki.mncdn.com/mnresize/600/800/mpsellerportal/v1/img_085432115v1_5b65e727-7fa8-4537-9df3-2780aef2b434.jpg",
+              };
+            List<string> manImagePaths = new List<string>()
+            {
+                "https://img-lcwaikiki.mncdn.com/mnresize/600/800/pim/productimages/20241/6762420/v1/l_20241-s40408z8-rfd-102-88-96-190_a.jpg",
+                "https://img-lcwaikiki.mncdn.com/mnresize/600/800/pim/productimages/20231/6180433/v1/l_20231-s31299z8-rfg-96-81-93-190_a.jpg",
+                "https://img-lcwaikiki.mncdn.com/mnresize/600/800/pim/productimages/20232/6444657/v2/l_20232-w30897z8-hcz-100-79-96-188_a.jpg",
+                "https://img-lcwaikiki.mncdn.com/mnresize/600/800/mpsellerportal/v1/img_022357893v1_01abbb28-f253-4940-8baf-77cd30fbd31e.jpg"
+            };
+            Product product = new Product();
+            List<Product> products = new List<Product>();
+
+            for (int i = 0; i < numOfProducts; i++)
+            {
+                Random rnd = new Random();
+                product.ProductName = "product " + i;
+
+
+
+                int random = rnd.Next(0, categories.Count);
+                product.Category = categories[random];
+
+                random = rnd.Next(0, subcategories.Count);
+                product.Subcategory = subcategories[random];
+
+                random = rnd.Next(0, colors.Count);
+                product.Color = colors[random];
+
+                random = rnd.Next(0, brands.Count);
+                product.Brand = brands[random];
+
+                random = rnd.Next(0, genders.Count);
+                product.Gender = genders[random];
+
+                if (product.Gender == "man")
+                {
+                    random = rnd.Next(0, manImagePaths.Count);
+                    product.ImagePath = manImagePaths[random];
+                }
+                else
+                {
+                    random = rnd.Next(0, womanImagePaths.Count);
+                    product.ImagePath = womanImagePaths[random];
+                }
+
+                product.Amount = rnd.Next(10, 100);
+                product.Price = rnd.Next(10, 100);
+                product.CurrentPrice = rnd.Next(10, 100);
+                product.ProductDetail = "Detail " + i;
+                product.Image = null;
+
+                products.Add(product);
+            }
+
+
+            return products;
+        }
+
+
+        public List<StockDetail> GenerateStockDetail(int id)
+        {
+            var sizes = new List<string>() { "S", "M", "L", "XL", "XXL" };
+            var stockDetails = new List<StockDetail>();
+            Random rnd = new Random();
+            int numOfStockDetails = rnd.Next(1, 5);
+
+            for (int i = 0; i < numOfStockDetails; i++)
+            {
+
+                StockDetail stockDetail = new StockDetail();
+                stockDetail.ProductID = id;
+                stockDetail.Size = sizes[rnd.Next(0, sizes.Count)];
+                stockDetail.VariationAmount = 10;
+                stockDetail.VariationActiveAmount = 10;
+                stockDetail.WarehouseID = 1;
+
+                stockDetails.Add(stockDetail);
+            }
+
+            return stockDetails;
+        }
+    }
+
 }
+

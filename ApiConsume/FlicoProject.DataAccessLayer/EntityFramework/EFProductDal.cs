@@ -14,7 +14,8 @@ namespace FlicoProject.DataAccessLayer.EntityFramework
     {
         public EFProductDal(Context context) : base(context)
         {
-
+           
         }
+
     }
 }

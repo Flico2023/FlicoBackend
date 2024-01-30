@@ -24,6 +24,6 @@ namespace FlicoProject.EntityLayer.Concrete
         public string ImagePath { get; set; }
 
         [NotMapped]
-        public IFormFile Image { get; set; }
+        public IFormFile? Image { get; set; }
     }
 }

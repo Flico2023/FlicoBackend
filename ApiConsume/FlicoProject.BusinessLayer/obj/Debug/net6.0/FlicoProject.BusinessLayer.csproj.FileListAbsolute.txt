@@ -82,3 +82,22 @@ C:\Users\kerem\OneDrive\Desktop\FlicoBackend-main (1)\FlicoBackend-main\ApiConsu
 C:\Users\kerem\OneDrive\Desktop\FlicoBackend-main (1)\FlicoBackend-main\ApiConsume\FlicoProject.BusinessLayer\obj\Debug\net6.0\FlicoProject.BusinessLayer.dll
 C:\Users\kerem\OneDrive\Desktop\FlicoBackend-main (1)\FlicoBackend-main\ApiConsume\FlicoProject.BusinessLayer\obj\Debug\net6.0\refint\FlicoProject.BusinessLayer.dll
 C:\Users\kerem\OneDrive\Desktop\FlicoBackend-main (1)\FlicoBackend-main\ApiConsume\FlicoProject.BusinessLayer\obj\Debug\net6.0\FlicoProject.BusinessLayer.pdb
+C:\Users\Emre\Desktop\FLICO\FlicoBackend\ApiConsume\FlicoProject.BusinessLayer\bin\Debug\net6.0\FlicoProject.BusinessLayer.deps.json
+C:\Users\Emre\Desktop\FLICO\FlicoBackend\ApiConsume\FlicoProject.BusinessLayer\bin\Debug\net6.0\FlicoProject.BusinessLayer.runtimeconfig.json
+C:\Users\Emre\Desktop\FLICO\FlicoBackend\ApiConsume\FlicoProject.BusinessLayer\bin\Debug\net6.0\FlicoProject.BusinessLayer.dll
+C:\Users\Emre\Desktop\FLICO\FlicoBackend\ApiConsume\FlicoProject.BusinessLayer\bin\Debug\net6.0\FlicoProject.BusinessLayer.pdb
+C:\Users\Emre\Desktop\FLICO\FlicoBackend\ApiConsume\FlicoProject.BusinessLayer\bin\Debug\net6.0\FlicoProject.DataAccessLayer.dll
+C:\Users\Emre\Desktop\FLICO\FlicoBackend\ApiConsume\FlicoProject.BusinessLayer\bin\Debug\net6.0\FlicoProject.EntityLayer.dll
+C:\Users\Emre\Desktop\FLICO\FlicoBackend\ApiConsume\FlicoProject.BusinessLayer\bin\Debug\net6.0\FlicoProject.DataAccessLayer.pdb
+C:\Users\Emre\Desktop\FLICO\FlicoBackend\ApiConsume\FlicoProject.BusinessLayer\bin\Debug\net6.0\FlicoProject.EntityLayer.pdb
+C:\Users\Emre\Desktop\FLICO\FlicoBackend\ApiConsume\FlicoProject.BusinessLayer\obj\Debug\net6.0\FlicoProject.BusinessLayer.csproj.AssemblyReference.cache
+C:\Users\Emre\Desktop\FLICO\FlicoBackend\ApiConsume\FlicoProject.BusinessLayer\obj\Debug\net6.0\FlicoProject.BusinessLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Emre\Desktop\FLICO\FlicoBackend\ApiConsume\FlicoProject.BusinessLayer\obj\Debug\net6.0\FlicoProject.BusinessLayer.AssemblyInfoInputs.cache
+C:\Users\Emre\Desktop\FLICO\FlicoBackend\ApiConsume\FlicoProject.BusinessLayer\obj\Debug\net6.0\FlicoProject.BusinessLayer.AssemblyInfo.cs
+C:\Users\Emre\Desktop\FLICO\FlicoBackend\ApiConsume\FlicoProject.BusinessLayer\obj\Debug\net6.0\FlicoProject.BusinessLayer.csproj.CoreCompileInputs.cache
+C:\Users\Emre\Desktop\FLICO\FlicoBackend\ApiConsume\FlicoProject.BusinessLayer\obj\Debug\net6.0\FlicoProject.BusinessLayer.csproj.CopyComplete
+C:\Users\Emre\Desktop\FLICO\FlicoBackend\ApiConsume\FlicoProject.BusinessLayer\obj\Debug\net6.0\FlicoProject.BusinessLayer.dll
+C:\Users\Emre\Desktop\FLICO\FlicoBackend\ApiConsume\FlicoProject.BusinessLayer\obj\Debug\net6.0\refint\FlicoProject.BusinessLayer.dll
+C:\Users\Emre\Desktop\FLICO\FlicoBackend\ApiConsume\FlicoProject.BusinessLayer\obj\Debug\net6.0\FlicoProject.BusinessLayer.pdb
+C:\Users\Emre\Desktop\FLICO\FlicoBackend\ApiConsume\FlicoProject.BusinessLayer\obj\Debug\net6.0\FlicoProject.BusinessLayer.genruntimeconfig.cache
+C:\Users\Emre\Desktop\FLICO\FlicoBackend\ApiConsume\FlicoProject.BusinessLayer\obj\Debug\net6.0\ref\FlicoProject.BusinessLayer.dll
