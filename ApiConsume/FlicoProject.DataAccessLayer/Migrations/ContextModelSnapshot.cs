@@ -99,6 +99,31 @@ namespace FlicoProject.DataAccessLayer.Migrations
                     b.ToTable("Closets");
                 });
 
+            modelBuilder.Entity("FlicoProject.EntityLayer.Concrete.Faq", b =>
+                {
+                    b.Property<int>("FaqID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("FaqID"), 1L, 1);
+
+                    b.Property<string>("Answer")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Category")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Question")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("FaqID");
+
+                    b.ToTable("Faqs");
+                });
+
             modelBuilder.Entity("FlicoProject.EntityLayer.Concrete.Outsource", b =>
                 {
                     b.Property<int>("OutsourceId")

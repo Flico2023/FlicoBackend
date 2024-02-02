@@ -2375,6 +2375,23 @@
           "bin/placeholder/FlicoProject.DataAccessLayer.dll": {}
         }
       },
+      "FlicoProject.DtoLayer/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "AutoMapper.Extensions.Microsoft.DependencyInjection": "12.0.1",
+          "FlicoProject.EntityLayer": "1.0.0",
+          "Microsoft.AspNet.WebApi.Cors": "5.2.9",
+          "Microsoft.EntityFrameworkCore": "6.0.0",
+          "Microsoft.EntityFrameworkCore.SqlServer": "6.0.0"
+        },
+        "compile": {
+          "bin/placeholder/FlicoProject.DtoLayer.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/FlicoProject.DtoLayer.dll": {}
+        }
+      },
       "FlicoProject.EntityLayer/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -7443,6 +7460,11 @@
       "path": "../FlicoProject.DataAccessLayer/FlicoProject.DataAccessLayer.csproj",
       "msbuildProject": "../FlicoProject.DataAccessLayer/FlicoProject.DataAccessLayer.csproj"
     },
+    "FlicoProject.DtoLayer/1.0.0": {
+      "type": "project",
+      "path": "../FlicoProject.DtoLayer/FlicoProject.DtoLayer.csproj",
+      "msbuildProject": "../FlicoProject.DtoLayer/FlicoProject.DtoLayer.csproj"
+    },
     "FlicoProject.EntityLayer/1.0.0": {
       "type": "project",
       "path": "../FlicoProject.EntityLayer/FlicoProject.EntityLayer.csproj",
@@ -7453,6 +7475,7 @@
     "net6.0": [
       "AutoMapper.Extensions.Microsoft.DependencyInjection >= 12.0.1",
       "FlicoProject.DataAccessLayer >= 1.0.0",
+      "FlicoProject.DtoLayer >= 1.0.0",
       "FlicoProject.EntityLayer >= 1.0.0",
       "Microsoft.AspNet.WebApi.Cors >= 5.2.9",
       "Microsoft.EntityFrameworkCore >= 6.0.0",
@@ -7490,6 +7513,9 @@
           "projectReferences": {
             "C:\\Users\\Emre\\Desktop\\FLICO\\FlicoBackend\\ApiConsume\\FlicoProject.DataAccessLayer\\FlicoProject.DataAccessLayer.csproj": {
               "projectPath": "C:\\Users\\Emre\\Desktop\\FLICO\\FlicoBackend\\ApiConsume\\FlicoProject.DataAccessLayer\\FlicoProject.DataAccessLayer.csproj"
+            },
+            "C:\\Users\\Emre\\Desktop\\FLICO\\FlicoBackend\\ApiConsume\\FlicoProject.DtoLayer\\FlicoProject.DtoLayer.csproj": {
+              "projectPath": "C:\\Users\\Emre\\Desktop\\FLICO\\FlicoBackend\\ApiConsume\\FlicoProject.DtoLayer\\FlicoProject.DtoLayer.csproj"
             },
             "C:\\Users\\Emre\\Desktop\\FLICO\\FlicoBackend\\ApiConsume\\FlicoProject.EntityLayer\\FlicoProject.EntityLayer.csproj": {
               "projectPath": "C:\\Users\\Emre\\Desktop\\FLICO\\FlicoBackend\\ApiConsume\\FlicoProject.EntityLayer\\FlicoProject.EntityLayer.csproj"

@@ -23,6 +23,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\FlicoProject.DataAccessLayer\FlicoProject.DataAccessLayer.csproj" />
+    <ProjectReference Include="..\FlicoProject.DtoLayer\FlicoProject.DtoLayer.csproj" />
     <ProjectReference Include="..\FlicoProject.EntityLayer\FlicoProject.EntityLayer.csproj" />
   </ItemGroup>
 

@@ -24,6 +24,7 @@ namespace FlicoProject.DataAccessLayer.Concrete
         public DbSet<User> Users { get; set; }
         public DbSet<Cart> Carts { get; set; }
 
+        public DbSet<Faq> Faqs { get; set; }
 
     }
 }

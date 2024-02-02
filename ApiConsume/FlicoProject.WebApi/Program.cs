@@ -9,6 +9,8 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddDbContext<Context>();
+builder.Services.AddScoped<IFaqDal, EFFaqDal>();
+builder.Services.AddScoped<IFaqService, FaqManager>();
 builder.Services.AddScoped<IAirportDal, EFAirportDal>();
 builder.Services.AddScoped<IAirportService, AirportManager>();
 builder.Services.AddScoped<IWarehouseDal, EFWarehouseDal>();

@@ -101,3 +101,5 @@ C:\Users\Emre\Desktop\FLICO\FlicoBackend\ApiConsume\FlicoProject.BusinessLayer\o
 C:\Users\Emre\Desktop\FLICO\FlicoBackend\ApiConsume\FlicoProject.BusinessLayer\obj\Debug\net6.0\FlicoProject.BusinessLayer.pdb
 C:\Users\Emre\Desktop\FLICO\FlicoBackend\ApiConsume\FlicoProject.BusinessLayer\obj\Debug\net6.0\FlicoProject.BusinessLayer.genruntimeconfig.cache
 C:\Users\Emre\Desktop\FLICO\FlicoBackend\ApiConsume\FlicoProject.BusinessLayer\obj\Debug\net6.0\ref\FlicoProject.BusinessLayer.dll
+C:\Users\Emre\Desktop\FLICO\FlicoBackend\ApiConsume\FlicoProject.BusinessLayer\bin\Debug\net6.0\FlicoProject.DtoLayer.dll
+C:\Users\Emre\Desktop\FLICO\FlicoBackend\ApiConsume\FlicoProject.BusinessLayer\bin\Debug\net6.0\FlicoProject.DtoLayer.pdb
