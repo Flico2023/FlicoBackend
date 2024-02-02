@@ -26,10 +26,9 @@ namespace FlicoProject.WebApi.Controllers
         [HttpGet]
         public IActionResult FaqList()
         {
-            var Faqs = _faqService.TGetList().OrderBy(faqs => faqs.Category);
-            List<Faq> sortedFaqs = (List<Faq>) Faqs.OrderBy(faqs => faqs.Category);
+            var Faqs = _faqService.TGetList().OrderBy(faqs => faqs.Category).ToList();
 
-            return Ok(new ResultDTO<List<Faq>>(sortedFaqs));
+            return Ok(new ResultDTO<List<Faq>>(Faqs));
         }
         [HttpPost]
         public IActionResult AddFaq(FaqDto Faqdto)
