@@ -5,6 +5,7 @@ using FlicoProject.DtoLayer;
 using FlicoProject.EntityLayer.Concrete;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Linq;
 using static System.String;
 
 namespace FlicoProject.WebApi.Controllers
@@ -25,19 +26,10 @@ namespace FlicoProject.WebApi.Controllers
         [HttpGet]
         public IActionResult FaqList()
         {
-            var Faqs = _faqService.TGetList();
+            var Faqs = _faqService.TGetList().OrderBy(faqs => faqs.Category);
+            List<Faq> sortedFaqs = (List<Faq>) Faqs.OrderBy(faqs => faqs.Category);
 
-            // Dinamik kategorileri çıkarın
-            var categories = Faqs.Select(f => f.Category).Distinct().ToList();
-
-            // Kategorilere göre ayrıştırma işlemi
-            var faqsByCategory = new Dictionary<string, List<Faq>>();
-            foreach (var category in categories)
-            {
-                faqsByCategory[category] = Faqs.Where(f => f.Category == category).ToList();
-            }
-
-            return Ok(new ResultDTO<Dictionary<string, List<Faq>>>(faqsByCategory));
+            return Ok(new ResultDTO<List<Faq>>(sortedFaqs));
         }
         [HttpPost]
         public IActionResult AddFaq(FaqDto Faqdto)
