@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FlicoProject.WebApi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+001f3e8e85be0f060cc20dd255076ed87826c983")]
 [assembly: System.Reflection.AssemblyProductAttribute("FlicoProject.WebApi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FlicoProject.WebApi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

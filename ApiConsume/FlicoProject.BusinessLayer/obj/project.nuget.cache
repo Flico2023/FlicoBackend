@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "MlpUqBNROL/Giwhs/w+pVYG1qPPytK+AorCOa4iK+E808MO/75DZewpOihBIWQrOM6QhM+eni5yYnmQqPZMT+g==",
+  "dgSpecHash": "ZBF3H50o/TldugBCf+OYcc2SGyukwLRrIASrKU1kXwXd80fLZnlobCPzqCGj+PzYlpND/nyiDuTIbv9EcoP4bQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\kerem\\OneDrive\\Desktop\\itudbmaster\\itudb2211\\FlicoBackend\\ApiConsume\\FlicoProject.BusinessLayer\\FlicoProject.BusinessLayer.csproj",
+  "projectFilePath": "C:\\Users\\kerem\\OneDrive\\Belgeler\\GitHub\\FlicoBackend\\ApiConsume\\FlicoProject.BusinessLayer\\FlicoProject.BusinessLayer.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\kerem\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\kerem\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
