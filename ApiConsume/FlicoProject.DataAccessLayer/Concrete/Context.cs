@@ -26,5 +26,7 @@ namespace FlicoProject.DataAccessLayer.Concrete
 
         public DbSet<Faq> Faqs { get; set; }
 
+        public DbSet<ContactMessage> ContactMessages { get; set; }
+
     }
 }

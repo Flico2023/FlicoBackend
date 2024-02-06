@@ -1,9 +1,16 @@
 using FlicoProject.BusinessLayer.Abstract;
 using FlicoProject.BusinessLayer.Concrete;
+using FlicoProject.BusinessLayer.Concrete.Mail;
+using FlicoProject.BusinessLayer.Concrete.Validators.PostContactMessage;
+using FlicoProject.BusinessLayer.Validators;
 using FlicoProject.DataAccessLayer.Abstract;
 using FlicoProject.DataAccessLayer.Concrete;
 using FlicoProject.DataAccessLayer.EntityFramework;
+using FlicoProject.DtoLayer;
+using FlicoProject.EntityLayer.Concrete;
 using FlicoProject.WebApi.Mappers;
+using FluentValidation;
+using Microsoft.AspNetCore.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -29,6 +36,8 @@ builder.Services.AddScoped<IUserDal, EFUserDal>();
 builder.Services.AddScoped<IUserService, UserManager>();
 builder.Services.AddScoped<ICartDal, EFCartDal>();
 builder.Services.AddScoped<ICartService, CartManager>();
+builder.Services.AddScoped<IContactMessageDal, EFContactMessageDal>();
+builder.Services.AddScoped<IContactMessageService, ContactMessageManager>();
 
 builder.Services.AddCors(opt =>
 {
@@ -43,6 +52,8 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+
+//AUTO MAPPER
 builder.Services.AddAutoMapper(typeof(AirportProfile));
 builder.Services.AddAutoMapper(typeof(ClosetProfile));
 builder.Services.AddAutoMapper(typeof(ProductProfile));
@@ -52,7 +63,17 @@ builder.Services.AddAutoMapper(typeof(OutsourceProfile));
 builder.Services.AddAutoMapper(typeof(OutsourceProductProfile));
 builder.Services.AddAutoMapper(typeof(UserProfile));
 builder.Services.AddAutoMapper(typeof(CartProfile));
+builder.Services.AddAutoMapper(typeof(ContactMessageProfile));
 
+//FLUENT VALIDATION
+builder.Services.AddScoped<IValidator<PostContactMessageDto>, PostContactMessageDtoValidator>();
+builder.Services.AddScoped<IValidator<PutContactMessageDto>, PutContactMessageDtoValidator>();
+
+//OTHER VALIDATIONS
+builder.Services.AddScoped<IPostContactDtoOtherValidators, PostContactDtoOtherValidators>();
+builder.Services.AddScoped<IPutContactDtoOtherValidators, PutContactDtoOtherValidators>();
+
+builder.Services.AddScoped<IMailService, MailService>();
 
 var app = builder.Build();
 

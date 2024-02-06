@@ -387,7 +387,7 @@ namespace FlicoProject.WebApi.Controllers
             {
                 if (_productService.TInsert(product) != 1)
                 {
-                    return BadRequest(new ResultDTO<Product>("Product Failed"));
+                    return BadRequest(new ResultDTO<Product>("Product Failed "+product.ProductName));
                 }
 
                 var productID = _productService.TGetList().Find(x => x.ProductName == product.ProductName && x.Color == product.Color).ProductID;
@@ -398,7 +398,7 @@ namespace FlicoProject.WebApi.Controllers
                 {
                     if(_stockDetailservice.TInsert(stockDetail) != 1)
                     {
-                        return BadRequest(new ResultDTO<StockDetail>("StockDetail Failed"));
+                        return BadRequest(new ResultDTO<StockDetail>("StockDetail Failed "+ stockDetail.ProductID));
                     }
                 }
 
@@ -443,6 +443,7 @@ namespace FlicoProject.WebApi.Controllers
             for (int i = 0; i < numOfProducts; i++)
             {
                 Random rnd = new Random();
+                
                 product.ProductName = "product " + i;
 
 
@@ -498,6 +499,7 @@ namespace FlicoProject.WebApi.Controllers
             {
 
                 StockDetail stockDetail = new StockDetail();
+                
                 stockDetail.ProductID = id;
                 stockDetail.Size = sizes[rnd.Next(0, sizes.Count)];
                 stockDetail.VariationAmount = 10;
