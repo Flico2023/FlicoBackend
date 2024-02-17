@@ -1,6 +1,7 @@
 using FlicoProject.BusinessLayer.Abstract;
 using FlicoProject.BusinessLayer.Concrete;
 using FlicoProject.BusinessLayer.Concrete.Mail;
+using FlicoProject.BusinessLayer.Concrete.Validators.PostCartDtoValidtors;
 using FlicoProject.BusinessLayer.Concrete.Validators.PostContactMessage;
 using FlicoProject.BusinessLayer.Validators;
 using FlicoProject.DataAccessLayer.Abstract;
@@ -68,6 +69,8 @@ builder.Services.AddAutoMapper(typeof(ContactMessageProfile));
 //FLUENT VALIDATION
 builder.Services.AddScoped<IValidator<PostContactMessageDto>, PostContactMessageDtoValidator>();
 builder.Services.AddScoped<IValidator<PutContactMessageDto>, PutContactMessageDtoValidator>();
+builder.Services.AddScoped<IValidator<PostCartDto>, PostCartDtoFluentValidator>();
+
 
 //OTHER VALIDATIONS
 builder.Services.AddScoped<IPostContactDtoOtherValidators, PostContactDtoOtherValidators>();

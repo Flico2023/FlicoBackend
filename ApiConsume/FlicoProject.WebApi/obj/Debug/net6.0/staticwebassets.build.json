@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "PdrShLJQp9/dKyIbyCi3bxNb17u7Oj1oIno6rxmOKAY=",
+  "Hash": "WOToXuN1eAKBu3S0OWJvUBL4F8u47JZYR/s90tI0KY8=",
   "Source": "FlicoProject.WebApi",
   "BasePath": "_content/FlicoProject.WebApi",
   "Mode": "Default",
@@ -16,6 +16,23 @@
     }
   ],
   "Assets": [
+    {
+      "Identity": "C:\\Users\\Emre\\Desktop\\FLICO\\FlicoBackend\\ApiConsume\\FlicoProject.WebApi\\wwwroot\\product_images\\nm33zudt.png",
+      "SourceId": "FlicoProject.WebApi",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Emre\\Desktop\\FLICO\\FlicoBackend\\ApiConsume\\FlicoProject.WebApi\\wwwroot\\",
+      "BasePath": "_content/FlicoProject.WebApi",
+      "RelativePath": "product_images/nm33zudt.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\product_images\\nm33zudt.png"
+    },
     {
       "Identity": "C:\\Users\\Emre\\Desktop\\FLICO\\FlicoBackend\\ApiConsume\\FlicoProject.WebApi\\wwwroot\\product_images\\yrwqstdr.jpg",
       "SourceId": "FlicoProject.WebApi",

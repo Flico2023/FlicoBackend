@@ -55,8 +55,6 @@ namespace FlicoProject.WebApi.Controllers
             ContactMessageDto.Subject = ContactMessageDto.Subject.Trim();
             ContactMessageDto.Message = ContactMessageDto.Message.Trim();
 
-
-
             var result = _contactMessageService.ValidatePostContactMessageDto(ContactMessageDto);
             if (result.Success != true)
             {

@@ -67,7 +67,7 @@ namespace FlicoProject.BusinessLayer.Concrete
             }
             else
             {
-                _userDal.Insert(t);
+                _userDal.Update(t);
                 return 1;
             }
         }

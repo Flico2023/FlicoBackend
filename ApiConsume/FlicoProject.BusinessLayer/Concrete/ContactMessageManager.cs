@@ -29,7 +29,12 @@ namespace FlicoProject.BusinessLayer.Concrete
         private readonly IConfiguration _configuration;
         private readonly IMailService _mailService;
 
-        public ContactMessageManager(IMailService MailService ,IConfiguration Configuration, IPutContactDtoOtherValidators PutContactDtoOtherValidators, IPostContactDtoOtherValidators PostContactDtoOtherValidators, IContactMessageDal ContactMessageDal, IValidator<PostContactMessageDto> validator,IValidator<PutContactMessageDto> putValidator)
+        public ContactMessageManager(IMailService MailService ,IConfiguration Configuration,
+                                IPutContactDtoOtherValidators PutContactDtoOtherValidators,
+                                IPostContactDtoOtherValidators PostContactDtoOtherValidators,
+                                IContactMessageDal ContactMessageDal,
+                                IValidator<PostContactMessageDto> validator,
+                                IValidator<PutContactMessageDto> putValidator)
         {
             _configuration = Configuration;
             _ContactMessageDal = ContactMessageDal;
@@ -48,7 +53,6 @@ namespace FlicoProject.BusinessLayer.Concrete
             var subject = $"Ticket {message.Subject} has answered";
 
             _mailService.SendMail(message.Email, subject, html);
-
         }
 
         public List<ContactMessage> FilterContactMessageList(List<ContactMessage> messages,string email, string subject, string date, string status, int? id,string name )

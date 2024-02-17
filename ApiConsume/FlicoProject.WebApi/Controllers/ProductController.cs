@@ -387,7 +387,7 @@ namespace FlicoProject.WebApi.Controllers
             {
                 if (_productService.TInsert(product) != 1)
                 {
-                    return BadRequest(new ResultDTO<Product>("Product Failed "+product.ProductName));
+                    return BadRequest(new ResultDTO<Product>("Product Failed "+product.ToString()));
                 }
 
                 var productID = _productService.TGetList().Find(x => x.ProductName == product.ProductName && x.Color == product.Color).ProductID;
@@ -398,10 +398,10 @@ namespace FlicoProject.WebApi.Controllers
                 {
                     if(_stockDetailservice.TInsert(stockDetail) != 1)
                     {
-                        return BadRequest(new ResultDTO<StockDetail>("StockDetail Failed "+ stockDetail.ProductID));
+                        return BadRequest(new ResultDTO<StockDetail>("StockDetail Failed "+ stockDetail.ToString()));
                     }
                 }
-
+              
 
             }
 
@@ -437,40 +437,41 @@ namespace FlicoProject.WebApi.Controllers
                 "https://img-lcwaikiki.mncdn.com/mnresize/600/800/pim/productimages/20232/6444657/v2/l_20232-w30897z8-hcz-100-79-96-188_a.jpg",
                 "https://img-lcwaikiki.mncdn.com/mnresize/600/800/mpsellerportal/v1/img_022357893v1_01abbb28-f253-4940-8baf-77cd30fbd31e.jpg"
             };
-            Product product = new Product();
+ 
             List<Product> products = new List<Product>();
 
-            for (int i = 0; i < numOfProducts; i++)
+            for (int i = 1; i <= numOfProducts; i++)
             {
+                Product product = new Product();
                 Random rnd = new Random();
                 
                 product.ProductName = "product " + i;
 
 
 
-                int random = rnd.Next(0, categories.Count);
+                int random = rnd.Next(1, categories.Count);
                 product.Category = categories[random];
 
-                random = rnd.Next(0, subcategories.Count);
+                random = rnd.Next(1, subcategories.Count);
                 product.Subcategory = subcategories[random];
 
-                random = rnd.Next(0, colors.Count);
+                random = rnd.Next(1, colors.Count);
                 product.Color = colors[random];
 
-                random = rnd.Next(0, brands.Count);
+                random = rnd.Next(1, brands.Count);
                 product.Brand = brands[random];
 
-                random = rnd.Next(0, genders.Count);
+                random = rnd.Next(1, genders.Count);
                 product.Gender = genders[random];
 
                 if (product.Gender == "man")
                 {
-                    random = rnd.Next(0, manImagePaths.Count);
+                    random = rnd.Next(1, manImagePaths.Count);
                     product.ImagePath = manImagePaths[random];
                 }
                 else
                 {
-                    random = rnd.Next(0, womanImagePaths.Count);
+                    random = rnd.Next(1, womanImagePaths.Count);
                     product.ImagePath = womanImagePaths[random];
                 }
 
