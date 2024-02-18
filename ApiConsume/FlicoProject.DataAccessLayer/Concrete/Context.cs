@@ -12,7 +12,7 @@ namespace FlicoProject.DataAccessLayer.Concrete
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("server=(localdb)\\MSSQLLocalDB;Initial Catalog=FlicoDb;Integrated Security=True");
+            optionsBuilder.UseSqlServer("server=(localdb)\\MSSQLLocalDB;Initial Catalog=FlicoDb;Integrated Security=True").EnableSensitiveDataLogging(); 
         }
         public DbSet<Airport> Airports { get; set; }
         public DbSet<Warehouse> Warehouses { get; set; }

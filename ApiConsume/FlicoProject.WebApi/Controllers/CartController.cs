@@ -16,12 +16,14 @@ namespace FlicoProject.WebApi.Controllers
         private readonly ICartService _cartservice;
         private readonly IMapper _mapper;
         private readonly IProductService _productService;
+        private readonly IUserService _userService;
 
-        public CartController(ICartService cartservice, IMapper mapper, IProductService productService)
+        public CartController(ICartService cartservice, IMapper mapper, IProductService productService, IUserService userService)
         {
             _cartservice = cartservice;
             _mapper = mapper;
             _productService = productService;
+            _userService = userService;
         }
         [HttpGet]
         public IActionResult CartList([FromQuery] int pageSize, int pageIndex, int? userId, int? productId)
@@ -42,16 +44,17 @@ namespace FlicoProject.WebApi.Controllers
 
             var cartsWithProducts = carts.Select(x => new CartWithProductDto()
             {
-                ProductID = x.ProductID,
+
                 CartID = x.CartID,
                 Amount = x.Amount,
                 Size = x.Size,
-                UserID = x.UserID,
+                User = _userService.TGetByID(x.UserID),
                 Product = _productService.TGetByID(x.ProductID)
+
             }).ToList();
 
             var result = new PaginationResultDto<CartWithProductDto>(){
-                Items = cartsWithProducts,
+                Data = cartsWithProducts,
                 TotalCount = totalCount,
                 PageIndex = pageIndex,
                 PageSize = pageSize
@@ -61,6 +64,7 @@ namespace FlicoProject.WebApi.Controllers
         [HttpPost]
         public IActionResult AddCart(PostCartDto cartdto)
         {
+            //burda da başkasının kartına ekleme yapabilirim gibi bir durum var. Bunu nasıl engelleyebiliriz?
             var result = _cartservice.FluentValidatePostCartDto(cartdto);
             if (result.Success != true)
             {
@@ -124,7 +128,7 @@ namespace FlicoProject.WebApi.Controllers
                 return BadRequest(new ResultDTO<PostContactMessageDto>(result.Message));
             }
 
-            var existingCart = _cartservice.TGetByID(id);
+            var existingCart = _cartservice.TGetList().FirstOrDefault(x => x.CartID == id);
 
             if (existingCart == null)
             {
@@ -154,5 +158,7 @@ namespace FlicoProject.WebApi.Controllers
             }
             return Ok(new ResultDTO<Cart>(cart));
         }
+
+       
     }
 }
