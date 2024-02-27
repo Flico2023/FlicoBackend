@@ -55,7 +55,8 @@ namespace FlicoProject.BusinessLayer.Concrete
             _mailService.SendMail(message.Email, subject, html);
         }
 
-        public List<ContactMessage> FilterContactMessageList(List<ContactMessage> messages,string email, string subject, string date, string status, int? id,string name )
+        public List<ContactMessage> FilterContactMessageList(List<ContactMessage> messages,string email, 
+            string subject, string date, string status, int? id,string name )
         {
 
             if (id != null)

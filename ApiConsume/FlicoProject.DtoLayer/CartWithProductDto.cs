@@ -12,6 +12,7 @@ namespace FlicoProject.DtoLayer
         public Product Product { get; set; }
 
         public int CartID { get; set; }
+        public string Status { get; set; }
 
         public string Size { get; set; }
         public int Amount { get; set; }

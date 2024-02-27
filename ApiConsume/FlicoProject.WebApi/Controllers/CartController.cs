@@ -26,7 +26,7 @@ namespace FlicoProject.WebApi.Controllers
             _userService = userService;
         }
         [HttpGet]
-        public IActionResult CartList([FromQuery] int pageSize, int pageIndex, int? userId, int? productId)
+        public IActionResult CartList([FromQuery] int pageSize, int pageIndex, int? userId, int? productId, string? status)
         {
 
             var carts = _cartservice.TGetList();
@@ -38,6 +38,10 @@ namespace FlicoProject.WebApi.Controllers
             {
                 carts = carts.FindAll(x => x.ProductID == productId);
             }
+            if (!IsNullOrEmpty(status))
+            {
+                carts = carts.FindAll(x => x.Status == status);
+            }
 
             int totalCount = carts.Count;
             carts = carts.Skip(pageSize * (pageIndex - 1)).Take(pageSize).ToList();
@@ -48,6 +52,7 @@ namespace FlicoProject.WebApi.Controllers
                 CartID = x.CartID,
                 Amount = x.Amount,
                 Size = x.Size,
+                Status = x.Status,
                 User = _userService.TGetByID(x.UserID),
                 Product = _productService.TGetByID(x.ProductID)
 
@@ -144,6 +149,7 @@ namespace FlicoProject.WebApi.Controllers
             existingCart.Amount = cartdto.Amount;
             existingCart.Size = cartdto.Size;
             //existingCart.UserID = cartdto.UserID; başkasına kart ekleyemesin diye bunu kaldırdım
+            existingCart.Status = cartdto.Status;
             existingCart.ProductID = cartdto.ProductID;
             _cartservice.TUpdate(existingCart);
             return Ok(new ResultDTO<Cart>(existingCart));
@@ -159,6 +165,5 @@ namespace FlicoProject.WebApi.Controllers
             return Ok(new ResultDTO<Cart>(cart));
         }
 
-       
     }
 }

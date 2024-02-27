@@ -14,5 +14,7 @@ namespace FlicoProject.DtoLayer
         public int Amount { get; set; }
         public int UserID { get; set; }
 
+        public string Status { get; set; }
+
     }
 }

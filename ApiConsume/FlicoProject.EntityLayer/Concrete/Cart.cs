@@ -14,6 +14,7 @@ namespace FlicoProject.EntityLayer.Concrete
         public string Size { get; set; }
         public int Amount { get; set; }
         public int UserID { get; set; }
+        public string Status { get; set; }
 
     }
 }

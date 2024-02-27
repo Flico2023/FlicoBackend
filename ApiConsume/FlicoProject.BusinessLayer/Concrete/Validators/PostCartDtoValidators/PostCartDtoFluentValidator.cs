@@ -24,12 +24,22 @@ namespace FlicoProject.BusinessLayer.Concrete.Validators.PostCartDtoValidtors
 
             RuleFor(cart => cart.UserID)
                 .GreaterThanOrEqualTo(0).WithMessage("UserID must be 0 or positive.");
+
+            RuleFor(cart => cart.Status)
+                .NotEmpty().WithMessage("Status cannot be empty.")
+                .Must(status => IsOneOfValidStatuses(status)).WithMessage("Status must be one of: Cart, Checkout");
         }
 
         private bool IsOneOfValidSizes(string size)
         {
             string[] validSizes = { "XS", "S", "M", "L", "XL", "XXL" };
             return validSizes.Contains(size);
+        }
+
+        private bool IsOneOfValidStatuses(string status)
+        {
+            string[] validStatuses = { "Cart", "Checkout" };
+            return validStatuses.Contains(status);
         }
     }
 }
