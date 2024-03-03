@@ -8,8 +8,8 @@ namespace FlicoProject.WebApi.Mappers
     {
         public CartProfile()
         {
-            CreateMap<Cart, Cartdto>();
-            CreateMap<Cartdto, Cart>();
+            CreateMap<Cart, PostCartDto>();
+            CreateMap<PostCartDto, Cart>();
         }
     }
 }

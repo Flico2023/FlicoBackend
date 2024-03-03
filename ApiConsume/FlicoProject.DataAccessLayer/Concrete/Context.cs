@@ -12,7 +12,7 @@ namespace FlicoProject.DataAccessLayer.Concrete
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("server=(localdb)\\MSSQLLocalDB;Initial Catalog=FlicoDb;Integrated Security=True");
+            optionsBuilder.UseSqlServer("server=(localdb)\\MSSQLLocalDB;Initial Catalog=FlicoDb;Integrated Security=True").EnableSensitiveDataLogging(); 
         }
         public DbSet<Airport> Airports { get; set; }
         public DbSet<Warehouse> Warehouses { get; set; }
@@ -24,6 +24,9 @@ namespace FlicoProject.DataAccessLayer.Concrete
         public DbSet<User> Users { get; set; }
         public DbSet<Cart> Carts { get; set; }
 
+        public DbSet<Faq> Faqs { get; set; }
+
+        public DbSet<ContactMessage> ContactMessages { get; set; }
 
     }
 }

@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\kerem\\OneDrive\\Belgeler\\GitHub\\FlicoBackend\\ApiConsume\\FlicoProject.BusinessLayer\\FlicoProject.BusinessLayer.csproj": {}
+    "C:\\Users\\Emre\\Desktop\\FLICO\\FlicoBackend\\ApiConsume\\FlicoProject.BusinessLayer\\FlicoProject.BusinessLayer.csproj": {}
   },
   "projects": {
-    "C:\\Users\\kerem\\OneDrive\\Belgeler\\GitHub\\FlicoBackend\\ApiConsume\\FlicoProject.BusinessLayer\\FlicoProject.BusinessLayer.csproj": {
+    "C:\\Users\\Emre\\Desktop\\FLICO\\FlicoBackend\\ApiConsume\\FlicoProject.BusinessLayer\\FlicoProject.BusinessLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\kerem\\OneDrive\\Belgeler\\GitHub\\FlicoBackend\\ApiConsume\\FlicoProject.BusinessLayer\\FlicoProject.BusinessLayer.csproj",
+        "projectUniqueName": "C:\\Users\\Emre\\Desktop\\FLICO\\FlicoBackend\\ApiConsume\\FlicoProject.BusinessLayer\\FlicoProject.BusinessLayer.csproj",
         "projectName": "FlicoProject.BusinessLayer",
-        "projectPath": "C:\\Users\\kerem\\OneDrive\\Belgeler\\GitHub\\FlicoBackend\\ApiConsume\\FlicoProject.BusinessLayer\\FlicoProject.BusinessLayer.csproj",
-        "packagesPath": "C:\\Users\\kerem\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\kerem\\OneDrive\\Belgeler\\GitHub\\FlicoBackend\\ApiConsume\\FlicoProject.BusinessLayer\\obj\\",
+        "projectPath": "C:\\Users\\Emre\\Desktop\\FLICO\\FlicoBackend\\ApiConsume\\FlicoProject.BusinessLayer\\FlicoProject.BusinessLayer.csproj",
+        "packagesPath": "C:\\Users\\Emre\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Emre\\Desktop\\FLICO\\FlicoBackend\\ApiConsume\\FlicoProject.BusinessLayer\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\kerem\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Emre\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,11 +28,14 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\kerem\\OneDrive\\Belgeler\\GitHub\\FlicoBackend\\ApiConsume\\FlicoProject.DataAccessLayer\\FlicoProject.DataAccessLayer.csproj": {
-                "projectPath": "C:\\Users\\kerem\\OneDrive\\Belgeler\\GitHub\\FlicoBackend\\ApiConsume\\FlicoProject.DataAccessLayer\\FlicoProject.DataAccessLayer.csproj"
+              "C:\\Users\\Emre\\Desktop\\FLICO\\FlicoBackend\\ApiConsume\\FlicoProject.DataAccessLayer\\FlicoProject.DataAccessLayer.csproj": {
+                "projectPath": "C:\\Users\\Emre\\Desktop\\FLICO\\FlicoBackend\\ApiConsume\\FlicoProject.DataAccessLayer\\FlicoProject.DataAccessLayer.csproj"
               },
-              "C:\\Users\\kerem\\OneDrive\\Belgeler\\GitHub\\FlicoBackend\\ApiConsume\\FlicoProject.EntityLayer\\FlicoProject.EntityLayer.csproj": {
-                "projectPath": "C:\\Users\\kerem\\OneDrive\\Belgeler\\GitHub\\FlicoBackend\\ApiConsume\\FlicoProject.EntityLayer\\FlicoProject.EntityLayer.csproj"
+              "C:\\Users\\Emre\\Desktop\\FLICO\\FlicoBackend\\ApiConsume\\FlicoProject.DtoLayer\\FlicoProject.DtoLayer.csproj": {
+                "projectPath": "C:\\Users\\Emre\\Desktop\\FLICO\\FlicoBackend\\ApiConsume\\FlicoProject.DtoLayer\\FlicoProject.DtoLayer.csproj"
+              },
+              "C:\\Users\\Emre\\Desktop\\FLICO\\FlicoBackend\\ApiConsume\\FlicoProject.EntityLayer\\FlicoProject.EntityLayer.csproj": {
+                "projectPath": "C:\\Users\\Emre\\Desktop\\FLICO\\FlicoBackend\\ApiConsume\\FlicoProject.EntityLayer\\FlicoProject.EntityLayer.csproj"
               }
             }
           }
@@ -50,6 +53,14 @@
             "AutoMapper.Extensions.Microsoft.DependencyInjection": {
               "target": "Package",
               "version": "[12.0.1, )"
+            },
+            "FluentValidation": {
+              "target": "Package",
+              "version": "[11.9.0, )"
+            },
+            "HtmlSanitizer": {
+              "target": "Package",
+              "version": "[8.0.838, )"
             },
             "Microsoft.AspNet.WebApi.Cors": {
               "target": "Package",
@@ -74,6 +85,14 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[6.0.0, )"
+            },
+            "Microsoft.Extensions.Configuration": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "NETCore.MailKit": {
+              "target": "Package",
+              "version": "[2.1.0, )"
             }
           },
           "imports": [
@@ -92,21 +111,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\kerem\\OneDrive\\Belgeler\\GitHub\\FlicoBackend\\ApiConsume\\FlicoProject.DataAccessLayer\\FlicoProject.DataAccessLayer.csproj": {
+    "C:\\Users\\Emre\\Desktop\\FLICO\\FlicoBackend\\ApiConsume\\FlicoProject.DataAccessLayer\\FlicoProject.DataAccessLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\kerem\\OneDrive\\Belgeler\\GitHub\\FlicoBackend\\ApiConsume\\FlicoProject.DataAccessLayer\\FlicoProject.DataAccessLayer.csproj",
+        "projectUniqueName": "C:\\Users\\Emre\\Desktop\\FLICO\\FlicoBackend\\ApiConsume\\FlicoProject.DataAccessLayer\\FlicoProject.DataAccessLayer.csproj",
         "projectName": "FlicoProject.DataAccessLayer",
-        "projectPath": "C:\\Users\\kerem\\OneDrive\\Belgeler\\GitHub\\FlicoBackend\\ApiConsume\\FlicoProject.DataAccessLayer\\FlicoProject.DataAccessLayer.csproj",
-        "packagesPath": "C:\\Users\\kerem\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\kerem\\OneDrive\\Belgeler\\GitHub\\FlicoBackend\\ApiConsume\\FlicoProject.DataAccessLayer\\obj\\",
+        "projectPath": "C:\\Users\\Emre\\Desktop\\FLICO\\FlicoBackend\\ApiConsume\\FlicoProject.DataAccessLayer\\FlicoProject.DataAccessLayer.csproj",
+        "packagesPath": "C:\\Users\\Emre\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Emre\\Desktop\\FLICO\\FlicoBackend\\ApiConsume\\FlicoProject.DataAccessLayer\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\kerem\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Emre\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -120,8 +139,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\kerem\\OneDrive\\Belgeler\\GitHub\\FlicoBackend\\ApiConsume\\FlicoProject.EntityLayer\\FlicoProject.EntityLayer.csproj": {
-                "projectPath": "C:\\Users\\kerem\\OneDrive\\Belgeler\\GitHub\\FlicoBackend\\ApiConsume\\FlicoProject.EntityLayer\\FlicoProject.EntityLayer.csproj"
+              "C:\\Users\\Emre\\Desktop\\FLICO\\FlicoBackend\\ApiConsume\\FlicoProject.EntityLayer\\FlicoProject.EntityLayer.csproj": {
+                "projectPath": "C:\\Users\\Emre\\Desktop\\FLICO\\FlicoBackend\\ApiConsume\\FlicoProject.EntityLayer\\FlicoProject.EntityLayer.csproj"
               }
             }
           }
@@ -181,21 +200,110 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\kerem\\OneDrive\\Belgeler\\GitHub\\FlicoBackend\\ApiConsume\\FlicoProject.EntityLayer\\FlicoProject.EntityLayer.csproj": {
+    "C:\\Users\\Emre\\Desktop\\FLICO\\FlicoBackend\\ApiConsume\\FlicoProject.DtoLayer\\FlicoProject.DtoLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\kerem\\OneDrive\\Belgeler\\GitHub\\FlicoBackend\\ApiConsume\\FlicoProject.EntityLayer\\FlicoProject.EntityLayer.csproj",
-        "projectName": "FlicoProject.EntityLayer",
-        "projectPath": "C:\\Users\\kerem\\OneDrive\\Belgeler\\GitHub\\FlicoBackend\\ApiConsume\\FlicoProject.EntityLayer\\FlicoProject.EntityLayer.csproj",
-        "packagesPath": "C:\\Users\\kerem\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\kerem\\OneDrive\\Belgeler\\GitHub\\FlicoBackend\\ApiConsume\\FlicoProject.EntityLayer\\obj\\",
+        "projectUniqueName": "C:\\Users\\Emre\\Desktop\\FLICO\\FlicoBackend\\ApiConsume\\FlicoProject.DtoLayer\\FlicoProject.DtoLayer.csproj",
+        "projectName": "FlicoProject.DtoLayer",
+        "projectPath": "C:\\Users\\Emre\\Desktop\\FLICO\\FlicoBackend\\ApiConsume\\FlicoProject.DtoLayer\\FlicoProject.DtoLayer.csproj",
+        "packagesPath": "C:\\Users\\Emre\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Emre\\Desktop\\FLICO\\FlicoBackend\\ApiConsume\\FlicoProject.DtoLayer\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\kerem\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Emre\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\Emre\\Desktop\\FLICO\\FlicoBackend\\ApiConsume\\FlicoProject.EntityLayer\\FlicoProject.EntityLayer.csproj": {
+                "projectPath": "C:\\Users\\Emre\\Desktop\\FLICO\\FlicoBackend\\ApiConsume\\FlicoProject.EntityLayer\\FlicoProject.EntityLayer.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[12.0.1, )"
+            },
+            "Microsoft.AspNet.WebApi.Cors": {
+              "target": "Package",
+              "version": "[5.2.9, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Emre\\Desktop\\FLICO\\FlicoBackend\\ApiConsume\\FlicoProject.EntityLayer\\FlicoProject.EntityLayer.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Emre\\Desktop\\FLICO\\FlicoBackend\\ApiConsume\\FlicoProject.EntityLayer\\FlicoProject.EntityLayer.csproj",
+        "projectName": "FlicoProject.EntityLayer",
+        "projectPath": "C:\\Users\\Emre\\Desktop\\FLICO\\FlicoBackend\\ApiConsume\\FlicoProject.EntityLayer\\FlicoProject.EntityLayer.csproj",
+        "packagesPath": "C:\\Users\\Emre\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Emre\\Desktop\\FLICO\\FlicoBackend\\ApiConsume\\FlicoProject.EntityLayer\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Emre\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -270,7 +378,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -1,4 +1,5 @@
-﻿using FlicoProject.EntityLayer.Concrete;
+﻿using FlicoProject.DtoLayer;
+using FlicoProject.EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,6 +14,10 @@ namespace FlicoProject.BusinessLayer.Abstract
         int TDelete(int t);
         int TUpdate(Cart t);
         List<Cart> TGetList();
-        List<Cart> TGetByID(int id);
-}
+        Cart TGetByID(int id);
+
+        ResultDTO<PostCartDto> FluentValidatePostCartDto(PostCartDto dto);
+
+        ResultDTO<PostCartDto> ValidatePostCartDto(PostCartDto dto);
+    }
 }

@@ -4,6 +4,7 @@ using FlicoProject.DtoLayer;
 using FlicoProject.EntityLayer.Concrete;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using static System.String;
 
 namespace FlicoProject.WebApi.Controllers
 {
@@ -21,10 +22,38 @@ namespace FlicoProject.WebApi.Controllers
             _mapper = mapper;
         }
         [HttpGet]
-        public IActionResult UserList()
+        public IActionResult UserList([FromQuery] int pageSize, int PageIndex, string? email, string? name, string? surname, string? phone)
         {
             var users = _userService.TGetList();
-            return Ok(new ResultDTO<List<User>>(users));
+            Console.WriteLine(name);
+            if (!IsNullOrEmpty(name))
+            {
+                users = users.Where(x => x.Name.ToLower() == name.ToLower()).ToList();
+            }
+            if(!IsNullOrEmpty(surname))
+            {
+                users = users.Where(x => x.Surname.ToLower() == surname.ToLower()).ToList();
+            }
+            if(!IsNullOrEmpty(email))
+            {
+                users = users.Where(x => x.Email.ToLower() == email.ToLower()).ToList();
+            }
+            if(!IsNullOrEmpty(phone))
+            {
+                users = users.Where(x => x.Phone.ToLower() == phone.ToLower()).ToList();
+            }
+            var totalCount = users.Count;
+            users = users.Skip(pageSize * (PageIndex - 1)).Take(pageSize).ToList();
+
+            var userListDTO = new UserListResultDto();
+            userListDTO.Users = users;
+            userListDTO.TotalCount = totalCount;
+            userListDTO.PageIndex = PageIndex;
+            userListDTO.PageSize = pageSize;
+
+            return Ok(new ResultDTO<UserListResultDto>(userListDTO));
+
+
         }
         [HttpPost]
         public IActionResult AddUser(UserDto userdto)
@@ -80,6 +109,40 @@ namespace FlicoProject.WebApi.Controllers
                 return BadRequest(new ResultDTO<User>("The id to be looking for was not found."));
             }
             return Ok(new ResultDTO<User>(user));
+        }
+
+        [HttpPost("load")]
+        public IActionResult LoadUser()
+        {
+           var loaders = new UserLoader();
+            var users = loaders.Load();
+            foreach (var user in users)
+            {
+                if(_userService.TInsert(user) == 0)
+                {
+                    return BadRequest(new ResultDTO<User>($"Error in {user.Name}"));
+                }
+            }
+            return Ok(new ResultDTO<List<User>>(users));
+        }
+    }
+
+    public class UserLoader
+    {
+        public List<User> Load()
+        {
+            var users = new List<User>();
+            for (int i = 0; i < 100; i++)
+            {
+                var user = new User();
+                user.Name = "Name" + i;
+                user.Surname = "Surname" + i;
+                user.Email = "Email" + i;
+                user.Password = "Password" + i;
+                user.Phone = "Phone" + i;
+                users.Add(user);
+            }
+            return users;
         }
     }
 }

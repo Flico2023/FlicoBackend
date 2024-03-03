@@ -5,10 +5,6 @@ VisualStudioVersion = 17.6.33829.357
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ApiConsume", "ApiConsume", "{4927A51B-B86E-4F7E-BA99-27662DCF141A}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Frontend", "Frontend", "{C630A1B6-C6B5-4D41-8AE9-3C96AD0B0765}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ToDoList", "ToDoList", "{BD02CD6E-1659-49D1-BF0E-98A8DE7A45BA}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FlicoProject.EntityLayer", "ApiConsume\FlicoProject.EntityLayer\FlicoProject.EntityLayer.csproj", "{07EAB095-AF6F-47B0-81F2-5622CA8892D5}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FlicoProject.DataAccessLayer", "ApiConsume\FlicoProject.DataAccessLayer\FlicoProject.DataAccessLayer.csproj", "{A49C1A2C-94A5-4280-ACEF-E344AEDF3802}"
@@ -17,9 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FlicoProject.BusinessLayer"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FlicoProject.DtoLayer", "ApiConsume\FlicoProject.DtoLayer\FlicoProject.DtoLayer.csproj", "{9C2C26C3-2F6B-405D-8515-560403C47066}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FlicoProject.WebUI", "Frontend\FlicoProject.WebUI\FlicoProject.WebUI.csproj", "{07A9B5ED-159A-4A80-8064-637F399C08DD}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlicoProject.WebApi", "ApiConsume\FlicoProject.WebApi\FlicoProject.WebApi.csproj", "{621154FA-D0AD-4634-98C0-4573385878A8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FlicoProject.WebApi", "ApiConsume\FlicoProject.WebApi\FlicoProject.WebApi.csproj", "{621154FA-D0AD-4634-98C0-4573385878A8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -43,10 +37,6 @@ Global
 		{9C2C26C3-2F6B-405D-8515-560403C47066}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9C2C26C3-2F6B-405D-8515-560403C47066}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9C2C26C3-2F6B-405D-8515-560403C47066}.Release|Any CPU.Build.0 = Release|Any CPU
-		{07A9B5ED-159A-4A80-8064-637F399C08DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{07A9B5ED-159A-4A80-8064-637F399C08DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{07A9B5ED-159A-4A80-8064-637F399C08DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{07A9B5ED-159A-4A80-8064-637F399C08DD}.Release|Any CPU.Build.0 = Release|Any CPU
 		{621154FA-D0AD-4634-98C0-4573385878A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{621154FA-D0AD-4634-98C0-4573385878A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{621154FA-D0AD-4634-98C0-4573385878A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -60,7 +50,6 @@ Global
 		{A49C1A2C-94A5-4280-ACEF-E344AEDF3802} = {4927A51B-B86E-4F7E-BA99-27662DCF141A}
 		{A36AB5F3-D025-47A7-B59C-590501E1CD97} = {4927A51B-B86E-4F7E-BA99-27662DCF141A}
 		{9C2C26C3-2F6B-405D-8515-560403C47066} = {4927A51B-B86E-4F7E-BA99-27662DCF141A}
-		{07A9B5ED-159A-4A80-8064-637F399C08DD} = {C630A1B6-C6B5-4D41-8AE9-3C96AD0B0765}
 		{621154FA-D0AD-4634-98C0-4573385878A8} = {4927A51B-B86E-4F7E-BA99-27662DCF141A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
