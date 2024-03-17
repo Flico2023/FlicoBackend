@@ -9,5 +9,10 @@ namespace FlicoProject.DataAccessLayer.Abstract
 {
     public interface IStockDetailDal : IGenericDal<StockDetail>
     {
+        void DeleteProductStockDetails(int productID);
+
+        void InsertStockDetails(List<StockDetail> stockDetails);
+
+        List<StockDetail> GetStockDetailsByProductId(int productID);
     }
 }

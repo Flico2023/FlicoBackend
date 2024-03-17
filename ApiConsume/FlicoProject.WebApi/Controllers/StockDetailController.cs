@@ -31,9 +31,9 @@ namespace FlicoProject.WebApi.Controllers
             return Ok(new ResultDTO<List<StockDetail>>(stockDetails));
         }
         [HttpPost]
-        public IActionResult AddStockDetail(ListStockDetails stockDetail)
+        public IActionResult AddStockDetail()
         {
-            var a = new List<StockDetail>();
+            /*var a = new List<StockDetail>();
             foreach(var b in stockDetail.StockDetails)
             {
                 a.Add(_mapper.Map<StockDetail>(b));
@@ -46,7 +46,8 @@ namespace FlicoProject.WebApi.Controllers
                     return BadRequest(new ResultDTO<StockDetail>("Form values are not valid."));
                 }
             }
-            return Created("", new ResultDTO<List<StockDetail>>(a));
+            return Created("", new ResultDTO<List<StockDetail>>(a));*/
+            return Ok();
 
         }
         [HttpDelete("{id}")]

@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using FlicoProject.DtoLayer;
+using FlicoProject.DtoLayer.ProductDTOs;
 using FlicoProject.EntityLayer.Concrete;
 
 namespace FlicoProject.WebApi.Mappers
@@ -9,10 +9,9 @@ namespace FlicoProject.WebApi.Mappers
     {
         public StockProfile()
         {
-            CreateMap<StockDetail, StockDetailDTO>();
-            CreateMap<StockDetailDTO, StockDetail>();
-            CreateMap<StockDetail, ListStockDetails>();
-            CreateMap<ListStockDetails, StockDetail>();
+            CreateMap<StockDetail, StockDetailDto>();
+            CreateMap<StockDetailDto, StockDetail>();
+
         }
     }
 }

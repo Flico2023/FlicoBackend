@@ -1,15 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
-using System.Web.Http.ModelBinding;
 
-
-namespace FlicoProject.DtoLayer
+namespace FlicoProject.DtoLayer.ProductDTOs
 {
-    public class StockDetailDTO
+    public class StockDetailDto
     {
         public int ProductID { get; set; }
         public int WarehouseID { get; set; }

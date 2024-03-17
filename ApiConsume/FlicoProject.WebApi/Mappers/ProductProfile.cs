@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using FlicoProject.DtoLayer;
+using FlicoProject.DtoLayer.ProductDTOs;
 using FlicoProject.EntityLayer.Concrete;
 
 namespace FlicoProject.WebApi.Mappers
@@ -8,22 +9,10 @@ namespace FlicoProject.WebApi.Mappers
     {
         public ProductProfile()
         {
-            CreateMap<Product, ProductListDTO>();
-            CreateMap<ProductListDTO, Product>();
-            CreateMap<Product, productDTO2>();
-            CreateMap<productDTO2, Product>();
-            CreateMap<productDTO2, ProductListDTO>();
-            CreateMap<ProductListDTO, productDTO2>();
-            CreateMap<productDTO2, ProductDto3>();
-            CreateMap<ProductDto3, productDTO2>();
-            CreateMap<Product, ProductDto3>();
-            CreateMap<ProductDto3, Product>();
-            CreateMap<Product, ProductDTO4>();
-            CreateMap<ProductDTO4, Product>();
-            CreateMap<LastProductdto, productDTO2>();
-            CreateMap<productDTO2, LastProductdto>();
-            CreateMap<LastProductdto, Product>();
-            CreateMap<Product, LastProductdto>();
+
+            CreateMap<Product, ProductDto>();
+            CreateMap<ProductDto, Product>();
+            CreateMap<Product, ProductWithDetailsDto>();
 
         }
     }
