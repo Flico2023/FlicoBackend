@@ -10,6 +10,8 @@ namespace FlicoProject.WebApi.Mappers
         {
             CreateMap<User, UserDto>();
             CreateMap<UserDto, User>();
+            CreateMap<User,RegisterUser>();
+            CreateMap<RegisterUser, User>();
         }
     }
 }

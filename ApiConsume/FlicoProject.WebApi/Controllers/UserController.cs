@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using FlicoProject.BusinessLayer.Abstract;
+using FlicoProject.BusinessLayer.Concrete;
 using FlicoProject.DtoLayer;
 using FlicoProject.EntityLayer.Concrete;
 using Microsoft.AspNetCore.Http;
@@ -55,18 +56,33 @@ namespace FlicoProject.WebApi.Controllers
 
 
         }
-        [HttpPost]
-        public IActionResult AddUser(UserDto userdto)
+        [HttpPost("SignUp")]
+        public IActionResult Register(RegisterUser userdto)
         {
             var user = new User();
             user = _mapper.Map<User>(userdto);
             if (_userService.TInsert(user) == 1)
             {
-                return Created("", new ResultDTO<User>(user));
+                return Created("",JwtManager.GenerateToken(user));
             }
             else
             {
                 return BadRequest(new ResultDTO<User>("Form values are not valid."));
+            }
+        }
+        [HttpPost("SignIn")]
+        public IActionResult Login(LoginUser userdto)
+        {
+            var user = new User();
+            user = _userService.TGetList().Find(x=>x.Email == userdto.Mail && x.Password == userdto.Password);
+            if (user != null)
+            {
+                //var values =JwtManager.GenerateToken(user);
+                return Ok(JwtManager.GenerateToken(user));
+            }
+            else
+            {
+                return BadRequest(new ResultDTO<LoginUser>("Form values are not valid."));
             }
         }
         [HttpDelete("{id}")]

@@ -11,7 +11,10 @@ using FlicoProject.DtoLayer;
 using FlicoProject.EntityLayer.Concrete;
 using FlicoProject.WebApi.Mappers;
 using FluentValidation;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -46,6 +49,20 @@ builder.Services.AddCors(opt =>
     {
         opts.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
     });
+});
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(x =>
+{
+    x.RequireHttpsMetadata = false;
+    x.TokenValidationParameters = new
+    TokenValidationParameters
+    {
+        ValidIssuer = "http://localhost",
+        ValidAudience = "http://localhost",
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("FlicoIsAwesomeFlicoIsAwesomeFlicoIsAwesome")),
+        ValidateIssuerSigningKey = true,
+        ValidateLifetime = true,
+        ClockSkew = TimeSpan.Zero,
+    };
 });
 builder.Services.AddControllers();
 builder.Services.AddControllers();
@@ -87,6 +104,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 app.UseCors("FlicoApiCors");
+app.UseAuthentication();
 app.UseAuthorization();
 app.UseStaticFiles();
 app.MapControllers();
