@@ -8,7 +8,6 @@ namespace FlicoProject.DtoLayer.ProductDTOs
 {
     public class StockDetailDto
     {
-        public int ProductID { get; set; }
         public int WarehouseID { get; set; }
         public string Size { get; set; }
         public int VariationAmount { get; set; }

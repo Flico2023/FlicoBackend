@@ -45,7 +45,7 @@ namespace FlicoProject.BusinessLayer.Concrete.Validators.ProductValidators
     {
         public StockDetailDtoValidator()
         {
-            RuleFor(x => x.ProductID).NotEmpty().GreaterThan(0).WithMessage("ProductID must be greater than 0");
+
             RuleFor(x => x.WarehouseID).NotEmpty().GreaterThan(0).WithMessage("WarehouseID must be greater than 0");
             RuleFor(x => x.Size).NotEmpty().WithMessage("Size cannot be empty");
             RuleFor(x => x.VariationAmount).NotEmpty().GreaterThan(0).WithMessage("VariationAmount must be greater than 0");
