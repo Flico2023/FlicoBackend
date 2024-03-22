@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "WOToXuN1eAKBu3S0OWJvUBL4F8u47JZYR/s90tI0KY8=",
+  "Hash": "zhUX47NyJG/s9iFSXXEBHXRd6mInRK+8y0s9xwx3joI=",
   "Source": "FlicoProject.WebApi",
   "BasePath": "_content/FlicoProject.WebApi",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "FlicoProject.WebApi\\wwwroot",
       "Source": "FlicoProject.WebApi",
-      "ContentRoot": "C:\\Users\\Emre\\Desktop\\FLICO\\FlicoBackend\\ApiConsume\\FlicoProject.WebApi\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Bilge\\Desktop\\Flico\\FlicoBackend\\ApiConsume\\FlicoProject.WebApi\\wwwroot\\",
       "BasePath": "_content/FlicoProject.WebApi",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\Emre\\Desktop\\FLICO\\FlicoBackend\\ApiConsume\\FlicoProject.WebApi\\wwwroot\\product_images\\nm33zudt.png",
+      "Identity": "C:\\Users\\Bilge\\Desktop\\Flico\\FlicoBackend\\ApiConsume\\FlicoProject.WebApi\\wwwroot\\product_images\\nm33zudt.png",
       "SourceId": "FlicoProject.WebApi",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Emre\\Desktop\\FLICO\\FlicoBackend\\ApiConsume\\FlicoProject.WebApi\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Bilge\\Desktop\\Flico\\FlicoBackend\\ApiConsume\\FlicoProject.WebApi\\wwwroot\\",
       "BasePath": "_content/FlicoProject.WebApi",
       "RelativePath": "product_images/nm33zudt.png",
       "AssetKind": "All",
@@ -34,10 +34,10 @@
       "OriginalItemSpec": "wwwroot\\product_images\\nm33zudt.png"
     },
     {
-      "Identity": "C:\\Users\\Emre\\Desktop\\FLICO\\FlicoBackend\\ApiConsume\\FlicoProject.WebApi\\wwwroot\\product_images\\yrwqstdr.jpg",
+      "Identity": "C:\\Users\\Bilge\\Desktop\\Flico\\FlicoBackend\\ApiConsume\\FlicoProject.WebApi\\wwwroot\\product_images\\yrwqstdr.jpg",
       "SourceId": "FlicoProject.WebApi",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Emre\\Desktop\\FLICO\\FlicoBackend\\ApiConsume\\FlicoProject.WebApi\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Bilge\\Desktop\\Flico\\FlicoBackend\\ApiConsume\\FlicoProject.WebApi\\wwwroot\\",
       "BasePath": "_content/FlicoProject.WebApi",
       "RelativePath": "product_images/yrwqstdr.jpg",
       "AssetKind": "All",

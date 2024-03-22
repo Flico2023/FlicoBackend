@@ -1,6 +1,7 @@
 using FlicoProject.BusinessLayer.Abstract;
 using FlicoProject.BusinessLayer.Concrete;
 using FlicoProject.BusinessLayer.Concrete.Mail;
+using FlicoProject.BusinessLayer.Concrete.Validators.OrdersValidators;
 using FlicoProject.BusinessLayer.Concrete.Validators.PostCartDtoValidtors;
 using FlicoProject.BusinessLayer.Concrete.Validators.PostContactMessage;
 using FlicoProject.BusinessLayer.Validators;
@@ -39,6 +40,8 @@ builder.Services.AddScoped<ICartDal, EFCartDal>();
 builder.Services.AddScoped<ICartService, CartManager>();
 builder.Services.AddScoped<IContactMessageDal, EFContactMessageDal>();
 builder.Services.AddScoped<IContactMessageService, ContactMessageManager>();
+builder.Services.AddScoped<IOrderDal, EFOrderDal>();
+builder.Services.AddScoped<IOrderService, OrderManager>();
 
 builder.Services.AddCors(opt =>
 {
@@ -65,11 +68,14 @@ builder.Services.AddAutoMapper(typeof(OutsourceProductProfile));
 builder.Services.AddAutoMapper(typeof(UserProfile));
 builder.Services.AddAutoMapper(typeof(CartProfile));
 builder.Services.AddAutoMapper(typeof(ContactMessageProfile));
+builder.Services.AddAutoMapper(typeof(OrderProfile));
+
 
 //FLUENT VALIDATION
 builder.Services.AddScoped<IValidator<PostContactMessageDto>, PostContactMessageDtoValidator>();
 builder.Services.AddScoped<IValidator<PutContactMessageDto>, PutContactMessageDtoValidator>();
 builder.Services.AddScoped<IValidator<PostCartDto>, PostCartDtoFluentValidator>();
+builder.Services.AddScoped<IValidator<OrderDto>, OrderDtoValidator>();
 
 
 //OTHER VALIDATIONS

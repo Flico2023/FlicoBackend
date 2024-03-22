@@ -43,7 +43,6 @@ C:\Users\Bilge\Desktop\Flico\FlicoBackend\ApiConsume\FlicoProject.DataAccessLaye
 C:\Users\Bilge\Desktop\Flico\FlicoBackend\ApiConsume\FlicoProject.DataAccessLayer\obj\Debug\net6.0\FlicoProject.DataAccessLayer.AssemblyInfoInputs.cache
 C:\Users\Bilge\Desktop\Flico\FlicoBackend\ApiConsume\FlicoProject.DataAccessLayer\obj\Debug\net6.0\FlicoProject.DataAccessLayer.AssemblyInfo.cs
 C:\Users\Bilge\Desktop\Flico\FlicoBackend\ApiConsume\FlicoProject.DataAccessLayer\obj\Debug\net6.0\FlicoProject.DataAccessLayer.csproj.CoreCompileInputs.cache
-C:\Users\Bilge\Desktop\Flico\FlicoBackend\ApiConsume\FlicoProject.DataAccessLayer\obj\Debug\net6.0\FlicoProject.DataAccessLayer.csproj.CopyComplete
 C:\Users\Bilge\Desktop\Flico\FlicoBackend\ApiConsume\FlicoProject.DataAccessLayer\obj\Debug\net6.0\FlicoProject.DataAccessLayer.dll
 C:\Users\Bilge\Desktop\Flico\FlicoBackend\ApiConsume\FlicoProject.DataAccessLayer\obj\Debug\net6.0\refint\FlicoProject.DataAccessLayer.dll
 C:\Users\Bilge\Desktop\Flico\FlicoBackend\ApiConsume\FlicoProject.DataAccessLayer\obj\Debug\net6.0\FlicoProject.DataAccessLayer.pdb
@@ -100,3 +99,4 @@ C:\Users\Emre\Desktop\FLICO\FlicoBackend\ApiConsume\FlicoProject.DataAccessLayer
 C:\Users\Emre\Desktop\FLICO\FlicoBackend\ApiConsume\FlicoProject.DataAccessLayer\obj\Debug\net6.0\FlicoProject.DataAccessLayer.pdb
 C:\Users\Emre\Desktop\FLICO\FlicoBackend\ApiConsume\FlicoProject.DataAccessLayer\obj\Debug\net6.0\FlicoProject.DataAccessLayer.genruntimeconfig.cache
 C:\Users\Emre\Desktop\FLICO\FlicoBackend\ApiConsume\FlicoProject.DataAccessLayer\obj\Debug\net6.0\ref\FlicoProject.DataAccessLayer.dll
+C:\Users\Bilge\Desktop\Flico\FlicoBackend\ApiConsume\FlicoProject.DataAccessLayer\obj\Debug\net6.0\FlicoPro.5E3F3E15.Up2Date

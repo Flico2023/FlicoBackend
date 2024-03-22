@@ -749,6 +749,19 @@
           }
         }
       },
+      "Nanoid/3.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Nanoid.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Nanoid.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "NETCore.MailKit/2.1.0": {
         "type": "package",
         "dependencies": {
@@ -3691,6 +3704,23 @@
         "lib/netstandard2.1/MimeKit.xml",
         "mimekit.3.2.0.nupkg.sha512",
         "mimekit.nuspec"
+      ]
+    },
+    "Nanoid/3.0.0": {
+      "sha512": "TXFA+/K8CTID49Qn7upRKh1HK37GpLYh2EEKNvTTVo34G9AjorRrHYkhad5xeSxxlebvxAJJGs0lddQ706kjEQ==",
+      "type": "package",
+      "path": "nanoid/3.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net45/Nanoid.dll",
+        "lib/net45/Nanoid.xml",
+        "lib/net7.0/Nanoid.dll",
+        "lib/net7.0/Nanoid.xml",
+        "lib/netstandard2.0/Nanoid.dll",
+        "lib/netstandard2.0/Nanoid.xml",
+        "nanoid.3.0.0.nupkg.sha512",
+        "nanoid.nuspec"
       ]
     },
     "NETCore.MailKit/2.1.0": {
@@ -7977,23 +8007,24 @@
       "Microsoft.EntityFrameworkCore.SqlServer >= 6.0.0",
       "Microsoft.EntityFrameworkCore.Tools >= 6.0.0",
       "Microsoft.Extensions.Configuration >= 8.0.0",
-      "NETCore.MailKit >= 2.1.0"
+      "NETCore.MailKit >= 2.1.0",
+      "Nanoid >= 3.0.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Emre\\.nuget\\packages\\": {}
+    "C:\\Users\\Bilge\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Emre\\Desktop\\FLICO\\FlicoBackend\\ApiConsume\\FlicoProject.BusinessLayer\\FlicoProject.BusinessLayer.csproj",
+      "projectUniqueName": "C:\\Users\\Bilge\\Desktop\\Flico\\FlicoBackend\\ApiConsume\\FlicoProject.BusinessLayer\\FlicoProject.BusinessLayer.csproj",
       "projectName": "FlicoProject.BusinessLayer",
-      "projectPath": "C:\\Users\\Emre\\Desktop\\FLICO\\FlicoBackend\\ApiConsume\\FlicoProject.BusinessLayer\\FlicoProject.BusinessLayer.csproj",
-      "packagesPath": "C:\\Users\\Emre\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Emre\\Desktop\\FLICO\\FlicoBackend\\ApiConsume\\FlicoProject.BusinessLayer\\obj\\",
+      "projectPath": "C:\\Users\\Bilge\\Desktop\\Flico\\FlicoBackend\\ApiConsume\\FlicoProject.BusinessLayer\\FlicoProject.BusinessLayer.csproj",
+      "packagesPath": "C:\\Users\\Bilge\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Bilge\\Desktop\\Flico\\FlicoBackend\\ApiConsume\\FlicoProject.BusinessLayer\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Emre\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Bilge\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -8007,14 +8038,14 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\Emre\\Desktop\\FLICO\\FlicoBackend\\ApiConsume\\FlicoProject.DataAccessLayer\\FlicoProject.DataAccessLayer.csproj": {
-              "projectPath": "C:\\Users\\Emre\\Desktop\\FLICO\\FlicoBackend\\ApiConsume\\FlicoProject.DataAccessLayer\\FlicoProject.DataAccessLayer.csproj"
+            "C:\\Users\\Bilge\\Desktop\\Flico\\FlicoBackend\\ApiConsume\\FlicoProject.DataAccessLayer\\FlicoProject.DataAccessLayer.csproj": {
+              "projectPath": "C:\\Users\\Bilge\\Desktop\\Flico\\FlicoBackend\\ApiConsume\\FlicoProject.DataAccessLayer\\FlicoProject.DataAccessLayer.csproj"
             },
-            "C:\\Users\\Emre\\Desktop\\FLICO\\FlicoBackend\\ApiConsume\\FlicoProject.DtoLayer\\FlicoProject.DtoLayer.csproj": {
-              "projectPath": "C:\\Users\\Emre\\Desktop\\FLICO\\FlicoBackend\\ApiConsume\\FlicoProject.DtoLayer\\FlicoProject.DtoLayer.csproj"
+            "C:\\Users\\Bilge\\Desktop\\Flico\\FlicoBackend\\ApiConsume\\FlicoProject.DtoLayer\\FlicoProject.DtoLayer.csproj": {
+              "projectPath": "C:\\Users\\Bilge\\Desktop\\Flico\\FlicoBackend\\ApiConsume\\FlicoProject.DtoLayer\\FlicoProject.DtoLayer.csproj"
             },
-            "C:\\Users\\Emre\\Desktop\\FLICO\\FlicoBackend\\ApiConsume\\FlicoProject.EntityLayer\\FlicoProject.EntityLayer.csproj": {
-              "projectPath": "C:\\Users\\Emre\\Desktop\\FLICO\\FlicoBackend\\ApiConsume\\FlicoProject.EntityLayer\\FlicoProject.EntityLayer.csproj"
+            "C:\\Users\\Bilge\\Desktop\\Flico\\FlicoBackend\\ApiConsume\\FlicoProject.EntityLayer\\FlicoProject.EntityLayer.csproj": {
+              "projectPath": "C:\\Users\\Bilge\\Desktop\\Flico\\FlicoBackend\\ApiConsume\\FlicoProject.EntityLayer\\FlicoProject.EntityLayer.csproj"
             }
           }
         }
@@ -8023,6 +8054,11 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -8072,6 +8108,10 @@
           "NETCore.MailKit": {
             "target": "Package",
             "version": "[2.1.0, )"
+          },
+          "Nanoid": {
+            "target": "Package",
+            "version": "[3.0.0, )"
           }
         },
         "imports": [
@@ -8085,12 +8125,26 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[6.0.22, 6.0.22]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[6.0.22, 6.0.22]"
+          },
+          {
+            "name": "Microsoft.WindowsDesktop.App.Ref",
+            "version": "[6.0.22, 6.0.22]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files (x86)\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
       }
     }
   },
@@ -8099,7 +8153,7 @@
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Package 'Microsoft.AspNet.Cors 5.2.9' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project.",
+      "message": "'Microsoft.AspNet.Cors 5.2.9' paketi, proje hedef çerçevesi 'net6.0' yerine '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' kullanılarak geri yüklendi. Bu paket projenizle tamamen uyumlu olmayabilir.",
       "libraryId": "Microsoft.AspNet.Cors",
       "targetGraphs": [
         "net6.0"
@@ -8109,7 +8163,7 @@
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Package 'Microsoft.AspNet.WebApi.Core 5.2.9' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project.",
+      "message": "'Microsoft.AspNet.WebApi.Core 5.2.9' paketi, proje hedef çerçevesi 'net6.0' yerine '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' kullanılarak geri yüklendi. Bu paket projenizle tamamen uyumlu olmayabilir.",
       "libraryId": "Microsoft.AspNet.WebApi.Core",
       "targetGraphs": [
         "net6.0"
@@ -8119,7 +8173,7 @@
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Package 'Microsoft.AspNet.WebApi.Cors 5.2.9' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project.",
+      "message": "'Microsoft.AspNet.WebApi.Cors 5.2.9' paketi, proje hedef çerçevesi 'net6.0' yerine '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' kullanılarak geri yüklendi. Bu paket projenizle tamamen uyumlu olmayabilir.",
       "libraryId": "Microsoft.AspNet.WebApi.Cors",
       "targetGraphs": [
         "net6.0"

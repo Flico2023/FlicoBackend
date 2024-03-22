@@ -49,7 +49,6 @@ C:\Users\Bilge\Desktop\Flico\FlicoBackend\ApiConsume\FlicoProject.BusinessLayer\
 C:\Users\Bilge\Desktop\Flico\FlicoBackend\ApiConsume\FlicoProject.BusinessLayer\obj\Debug\net6.0\FlicoProject.BusinessLayer.AssemblyInfoInputs.cache
 C:\Users\Bilge\Desktop\Flico\FlicoBackend\ApiConsume\FlicoProject.BusinessLayer\obj\Debug\net6.0\FlicoProject.BusinessLayer.AssemblyInfo.cs
 C:\Users\Bilge\Desktop\Flico\FlicoBackend\ApiConsume\FlicoProject.BusinessLayer\obj\Debug\net6.0\FlicoProject.BusinessLayer.csproj.CoreCompileInputs.cache
-C:\Users\Bilge\Desktop\Flico\FlicoBackend\ApiConsume\FlicoProject.BusinessLayer\obj\Debug\net6.0\FlicoProject.BusinessLayer.csproj.CopyComplete
 C:\Users\Bilge\Desktop\Flico\FlicoBackend\ApiConsume\FlicoProject.BusinessLayer\obj\Debug\net6.0\FlicoProject.BusinessLayer.dll
 C:\Users\Bilge\Desktop\Flico\FlicoBackend\ApiConsume\FlicoProject.BusinessLayer\obj\Debug\net6.0\refint\FlicoProject.BusinessLayer.dll
 C:\Users\Bilge\Desktop\Flico\FlicoBackend\ApiConsume\FlicoProject.BusinessLayer\obj\Debug\net6.0\FlicoProject.BusinessLayer.pdb
@@ -103,3 +102,6 @@ C:\Users\Emre\Desktop\FLICO\FlicoBackend\ApiConsume\FlicoProject.BusinessLayer\o
 C:\Users\Emre\Desktop\FLICO\FlicoBackend\ApiConsume\FlicoProject.BusinessLayer\obj\Debug\net6.0\ref\FlicoProject.BusinessLayer.dll
 C:\Users\Emre\Desktop\FLICO\FlicoBackend\ApiConsume\FlicoProject.BusinessLayer\bin\Debug\net6.0\FlicoProject.DtoLayer.dll
 C:\Users\Emre\Desktop\FLICO\FlicoBackend\ApiConsume\FlicoProject.BusinessLayer\bin\Debug\net6.0\FlicoProject.DtoLayer.pdb
+C:\Users\Bilge\Desktop\Flico\FlicoBackend\ApiConsume\FlicoProject.BusinessLayer\bin\Debug\net6.0\FlicoProject.DtoLayer.dll
+C:\Users\Bilge\Desktop\Flico\FlicoBackend\ApiConsume\FlicoProject.BusinessLayer\bin\Debug\net6.0\FlicoProject.DtoLayer.pdb
+C:\Users\Bilge\Desktop\Flico\FlicoBackend\ApiConsume\FlicoProject.BusinessLayer\obj\Debug\net6.0\FlicoPro.A3B9E8CD.Up2Date
