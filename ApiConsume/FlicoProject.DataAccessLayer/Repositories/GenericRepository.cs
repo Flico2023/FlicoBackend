@@ -11,7 +11,7 @@ namespace FlicoProject.DataAccessLayer.Repositories
 {
     public class GenericRepository<T> : IGenericDal<T> where T : class
     {
-        private readonly Context _context;
+        protected readonly Context _context;
 
         public GenericRepository(Context context)
         {

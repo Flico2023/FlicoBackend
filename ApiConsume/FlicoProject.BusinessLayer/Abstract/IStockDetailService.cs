@@ -9,5 +9,10 @@ namespace FlicoProject.BusinessLayer.Abstract
 {
     public interface IStockDetailService : IGenericService<StockDetail>
     {
+        void DeleteProductStockDetails(int productID);
+
+        void InsertStockDetails(List<StockDetail> stockDetails);
+
+        List<StockDetail> GetStockDetailsByProductId(int productID);
     }
 }

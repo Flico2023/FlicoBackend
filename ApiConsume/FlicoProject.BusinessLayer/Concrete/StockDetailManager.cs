@@ -20,6 +20,18 @@ namespace FlicoProject.BusinessLayer.Concrete
             _StockDetailDal = stockDetailDal;
         }
 
+        public void DeleteProductStockDetails(int productID)
+        {
+            _StockDetailDal.DeleteProductStockDetails(productID);
+        }
+        public void InsertStockDetails(List<StockDetail> stockDetails)
+        {
+            _StockDetailDal.InsertStockDetails(stockDetails);
+        }
+        public List<StockDetail> GetStockDetailsByProductId(int productID)
+        {
+            return _StockDetailDal.GetStockDetailsByProductId(productID);
+        }
         public int TDelete(int id)
         {
             var stockDetail = _StockDetailDal.GetByID(id);

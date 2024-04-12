@@ -4,11 +4,13 @@ using FlicoProject.BusinessLayer.Concrete.Mail;
 using FlicoProject.BusinessLayer.Concrete.Validators.OrdersValidators;
 using FlicoProject.BusinessLayer.Concrete.Validators.PostCartDtoValidtors;
 using FlicoProject.BusinessLayer.Concrete.Validators.PostContactMessage;
+using FlicoProject.BusinessLayer.Concrete.Validators.ProductValidators;
 using FlicoProject.BusinessLayer.Validators;
 using FlicoProject.DataAccessLayer.Abstract;
 using FlicoProject.DataAccessLayer.Concrete;
 using FlicoProject.DataAccessLayer.EntityFramework;
 using FlicoProject.DtoLayer;
+using FlicoProject.DtoLayer.ProductDTOs;
 using FlicoProject.EntityLayer.Concrete;
 using FlicoProject.WebApi.Mappers;
 using FluentValidation;
@@ -76,6 +78,8 @@ builder.Services.AddScoped<IValidator<PostContactMessageDto>, PostContactMessage
 builder.Services.AddScoped<IValidator<PutContactMessageDto>, PutContactMessageDtoValidator>();
 builder.Services.AddScoped<IValidator<PostCartDto>, PostCartDtoFluentValidator>();
 builder.Services.AddScoped<IValidator<OrderDto>, OrderDtoValidator>();
+builder.Services.AddScoped<IValidator<ProductRequestDTO>, ProductRequestDTOValidator>();
+
 
 
 //OTHER VALIDATIONS
