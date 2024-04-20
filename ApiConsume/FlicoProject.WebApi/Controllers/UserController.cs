@@ -3,7 +3,9 @@ using FlicoProject.BusinessLayer.Abstract;
 using FlicoProject.BusinessLayer.Concrete;
 using FlicoProject.DtoLayer;
 using FlicoProject.EntityLayer.Concrete;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using static System.String;
 
@@ -11,16 +13,23 @@ namespace FlicoProject.WebApi.Controllers
 {
     [Route("api/user")]
     [ApiController]
+    [Authorize]
     public class UserController : ControllerBase
     {
 
         private readonly IUserService _userService;
         private readonly IMapper _mapper;
+        private readonly SignInManager<AppUser> _signInManager;
+        private readonly UserManager<AppUser> _userManager;
+        private readonly RoleManager<AppRole> _roleManager;
 
-        public UserController(IUserService userservice, IMapper mapper)
+        public UserController(IUserService userservice, IMapper mapper,SignInManager<AppUser> signInManager,UserManager<AppUser> userManager,RoleManager<AppRole> rolemanager)
         {
             _userService = userservice;
             _mapper = mapper;
+            _signInManager = signInManager;
+            _userManager = userManager;
+            _roleManager = rolemanager;
         }
         [HttpGet]
         public IActionResult UserList([FromQuery] int pageSize, int PageIndex, string? email, string? name, string? surname, string? phone)
@@ -41,7 +50,7 @@ namespace FlicoProject.WebApi.Controllers
             }
             if(!IsNullOrEmpty(phone))
             {
-                users = users.Where(x => x.Phone.ToLower() == phone.ToLower()).ToList();
+                users = users.Where(x => x.PhoneNumber.ToLower() == phone.ToLower()).ToList();
             }
             var totalCount = users.Count;
             users = users.Skip(pageSize * (PageIndex - 1)).Take(pageSize).ToList();
@@ -57,32 +66,59 @@ namespace FlicoProject.WebApi.Controllers
 
         }
         [HttpPost("SignUp")]
-        public IActionResult Register(RegisterUser userdto)
+        [AllowAnonymous]
+        public async Task<IActionResult> Register(RegisterUser userdto)
         {
-            var user = new User();
-            user = _mapper.Map<User>(userdto);
-            if (_userService.TInsert(user) == 1)
+            if(ModelState.IsValid)
             {
-                return Created("",JwtManager.GenerateToken(user));
+                AppUser appUser = new AppUser()
+                {
+                    UserName = userdto.Email,
+                    Name = userdto.Name,
+                    Surname =userdto.Surname,
+                    Email =userdto.Email,
+                    PhoneNumber =userdto.Phone
+                };
+                var result = await _userManager.CreateAsync(appUser, userdto.Password);
+                var role = await _userManager.AddToRoleAsync(appUser, "NormalUser");
+                if (result.Succeeded&& role.Succeeded)
+                {
+                    var user = _userService.TGetList().Find(x => x.Email == userdto.Email);
+                    
+                    return Created("Register Succesful",JwtManager.GenerateToken(user,"NormalUser"));
+                }
+                else
+                {
+                    return BadRequest(new ResultDTO<AppUser>("This Email is already used"));
+                }
             }
-            else
-            {
-                return BadRequest(new ResultDTO<User>("Form values are not valid."));
+            else { return BadRequest();
             }
+            
+            
         }
         [HttpPost("SignIn")]
-        public IActionResult Login(LoginUser userdto)
+        [AllowAnonymous]
+        public async Task<IActionResult> Login(LoginUser userdto)
         {
-            var user = new User();
-            user = _userService.TGetList().Find(x=>x.Email == userdto.Mail && x.Password == userdto.Password);
-            if (user != null)
+            var user = new AppUser();
+            user = _userService.TGetList().Find(x=>x.Email == userdto.Mail);
+            if (user == null)
             {
-                //var values =JwtManager.GenerateToken(user);
-                return Ok(JwtManager.GenerateToken(user));
+                return BadRequest(new ResultDTO<LoginUser>("Email is not exist"));
             }
             else
             {
-                return BadRequest(new ResultDTO<LoginUser>("Form values are not valid."));
+                var result = await _signInManager.PasswordSignInAsync(user, userdto.Password, false, true);
+                var role = await _userManager.GetRolesAsync(user);
+                if (result.Succeeded)
+                {
+                    return Ok(JwtManager.GenerateToken(user, role[0]));
+                }
+                else
+                {
+                    return BadRequest(new ResultDTO<LoginUser>("Password is incorrect"));
+                }
             }
         }
         [HttpDelete("{id}")]
@@ -98,21 +134,21 @@ namespace FlicoProject.WebApi.Controllers
                 var user = _userService.TGetByID(id);
                 _userService.TDelete(id);
 
-                return Ok(new ResultDTO<User>(user));
+                return Ok(new ResultDTO<AppUser>(user));
             }
         }
         [HttpPut("{id}")]
-        public IActionResult UpdateUser(int id, User user)
+        public IActionResult UpdateUser(int id, AppUser user)
         {
-            user.UserID = id;
+            user.Id = id;
             int result = _userService.TUpdate(user);
             if (result == 0)
             {
-                return BadRequest(new ResultDTO<User>("The user wanted to update could not be updated."));
+                return BadRequest(new ResultDTO<AppUser>("The user wanted to update could not be updated."));
             }
             else
             {
-                return Ok(new ResultDTO<User>(user));
+                return Ok(new ResultDTO<AppUser>(user));
             }
 
         }
@@ -122,9 +158,9 @@ namespace FlicoProject.WebApi.Controllers
             var user = _userService.TGetByID(id);
             if (user == null)
             {
-                return BadRequest(new ResultDTO<User>("The id to be looking for was not found."));
+                return BadRequest(new ResultDTO<AppUser>("The id to be looking for was not found."));
             }
-            return Ok(new ResultDTO<User>(user));
+            return Ok(new ResultDTO<AppUser>(user));
         }
 
         [HttpPost("load")]
@@ -136,26 +172,26 @@ namespace FlicoProject.WebApi.Controllers
             {
                 if(_userService.TInsert(user) == 0)
                 {
-                    return BadRequest(new ResultDTO<User>($"Error in {user.Name}"));
+                    return BadRequest(new ResultDTO<AppUser>($"Error in {user.Name}"));
                 }
             }
-            return Ok(new ResultDTO<List<User>>(users));
+            return Ok(new ResultDTO<List<AppUser>>(users));
         }
     }
 
     public class UserLoader
     {
-        public List<User> Load()
+        public List<AppUser> Load()
         {
-            var users = new List<User>();
+            var users = new List<AppUser>();
             for (int i = 0; i < 100; i++)
             {
-                var user = new User();
+                var user = new AppUser();
                 user.Name = "Name" + i;
                 user.Surname = "Surname" + i;
                 user.Email = "Email" + i;
-                user.Password = "Password" + i;
-                user.Phone = "Phone" + i;
+                user.PasswordHash = "Password" + i;
+                user.PhoneNumber = "Phone" + i;
                 users.Add(user);
             }
             return users;

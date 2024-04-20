@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using FlicoProject.BusinessLayer.Abstract;
 using FlicoProject.BusinessLayer.Concrete.Mail;
-using FlicoProject.DataAccessLayer.Migrations;
+//using FlicoProject.DataAccessLayer.Migrations;
 using FlicoProject.DtoLayer;
 using FlicoProject.EntityLayer.Concrete;
 using Microsoft.AspNetCore.Http;

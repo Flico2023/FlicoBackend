@@ -13,6 +13,7 @@ using FlicoProject.WebApi.Mappers;
 using FluentValidation;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 
@@ -42,7 +43,6 @@ builder.Services.AddScoped<ICartDal, EFCartDal>();
 builder.Services.AddScoped<ICartService, CartManager>();
 builder.Services.AddScoped<IContactMessageDal, EFContactMessageDal>();
 builder.Services.AddScoped<IContactMessageService, ContactMessageManager>();
-
 builder.Services.AddCors(opt =>
 {
     opt.AddPolicy("FlicoApiCors", opts =>
@@ -94,10 +94,12 @@ builder.Services.AddScoped<IPostContactDtoOtherValidators, PostContactDtoOtherVa
 builder.Services.AddScoped<IPutContactDtoOtherValidators, PutContactDtoOtherValidators>();
 
 builder.Services.AddScoped<IMailService, MailService>();
-
+builder.Services.AddDbContext<Context>();
+builder.Services.AddIdentity<AppUser,AppRole>().AddEntityFrameworkStores<Context>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
+
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();

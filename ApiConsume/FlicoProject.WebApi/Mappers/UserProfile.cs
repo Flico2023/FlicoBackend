@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using FlicoProject.BusinessLayer.Concrete;
 using FlicoProject.DtoLayer;
 using FlicoProject.EntityLayer.Concrete;
 
@@ -12,6 +13,8 @@ namespace FlicoProject.WebApi.Mappers
             CreateMap<UserDto, User>();
             CreateMap<User,RegisterUser>();
             CreateMap<RegisterUser, User>();
+            CreateMap<RegisterUser,AppUser>();
+            CreateMap<AppUser,RegisterUser>();
         }
     }
 }

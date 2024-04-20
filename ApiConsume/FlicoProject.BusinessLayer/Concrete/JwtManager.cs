@@ -13,9 +13,10 @@ namespace FlicoProject.BusinessLayer.Concrete
 {
     public class JwtManager
     {
-        public static TokenResponse GenerateToken(User user) { 
+        public static TokenResponse GenerateToken(AppUser user,String role) { 
             var claims = new List<Claim>();
-            claims.Add(new Claim(ClaimTypes.NameIdentifier, user.UserID.ToString()));
+            claims.Add(new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()));
+            claims.Add(new Claim(ClaimTypes.Role,role));
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("FlicoIsAwesomeFlicoIsAwesomeFlicoIsAwesome"));
             var SigninCredentials = new SigningCredentials(key,SecurityAlgorithms.HmacSha256);
             var expireDate = DateTime.UtcNow.AddDays(90);

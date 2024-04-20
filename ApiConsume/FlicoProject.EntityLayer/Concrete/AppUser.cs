@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FlicoProject.BusinessLayer.Concrete
+namespace FlicoProject.EntityLayer.Concrete
 {
-    public class AppUser:IdentityUser
+    public class AppUser:IdentityUser<int>
     {
         public string Name { get; set; }
         public string Surname { get; set; }

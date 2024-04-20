@@ -1,4 +1,5 @@
-﻿using FlicoProject.DataAccessLayer.Abstract;
+﻿//using FlicoProject.BusinessLayer.Concrete;
+using FlicoProject.DataAccessLayer.Abstract;
 using FlicoProject.DataAccessLayer.Concrete;
 using FlicoProject.DataAccessLayer.Repositories;
 using FlicoProject.EntityLayer.Concrete;
@@ -10,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace FlicoProject.DataAccessLayer.EntityFramework
 {
-    public class EFUserDal:GenericRepository<User>,IUserDal
+    public class EFUserDal:GenericRepository<AppUser>,IUserDal
     {
         public EFUserDal(Context context) : base(context)
         {

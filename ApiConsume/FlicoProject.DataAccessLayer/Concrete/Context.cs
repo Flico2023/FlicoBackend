@@ -1,5 +1,6 @@
-﻿using FlicoProject.BusinessLayer.Concrete;
+﻿//using FlicoProject.BusinessLayer.Concrete;
 using FlicoProject.EntityLayer.Concrete;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -10,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace FlicoProject.DataAccessLayer.Concrete
 {
-    public class Context:IdentityDbContext<AppUser>
+    public class Context : IdentityDbContext<AppUser,AppRole,int>
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -23,11 +24,9 @@ namespace FlicoProject.DataAccessLayer.Concrete
         public DbSet<Closet> Closets { get; set; }
         public DbSet<Outsource> Outsources { get; set; }
         public DbSet<OutsourceProduct> OutsourceProducts { get; set; }
-        public DbSet<User> Users { get; set; }
+        //public DbSet<User> Users { get; set; }
         public DbSet<Cart> Carts { get; set; }
-
         public DbSet<Faq> Faqs { get; set; }
-
         public DbSet<ContactMessage> ContactMessages { get; set; }
 
     }
