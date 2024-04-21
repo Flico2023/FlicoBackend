@@ -13,7 +13,6 @@ namespace FlicoProject.WebApi.Controllers
 {
     [Route("api/user")]
     [ApiController]
-    [Authorize]
     public class UserController : ControllerBase
     {
 
@@ -31,7 +30,7 @@ namespace FlicoProject.WebApi.Controllers
             _userManager = userManager;
             _roleManager = rolemanager;
         }
-        [HttpGet]
+        [HttpGet,Authorize(Roles ="Admin")]
         public IActionResult UserList([FromQuery] int pageSize, int PageIndex, string? email, string? name, string? surname, string? phone)
         {
             var users = _userService.TGetList();
@@ -122,6 +121,7 @@ namespace FlicoProject.WebApi.Controllers
             }
         }
         [HttpDelete("{id}")]
+        [Authorize(Roles ="Admin")]
         public IActionResult DeleteUser(int id)
         {
             var userid = _userService.TDelete(id);
@@ -137,7 +137,7 @@ namespace FlicoProject.WebApi.Controllers
                 return Ok(new ResultDTO<AppUser>(user));
             }
         }
-        [HttpPut("{id}")]
+        [HttpPut("{id}"),Authorize(Roles = "Admin")]
         public IActionResult UpdateUser(int id, AppUser user)
         {
             user.Id = id;
@@ -152,7 +152,7 @@ namespace FlicoProject.WebApi.Controllers
             }
 
         }
-        [HttpGet("{id}")]
+        [HttpGet("{id}"),Authorize(Roles = "Admin")]
         public IActionResult GetUser(int id)
         {
             var user = _userService.TGetByID(id);
@@ -163,7 +163,7 @@ namespace FlicoProject.WebApi.Controllers
             return Ok(new ResultDTO<AppUser>(user));
         }
 
-        [HttpPost("load")]
+        [HttpPost("load"), Authorize(Roles = "Admin")]
         public IActionResult LoadUser()
         {
            var loaders = new UserLoader();

@@ -105,6 +105,10 @@
             "NETCore.MailKit": {
               "target": "Package",
               "version": "[2.1.0, )"
+            },
+            "Swashbuckle.AspNetCore.Filters": {
+              "target": "Package",
+              "version": "[6.0.0, )"
             }
           },
           "imports": [
@@ -206,6 +210,10 @@
             "Microsoft.Extensions.Identity.Core": {
               "target": "Package",
               "version": "[6.0.28, )"
+            },
+            "Swashbuckle.AspNetCore.Filters": {
+              "target": "Package",
+              "version": "[6.0.0, )"
             }
           },
           "imports": [
@@ -307,6 +315,10 @@
             "Microsoft.Extensions.Identity.Core": {
               "target": "Package",
               "version": "[6.0.28, )"
+            },
+            "Swashbuckle.AspNetCore.Filters": {
+              "target": "Package",
+              "version": "[6.0.0, )"
             }
           },
           "imports": [
@@ -408,6 +420,10 @@
             "Microsoft.Extensions.Identity.Core": {
               "target": "Package",
               "version": "[6.0.28, )"
+            },
+            "Swashbuckle.AspNetCore.Filters": {
+              "target": "Package",
+              "version": "[6.0.0, )"
             }
           },
           "imports": [

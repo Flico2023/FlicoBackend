@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FlicoProject.DtoLayer")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+93f89483101c85e20ff86cdcc47c77000fc67392")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+205c1477290059aa9bd1d5690cde84014c17dcd2")]
 [assembly: System.Reflection.AssemblyProductAttribute("FlicoProject.DtoLayer")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FlicoProject.DtoLayer")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

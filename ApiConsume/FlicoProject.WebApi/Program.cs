@@ -15,6 +15,8 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi.Models;
+using Swashbuckle.AspNetCore.Filters;
 using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -68,7 +70,19 @@ builder.Services.AddControllers();
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(options =>
+{
+    options.AddSecurityDefinition("auth", new OpenApiSecurityScheme
+    {
+        Description = "Standart Authorization",
+        In = ParameterLocation.Header,
+        Name = "Auth",
+        Type =SecuritySchemeType.ApiKey
+
+    }) ;
+    options.OperationFilter<SecurityRequirementsOperationFilter>();
+
+});
 
 
 //AUTO MAPPER

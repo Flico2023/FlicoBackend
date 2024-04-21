@@ -885,3 +885,8 @@ C:\Users\kerem\OneDrive\Belgeler\GitHub\FlicoBackend\ApiConsume\FlicoProject.Web
 C:\Users\kerem\OneDrive\Belgeler\GitHub\FlicoBackend\ApiConsume\FlicoProject.WebApi\obj\Debug\net6.0\FlicoProject.WebApi.genruntimeconfig.cache
 C:\Users\kerem\OneDrive\Belgeler\GitHub\FlicoBackend\ApiConsume\FlicoProject.WebApi\obj\Debug\net6.0\ref\FlicoProject.WebApi.dll
 C:\Users\kerem\OneDrive\Belgeler\GitHub\FlicoBackend\ApiConsume\FlicoProject.WebApi\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\kerem\OneDrive\Belgeler\GitHub\FlicoBackend\ApiConsume\FlicoProject.WebApi\bin\Debug\net6.0\Microsoft.DotNet.PlatformAbstractions.dll
+C:\Users\kerem\OneDrive\Belgeler\GitHub\FlicoBackend\ApiConsume\FlicoProject.WebApi\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\kerem\OneDrive\Belgeler\GitHub\FlicoBackend\ApiConsume\FlicoProject.WebApi\bin\Debug\net6.0\Scrutor.dll
+C:\Users\kerem\OneDrive\Belgeler\GitHub\FlicoBackend\ApiConsume\FlicoProject.WebApi\bin\Debug\net6.0\Swashbuckle.AspNetCore.Annotations.dll
+C:\Users\kerem\OneDrive\Belgeler\GitHub\FlicoBackend\ApiConsume\FlicoProject.WebApi\bin\Debug\net6.0\Swashbuckle.AspNetCore.Filters.dll
