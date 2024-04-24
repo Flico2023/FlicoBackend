@@ -12,24 +12,28 @@ using System.Text;
 using System.Threading.Tasks;
 using static System.String;
 using NanoidDotNet;
+using System.Web.Http.Filters;
+using FlicoProject.DtoLayer.ProductDTOs;
 
 namespace FlicoProject.BusinessLayer.Concrete
 {
     public class OrderManager : IOrderService
     {
         private readonly IOrderDal _orderDal;
+        private IOrderProductDal _orderProductDal;
         private readonly IUserDal _userDal;
-        private readonly IValidator<OrderDto> _validator;
+        private readonly IValidator<OrderPostWithProductsDto> _validator;
 
-        public OrderManager(IOrderDal orderDal, IUserDal userDal, IValidator<OrderDto> validator)
+        public OrderManager(IOrderDal orderDal, IOrderProductDal orderProductDal,  IUserDal userDal, IValidator<OrderPostWithProductsDto> validator)
         {
             _orderDal = orderDal;
+            _orderProductDal = orderProductDal;
             _validator = validator;
             _userDal = userDal;
         }
-        public List<Order> FilterOrderList(List<Order> orders, string status, string email, string fullname, int? id, int? UserID)
+        public List<OrderWithProductsDto> FilterOrderList(List<Order> orders, string status, string email, string fullname, DateTime endDate, DateTime startDate, int? id, int? UserID)
         {
-            if(id != null)
+            if (id != null)
             {
                 orders = orders.Where(x => x.Id == id).ToList();
             }
@@ -39,7 +43,7 @@ namespace FlicoProject.BusinessLayer.Concrete
             }
             if (!IsNullOrWhiteSpace(fullname))
             {
-                orders = orders.Where(x => Concat( _userDal.GetByID(x.UserID).Name, _userDal.GetByID(x.UserID).Surname) == fullname).ToList();
+                orders = orders.Where(x => Concat(_userDal.GetByID(x.UserID).Name, _userDal.GetByID(x.UserID).Surname) == fullname).ToList();
             }
             if (!IsNullOrWhiteSpace(UserID.ToString()))
             {
@@ -49,20 +53,43 @@ namespace FlicoProject.BusinessLayer.Concrete
             {
                 orders = orders.Where(x => x.OrderStatus == status).ToList();
             }
-            return orders;
+            if ((!IsNullOrWhiteSpace(endDate.ToString()) && !IsNullOrWhiteSpace(startDate.ToString())) && endDate >= startDate && endDate>DateTime.MinValue)
+            {
+                orders = orders.Where(x => x.CreatedAt >= startDate && x.CreatedAt <= endDate).ToList();
+            }
+
+            var result = orders.Select(x => new OrderWithProductsDto
+            {
+                Id = x.Id,
+                OrderID = x.OrderID,
+                AirportID = x.AirportID,
+                ClosetID = x.ClosetID,
+                UserID = x.UserID,
+                StuffID = x.StuffID,
+                OrderStatus = x.OrderStatus,
+                TotalPrice = x.TotalPrice,
+                StartDate = x.StartDate,
+                EndDate = x.EndDate,
+                CreatedAt = x.CreatedAt,
+                OrderProducts = _orderProductDal.GetOrderProductsByOrderId(x.Id)
+            }).ToList();
+
+
+            return result;
+            
         }
-        public ResultDTO<OrderDto> ValidatePostOrderDto(OrderDto order)
+        public ResultDTO<OrderPostWithProductsDto> ValidatePostOrderDto(OrderPostWithProductsDto order)
         {
             var result = _validator.Validate(order);
             if(result.IsValid)
             {
-                return new ResultDTO<OrderDto>(order);
+                return new ResultDTO<OrderPostWithProductsDto>(order);
             }
             else
             {
                 var errors = result.Errors.Select(x => x.ErrorMessage).ToList();
                 var error = errors[0] ?? "Something went wrong";
-                return new ResultDTO<OrderDto>(errors[0]);
+                return new ResultDTO<OrderPostWithProductsDto>(errors[0]);
             }
         }
         public int TDelete(int id)

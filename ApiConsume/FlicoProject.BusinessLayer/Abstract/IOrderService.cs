@@ -15,8 +15,8 @@ namespace FlicoProject.BusinessLayer.Abstract
         int TUpdate(Order t);
         List<Order> TGetList();
         Order TGetByID(int id);
-        ResultDTO<OrderDto> ValidatePostOrderDto(OrderDto order);
-        List<Order> FilterOrderList(List<Order> orders, string status, string email, string fullname, int? id, int? UserID);
+        ResultDTO<OrderPostWithProductsDto> ValidatePostOrderDto(OrderPostWithProductsDto order);
+        List<OrderWithProductsDto> FilterOrderList(List<Order> orders, string status, string email, string fullname, DateTime endDate, DateTime startDate, int? id, int? UserID);
 
 
     }

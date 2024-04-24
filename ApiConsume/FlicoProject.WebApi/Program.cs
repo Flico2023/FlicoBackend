@@ -44,6 +44,8 @@ builder.Services.AddScoped<IContactMessageDal, EFContactMessageDal>();
 builder.Services.AddScoped<IContactMessageService, ContactMessageManager>();
 builder.Services.AddScoped<IOrderDal, EFOrderDal>();
 builder.Services.AddScoped<IOrderService, OrderManager>();
+builder.Services.AddScoped<IOrderProductDal, EFOrderProductDal>();
+builder.Services.AddScoped<IOrderProductService, OrderProductManager>();
 
 builder.Services.AddCors(opt =>
 {
@@ -71,13 +73,14 @@ builder.Services.AddAutoMapper(typeof(UserProfile));
 builder.Services.AddAutoMapper(typeof(CartProfile));
 builder.Services.AddAutoMapper(typeof(ContactMessageProfile));
 builder.Services.AddAutoMapper(typeof(OrderProfile));
+builder.Services.AddAutoMapper(typeof(OrderProductProfile));
 
 
 //FLUENT VALIDATION
 builder.Services.AddScoped<IValidator<PostContactMessageDto>, PostContactMessageDtoValidator>();
 builder.Services.AddScoped<IValidator<PutContactMessageDto>, PutContactMessageDtoValidator>();
 builder.Services.AddScoped<IValidator<PostCartDto>, PostCartDtoFluentValidator>();
-builder.Services.AddScoped<IValidator<OrderDto>, OrderDtoValidator>();
+builder.Services.AddScoped<IValidator<OrderPostWithProductsDto>, OrderPostWithProductsDtoValidator>();
 builder.Services.AddScoped<IValidator<ProductRequestDTO>, ProductRequestDTOValidator>();
 
 

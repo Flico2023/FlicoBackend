@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using FlicoProject.BusinessLayer.Abstract;
 using FlicoProject.DtoLayer;
+using FlicoProject.DtoLayer.ProductDTOs;
 using FlicoProject.EntityLayer.Concrete;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -16,53 +17,70 @@ namespace FlicoProject.WebApi.Controllers
     public class OrderController : ControllerBase
     {
         private readonly IOrderService _orderService;
+        private readonly IOrderProductService _OrderProductservice;
         private readonly IMapper _mapper;
 
 
-        public OrderController(IOrderService orderService, IMapper mapper)
+        public OrderController(IOrderService orderService, IOrderProductService OrderProductservice, IMapper mapper)
         {
             _orderService = orderService;
+            _OrderProductservice = OrderProductservice;
             _mapper = mapper;
         }
+
+
         [HttpGet]
-        public IActionResult OrderList([FromQuery] int pageSize, int pageIndex, string? email, string? status, int? id, string? fullname, int? UserID)
+        public IActionResult OrderList([FromQuery] int pageSize, int pageIndex, string? email, string? status, int? id, string? fullname, DateTime endDate, DateTime startDate, int? UserID)
         {
             var orders = _orderService.TGetList().ToList();
 
-            List<Order> FilteredOrder = _orderService.FilterOrderList(orders, status, email, fullname,  id, UserID );
+            List<OrderWithProductsDto> FilteredOrder = _orderService.FilterOrderList(orders, status, email, fullname,endDate, startDate,  id, UserID );
 
 
             var totalCount = FilteredOrder.Count;
             FilteredOrder = FilteredOrder.Skip(pageSize * (pageIndex - 1)).Take(pageSize).ToList();
             var OrderListPageDto = new OrderListPageDto();
-            OrderListPageDto.order = orders;
+            OrderListPageDto.Orders = FilteredOrder;
             OrderListPageDto.TotalCount = totalCount;
             OrderListPageDto.PageIndex = pageIndex;
             OrderListPageDto.PageSize = pageSize;
 
             return Ok(new ResultDTO<OrderListPageDto>(OrderListPageDto));
         }
+
+
+
         [HttpPost]
-        public IActionResult AddOrder(OrderDto orderdto)
+        public IActionResult AddOrder(OrderPostWithProductsDto OrderPostWithProductsDto)
         {   
-            var result = _orderService.ValidatePostOrderDto(orderdto);
+            var result = _orderService.ValidatePostOrderDto(OrderPostWithProductsDto);
             if (result.Success != true)
             {
                 return BadRequest(new ResultDTO<OrderDto>(result.Message));
             }
-            var order = new Order();
-            order = _mapper.Map<Order>(orderdto);
-            order.OrderID = Nanoid.Generate(size:8);
 
-            if (_orderService.TInsert(order) == 1)
-            {
-                return Created("", new ResultDTO<Order>(order));
-            }
-            else
+
+            var order = new Order();
+            order = _mapper.Map<Order>(OrderPostWithProductsDto.Order);
+            order.OrderID = Nanoid.Generate(size:8);
+            var orderProducts = OrderPostWithProductsDto.OrderProducts.Select(x => _mapper.Map<OrderProduct>(x)).ToList();
+
+
+            if (_orderService.TInsert(order) == 0)
             {
                 return BadRequest(new ResultDTO<Order>("Form values are not valid."));
             }
+
+            if (orderProducts.Any())
+            {
+                orderProducts.ForEach(x => x.OrderId = order.Id);
+                orderProducts.ForEach(x => _OrderProductservice.TInsert(x));
+            }
+
+            return Ok(new ResultDTO<Order>(order));
+
         }
+
         [HttpDelete("{id}")]
         public IActionResult DeleteOrder(int id)
         {
@@ -75,6 +93,8 @@ namespace FlicoProject.WebApi.Controllers
             {
                 var order = _orderService.TGetByID(id);
                 _orderService.TDelete(id);
+                _OrderProductservice.DeleteOrderProducts(id);
+
 
                 return Ok(new ResultDTO<Order>(order));
             }
@@ -102,7 +122,12 @@ namespace FlicoProject.WebApi.Controllers
             {
                 return BadRequest(new ResultDTO<Order>("The id to be looking for was not found."));
             }
-            return Ok(new ResultDTO<Order>(order));
+            var orderProducts = _OrderProductservice.GetOrderProductsByOrderId(id);
+
+            var orderwithProducts = _mapper.Map<OrderWithProductsDto>(order);
+            orderwithProducts.OrderProducts = orderProducts;
+
+            return Ok(orderwithProducts);
         }
     }
 }

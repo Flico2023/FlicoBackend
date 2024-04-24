@@ -19,9 +19,6 @@ namespace FlicoProject.EntityLayer.Concrete
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
         public DateTime CreatedAt { get; set; }
-        public int OrderProducts { get; set; }
-
-
 
     }
 }
