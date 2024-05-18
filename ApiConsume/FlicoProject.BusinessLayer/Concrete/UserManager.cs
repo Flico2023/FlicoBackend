@@ -34,20 +34,20 @@ namespace FlicoProject.BusinessLayer.Concrete
             }
         }
 
-        public User TGetByID(int id)
+        public AppUser TGetByID(int id)
         {
             return _userDal.GetByID(id);
         }
 
-        public List<User> TGetList()
+        public List<AppUser> TGetList()
         {
             return _userDal.GetList();
         }
 
-        public int TInsert(User t)
+        public int TInsert(AppUser t)
         {
             var airport = _userDal.GetList().Find(x => x.Email == t.Email);
-            if (IsNullOrWhiteSpace(t.Name) || IsNullOrWhiteSpace(t.Surname) || IsNullOrWhiteSpace(t.Email) || IsNullOrWhiteSpace(t.Password) || IsNullOrWhiteSpace(t.Phone) || airport != null)
+            if (IsNullOrWhiteSpace(t.Name) || IsNullOrWhiteSpace(t.Surname) || IsNullOrWhiteSpace(t.Email) || IsNullOrWhiteSpace(t.PasswordHash) || IsNullOrWhiteSpace(t.PhoneNumber) || airport != null)
             {
                 return 0;
             }
@@ -58,10 +58,10 @@ namespace FlicoProject.BusinessLayer.Concrete
             }
         }
 
-        public int TUpdate(User t)
+        public int TUpdate(AppUser t)
         {
-            var isvalid = _userDal.GetList().FirstOrDefault(x => x.UserID == t.UserID);
-            if (IsNullOrWhiteSpace(t.Name) || IsNullOrWhiteSpace(t.Surname) || IsNullOrWhiteSpace(t.Email) || IsNullOrWhiteSpace(t.Password) || IsNullOrWhiteSpace(t.Phone) || isvalid == null)
+            var isvalid = _userDal.GetList().FirstOrDefault(x => x.Id == t.Id);
+            if (IsNullOrWhiteSpace(t.Name) || IsNullOrWhiteSpace(t.Surname) || IsNullOrWhiteSpace(t.Email) || IsNullOrWhiteSpace(t.PasswordHash) || IsNullOrWhiteSpace(t.PhoneNumber) || isvalid == null)
             {
                 return 0;
             }

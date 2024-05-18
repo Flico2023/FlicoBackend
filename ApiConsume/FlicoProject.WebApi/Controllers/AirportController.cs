@@ -2,6 +2,7 @@
 using FlicoProject.BusinessLayer.Abstract;
 using FlicoProject.DtoLayer;
 using FlicoProject.EntityLayer.Concrete;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using static System.String;
@@ -27,7 +28,7 @@ namespace FlicoProject.WebApi.Controllers
             var airports = _airportservice.TGetList();
             return Ok(new ResultDTO<List<Airport>>(airports));
         }
-        [HttpPost]
+        [HttpPost, Authorize(Roles = "Admin")]
         public IActionResult AddAirport(AirportDto airportdto)
         {
             var airport = new Airport();
@@ -42,7 +43,7 @@ namespace FlicoProject.WebApi.Controllers
                 return BadRequest(new ResultDTO<Airport>("Form values are not valid."));
             }
         }
-        [HttpDelete("{id}")]
+        [HttpDelete("{id}"), Authorize(Roles = "Admin")]
         public IActionResult DeleteAirport(int id)
         {
             var airportid = _airportservice.TDelete(id);
@@ -58,7 +59,7 @@ namespace FlicoProject.WebApi.Controllers
                 return Ok(new ResultDTO<Airport>(airport));
             }
         }
-        [HttpPut("{id}")]
+        [HttpPut("{id}"), Authorize(Roles = "Admin")]
         public IActionResult UpdateAirport(int id,Airport airport)
         {
             airport.AirportID = id;
@@ -73,7 +74,7 @@ namespace FlicoProject.WebApi.Controllers
             }
 
         }
-        [HttpGet("{id}")]
+        [HttpGet("{id}"), Authorize(Roles = "Admin")]
         public IActionResult GetAirport(int id)
         {
             var airport = _airportservice.TGetByID(id);

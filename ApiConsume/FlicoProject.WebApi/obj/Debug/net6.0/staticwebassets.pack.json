@@ -1,8 +1,148 @@
 {
   "Files": [
     {
+      "Id": "C:\\Users\\Emre\\Desktop\\FLICO\\FlicoBackend\\ApiConsume\\FlicoProject.WebApi\\wwwroot\\product_images\\0rahfrhf.jpg",
+      "PackagePath": "staticwebassets\\product_images\\0rahfrhf.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Emre\\Desktop\\FLICO\\FlicoBackend\\ApiConsume\\FlicoProject.WebApi\\wwwroot\\product_images\\0u5t2pjc.jpg",
+      "PackagePath": "staticwebassets\\product_images\\0u5t2pjc.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Emre\\Desktop\\FLICO\\FlicoBackend\\ApiConsume\\FlicoProject.WebApi\\wwwroot\\product_images\\2pi00oyh.jpg",
+      "PackagePath": "staticwebassets\\product_images\\2pi00oyh.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Emre\\Desktop\\FLICO\\FlicoBackend\\ApiConsume\\FlicoProject.WebApi\\wwwroot\\product_images\\31j3rsdc.jpg",
+      "PackagePath": "staticwebassets\\product_images\\31j3rsdc.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Emre\\Desktop\\FLICO\\FlicoBackend\\ApiConsume\\FlicoProject.WebApi\\wwwroot\\product_images\\3fnkyh2s.jpg",
+      "PackagePath": "staticwebassets\\product_images\\3fnkyh2s.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Emre\\Desktop\\FLICO\\FlicoBackend\\ApiConsume\\FlicoProject.WebApi\\wwwroot\\product_images\\aztxhlww.jpg",
+      "PackagePath": "staticwebassets\\product_images\\aztxhlww.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Emre\\Desktop\\FLICO\\FlicoBackend\\ApiConsume\\FlicoProject.WebApi\\wwwroot\\product_images\\bqraulyi.jpg",
+      "PackagePath": "staticwebassets\\product_images\\bqraulyi.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Emre\\Desktop\\FLICO\\FlicoBackend\\ApiConsume\\FlicoProject.WebApi\\wwwroot\\product_images\\cmtqkvl2.jpg",
+      "PackagePath": "staticwebassets\\product_images\\cmtqkvl2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Emre\\Desktop\\FLICO\\FlicoBackend\\ApiConsume\\FlicoProject.WebApi\\wwwroot\\product_images\\cxkxqlxp.jpg",
+      "PackagePath": "staticwebassets\\product_images\\cxkxqlxp.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Emre\\Desktop\\FLICO\\FlicoBackend\\ApiConsume\\FlicoProject.WebApi\\wwwroot\\product_images\\d0pediro.jpg",
+      "PackagePath": "staticwebassets\\product_images\\d0pediro.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Emre\\Desktop\\FLICO\\FlicoBackend\\ApiConsume\\FlicoProject.WebApi\\wwwroot\\product_images\\djbhvkvb.png",
+      "PackagePath": "staticwebassets\\product_images\\djbhvkvb.png"
+    },
+    {
+      "Id": "C:\\Users\\Emre\\Desktop\\FLICO\\FlicoBackend\\ApiConsume\\FlicoProject.WebApi\\wwwroot\\product_images\\djimtoxa.jpg",
+      "PackagePath": "staticwebassets\\product_images\\djimtoxa.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Emre\\Desktop\\FLICO\\FlicoBackend\\ApiConsume\\FlicoProject.WebApi\\wwwroot\\product_images\\f22g4yoc.jpg",
+      "PackagePath": "staticwebassets\\product_images\\f22g4yoc.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Emre\\Desktop\\FLICO\\FlicoBackend\\ApiConsume\\FlicoProject.WebApi\\wwwroot\\product_images\\f2kox5co.jpg",
+      "PackagePath": "staticwebassets\\product_images\\f2kox5co.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Emre\\Desktop\\FLICO\\FlicoBackend\\ApiConsume\\FlicoProject.WebApi\\wwwroot\\product_images\\fau4haeh.jpg",
+      "PackagePath": "staticwebassets\\product_images\\fau4haeh.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Emre\\Desktop\\FLICO\\FlicoBackend\\ApiConsume\\FlicoProject.WebApi\\wwwroot\\product_images\\gtpowhhr.png",
+      "PackagePath": "staticwebassets\\product_images\\gtpowhhr.png"
+    },
+    {
+      "Id": "C:\\Users\\Emre\\Desktop\\FLICO\\FlicoBackend\\ApiConsume\\FlicoProject.WebApi\\wwwroot\\product_images\\i1mq2nyc.jpg",
+      "PackagePath": "staticwebassets\\product_images\\i1mq2nyc.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Emre\\Desktop\\FLICO\\FlicoBackend\\ApiConsume\\FlicoProject.WebApi\\wwwroot\\product_images\\irrebcbx.png",
+      "PackagePath": "staticwebassets\\product_images\\irrebcbx.png"
+    },
+    {
+      "Id": "C:\\Users\\Emre\\Desktop\\FLICO\\FlicoBackend\\ApiConsume\\FlicoProject.WebApi\\wwwroot\\product_images\\m4qbsc1k.png",
+      "PackagePath": "staticwebassets\\product_images\\m4qbsc1k.png"
+    },
+    {
+      "Id": "C:\\Users\\Emre\\Desktop\\FLICO\\FlicoBackend\\ApiConsume\\FlicoProject.WebApi\\wwwroot\\product_images\\mfl4v3ph.jpg",
+      "PackagePath": "staticwebassets\\product_images\\mfl4v3ph.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Emre\\Desktop\\FLICO\\FlicoBackend\\ApiConsume\\FlicoProject.WebApi\\wwwroot\\product_images\\nbjclc21.jpg",
+      "PackagePath": "staticwebassets\\product_images\\nbjclc21.jpg"
+    },
+    {
       "Id": "C:\\Users\\Emre\\Desktop\\FLICO\\FlicoBackend\\ApiConsume\\FlicoProject.WebApi\\wwwroot\\product_images\\nm33zudt.png",
       "PackagePath": "staticwebassets\\product_images\\nm33zudt.png"
+    },
+    {
+      "Id": "C:\\Users\\Emre\\Desktop\\FLICO\\FlicoBackend\\ApiConsume\\FlicoProject.WebApi\\wwwroot\\product_images\\nn5u2npn.png",
+      "PackagePath": "staticwebassets\\product_images\\nn5u2npn.png"
+    },
+    {
+      "Id": "C:\\Users\\Emre\\Desktop\\FLICO\\FlicoBackend\\ApiConsume\\FlicoProject.WebApi\\wwwroot\\product_images\\nsrofwxn.jpg",
+      "PackagePath": "staticwebassets\\product_images\\nsrofwxn.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Emre\\Desktop\\FLICO\\FlicoBackend\\ApiConsume\\FlicoProject.WebApi\\wwwroot\\product_images\\oxdrwi3s.jpg",
+      "PackagePath": "staticwebassets\\product_images\\oxdrwi3s.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Emre\\Desktop\\FLICO\\FlicoBackend\\ApiConsume\\FlicoProject.WebApi\\wwwroot\\product_images\\pjeqttdg.jpg",
+      "PackagePath": "staticwebassets\\product_images\\pjeqttdg.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Emre\\Desktop\\FLICO\\FlicoBackend\\ApiConsume\\FlicoProject.WebApi\\wwwroot\\product_images\\ptla5urc.jpg",
+      "PackagePath": "staticwebassets\\product_images\\ptla5urc.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Emre\\Desktop\\FLICO\\FlicoBackend\\ApiConsume\\FlicoProject.WebApi\\wwwroot\\product_images\\rkfji2rx.jpg",
+      "PackagePath": "staticwebassets\\product_images\\rkfji2rx.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Emre\\Desktop\\FLICO\\FlicoBackend\\ApiConsume\\FlicoProject.WebApi\\wwwroot\\product_images\\rkxliaw0.jpg",
+      "PackagePath": "staticwebassets\\product_images\\rkxliaw0.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Emre\\Desktop\\FLICO\\FlicoBackend\\ApiConsume\\FlicoProject.WebApi\\wwwroot\\product_images\\sigum0ja.jpg",
+      "PackagePath": "staticwebassets\\product_images\\sigum0ja.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Emre\\Desktop\\FLICO\\FlicoBackend\\ApiConsume\\FlicoProject.WebApi\\wwwroot\\product_images\\snluhs12.jpg",
+      "PackagePath": "staticwebassets\\product_images\\snluhs12.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Emre\\Desktop\\FLICO\\FlicoBackend\\ApiConsume\\FlicoProject.WebApi\\wwwroot\\product_images\\sur0qxnu.jpg",
+      "PackagePath": "staticwebassets\\product_images\\sur0qxnu.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Emre\\Desktop\\FLICO\\FlicoBackend\\ApiConsume\\FlicoProject.WebApi\\wwwroot\\product_images\\sxm3bcpw.jpg",
+      "PackagePath": "staticwebassets\\product_images\\sxm3bcpw.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Emre\\Desktop\\FLICO\\FlicoBackend\\ApiConsume\\FlicoProject.WebApi\\wwwroot\\product_images\\tqvvxqeb.jpg",
+      "PackagePath": "staticwebassets\\product_images\\tqvvxqeb.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Emre\\Desktop\\FLICO\\FlicoBackend\\ApiConsume\\FlicoProject.WebApi\\wwwroot\\product_images\\whrhzr2r.jpg",
+      "PackagePath": "staticwebassets\\product_images\\whrhzr2r.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Emre\\Desktop\\FLICO\\FlicoBackend\\ApiConsume\\FlicoProject.WebApi\\wwwroot\\product_images\\xpzwhhbj.jpg",
+      "PackagePath": "staticwebassets\\product_images\\xpzwhhbj.jpg"
     },
     {
       "Id": "C:\\Users\\Emre\\Desktop\\FLICO\\FlicoBackend\\ApiConsume\\FlicoProject.WebApi\\wwwroot\\product_images\\yrwqstdr.jpg",

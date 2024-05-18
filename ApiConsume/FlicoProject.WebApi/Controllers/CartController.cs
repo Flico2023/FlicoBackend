@@ -2,6 +2,7 @@
 using FlicoProject.BusinessLayer.Abstract;
 using FlicoProject.DtoLayer;
 using FlicoProject.EntityLayer.Concrete;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using static System.String;
@@ -26,6 +27,7 @@ namespace FlicoProject.WebApi.Controllers
             _userService = userService;
         }
         [HttpGet]
+       // [Authorize(Roles = "Admin,NormalUser")]
         public IActionResult CartList([FromQuery] int pageSize, int pageIndex, int? userId, int? productId, string? status)
         {
 
@@ -58,7 +60,7 @@ namespace FlicoProject.WebApi.Controllers
 
             }).ToList();
 
-            var result = new PaginationResultDto<CartWithProductDto>(){
+            var result = new PaginationResultDto<CartWithProductDto>() {
                 Data = cartsWithProducts,
                 TotalCount = totalCount,
                 PageIndex = pageIndex,
@@ -67,6 +69,7 @@ namespace FlicoProject.WebApi.Controllers
             return Ok(new ResultDTO<PaginationResultDto<CartWithProductDto>>(result));
         }
         [HttpPost]
+       // [Authorize(Roles = "Admin,NormalUser")]
         public IActionResult AddCart(PostCartDto cartdto)
         {
             //burda da başkasının kartına ekleme yapabilirim gibi bir durum var. Bunu nasıl engelleyebiliriz?
@@ -96,6 +99,7 @@ namespace FlicoProject.WebApi.Controllers
             }
         }
         [HttpDelete("{id}")]
+       // [Authorize(Roles = "Admin,NormalUser")]
         public IActionResult DeleteCart(int id)
         {
             /*
@@ -116,6 +120,7 @@ namespace FlicoProject.WebApi.Controllers
             
         }
         [HttpPut("{id}")]
+       // [Authorize(Roles = "Admin,NormalUser")]
         public IActionResult UpdateCart(int id,[FromBody]PostCartDto cartdto)
         {
             //BUARAYA DA BİR KONUŞALIM BAŞKA BİR KİŞİNİN KARTI GÜNCELLENMEMELİ
@@ -155,6 +160,7 @@ namespace FlicoProject.WebApi.Controllers
             return Ok(new ResultDTO<Cart>(existingCart));
         }
         [HttpGet("{id}")]
+       // [Authorize(Roles = "Admin,NormalUser")]
         public IActionResult GetCart(int id)
         {
             var cart = _cartservice.TGetByID(id);

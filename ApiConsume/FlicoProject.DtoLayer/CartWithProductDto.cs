@@ -1,4 +1,5 @@
-﻿using FlicoProject.EntityLayer.Concrete;
+﻿//using FlicoProject.BusinessLayer.Concrete;
+using FlicoProject.EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,7 +17,7 @@ namespace FlicoProject.DtoLayer
 
         public string Size { get; set; }
         public int Amount { get; set; }
-        public User User { get; set; }
+        public AppUser User { get; set; }
 
     }
 }

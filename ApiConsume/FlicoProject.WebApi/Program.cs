@@ -13,7 +13,13 @@ using FlicoProject.DtoLayer.ProductDTOs;
 using FlicoProject.EntityLayer.Concrete;
 using FlicoProject.WebApi.Mappers;
 using FluentValidation;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi.Models;
+using Swashbuckle.AspNetCore.Filters;
+using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -41,7 +47,7 @@ builder.Services.AddScoped<ICartDal, EFCartDal>();
 builder.Services.AddScoped<ICartService, CartManager>();
 builder.Services.AddScoped<IContactMessageDal, EFContactMessageDal>();
 builder.Services.AddScoped<IContactMessageService, ContactMessageManager>();
-
+builder.Services.AddScoped<IFavouriteDal, EFFavouriteDal>();
 builder.Services.AddCors(opt =>
 {
     opt.AddPolicy("FlicoApiCors", opts =>
@@ -49,11 +55,37 @@ builder.Services.AddCors(opt =>
         opts.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
     });
 });
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(x =>
+{
+    x.RequireHttpsMetadata = false;
+    x.TokenValidationParameters = new
+    TokenValidationParameters
+    {
+        ValidIssuer = "http://localhost",
+        ValidAudience = "http://localhost",
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("FlicoIsAwesomeFlicoIsAwesomeFlicoIsAwesome")),
+        ValidateIssuerSigningKey = true,
+        ValidateLifetime = true,
+        ClockSkew = TimeSpan.Zero,
+    };
+});
 builder.Services.AddControllers();
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(options =>
+{
+    options.AddSecurityDefinition("auth", new OpenApiSecurityScheme
+    {
+        Description = "Standart Authorization",
+        In = ParameterLocation.Header,
+        Name = "Auth",
+        Type =SecuritySchemeType.ApiKey
+
+    }) ;
+    options.OperationFilter<SecurityRequirementsOperationFilter>();
+
+});
 
 
 //AUTO MAPPER
@@ -67,7 +99,7 @@ builder.Services.AddAutoMapper(typeof(OutsourceProductProfile));
 builder.Services.AddAutoMapper(typeof(UserProfile));
 builder.Services.AddAutoMapper(typeof(CartProfile));
 builder.Services.AddAutoMapper(typeof(ContactMessageProfile));
-
+builder.Services.AddAutoMapper(typeof(FavouriteProfile));
 //FLUENT VALIDATION
 builder.Services.AddScoped<IValidator<PostContactMessageDto>, PostContactMessageDtoValidator>();
 builder.Services.AddScoped<IValidator<PutContactMessageDto>, PutContactMessageDtoValidator>();
@@ -81,16 +113,19 @@ builder.Services.AddScoped<IPostContactDtoOtherValidators, PostContactDtoOtherVa
 builder.Services.AddScoped<IPutContactDtoOtherValidators, PutContactDtoOtherValidators>();
 
 builder.Services.AddScoped<IMailService, MailService>();
-
+builder.Services.AddDbContext<Context>();
+builder.Services.AddIdentity<AppUser,AppRole>().AddEntityFrameworkStores<Context>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
+
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
 }
 app.UseCors("FlicoApiCors");
+app.UseAuthentication();
 app.UseAuthorization();
 app.UseStaticFiles();
 app.MapControllers();

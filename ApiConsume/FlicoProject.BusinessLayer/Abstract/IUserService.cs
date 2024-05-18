@@ -1,4 +1,5 @@
-﻿using FlicoProject.EntityLayer.Concrete;
+﻿using FlicoProject.BusinessLayer.Concrete;
+using FlicoProject.EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace FlicoProject.BusinessLayer.Abstract
 {
-    public interface IUserService:IGenericService<User>
+    public interface IUserService:IGenericService<AppUser>
     {
     }
 }

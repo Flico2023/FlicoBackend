@@ -13,12 +13,12 @@ namespace FlicoProject.DtoLayer
         public string Message { get; set; }
         public T Data { get; set; }
 
-        /*public ResultDTO()
+        public ResultDTO()
         {
             Success = true;
             Message = null;
             Data = default(T);
-        }*/
+        }
 
         public ResultDTO(string message)
         {
@@ -33,5 +33,6 @@ namespace FlicoProject.DtoLayer
             Message = "the request was completed successfully";
             Data = data;
         }
+
     }
 }
