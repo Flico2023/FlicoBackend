@@ -149,8 +149,11 @@ namespace FlicoProject.WebApi.Controllers
 
             var productWithDetails = _mapper.Map<ProductWithDetailsDto>(product);
             productWithDetails.StockDetails = stockDetails;
-            
-            return Ok(productWithDetails);
+
+            var mostBoughtWith = _productService.GetMostBoughtProducts(id);
+
+
+            return Ok(new { mostBoughtWith, productWithDetails });
         }
 
 

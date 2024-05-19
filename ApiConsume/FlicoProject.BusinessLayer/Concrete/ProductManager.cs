@@ -18,12 +18,14 @@ namespace FlicoProject.BusinessLayer.Concrete
     public class ProductManager : IProductService 
     {
         private readonly IProductDal _ProductDal;
-        private IStockDetailDal _stockDetailDal;
+        private readonly IStockDetailDal _stockDetailDal;
         private readonly IValidator<ProductRequestDTO> _validator;
-        public ProductManager(IProductDal productDal, IValidator<ProductRequestDTO> validator, IStockDetailDal stockDetailDal) {
+        private readonly IOrderProductDal _orderProductDal;
+        public ProductManager(IProductDal productDal, IValidator<ProductRequestDTO> validator, IStockDetailDal stockDetailDal, IOrderProductDal orderProductDal) {
             _ProductDal = productDal;
             _stockDetailDal = stockDetailDal;
             _validator = validator;
+            _orderProductDal = orderProductDal;
         }
 
         public List<ProductWithDetailsDto> GetListByFilters(ProductFiltersDto filters) { 
@@ -242,6 +244,51 @@ namespace FlicoProject.BusinessLayer.Concrete
             }
         }
 
+        public List<Product> GetMostBoughtProducts(int productId)
+        {
+            int topNumberOfElements = 4;
+
+            var orderProducts = _orderProductDal.GetList();
+
+            var mostBoughtIdList = orderProducts
+                .Where(op => op.ProductId == productId)
+                .Join(orderProducts,
+                      op => op.OrderId,
+                      other => other.OrderId,
+                      (op, other) => new { CurrentProduct = op, OtherProduct = other })
+                .Where(x => x.OtherProduct.ProductId != productId)
+                .GroupBy(x => x.OtherProduct.ProductId)
+                .OrderByDescending(g => g.Count())
+                .Select(g => g.Key)
+                .Take(topNumberOfElements)
+                .ToList();
+
+            var numOfElements = mostBoughtIdList.Count;
+
+            if (numOfElements < topNumberOfElements)
+            {
+                var remainingElements = topNumberOfElements - numOfElements;
+
+                while(remainingElements > 0){
+                    var otherId = _ProductDal.GetList()
+                        .Where(p => !mostBoughtIdList.Contains(p.ProductID))
+                        .Select(p => p.ProductID);
+
+                    var random = new Random();
+                    var randomIndex = random.Next(0, otherId.Count());
+                    var randomId = otherId.ElementAt(randomIndex);
+                    remainingElements--;
+                    mostBoughtIdList.Add(randomId);
+
+                }
+            }
+
+
+            var products = mostBoughtIdList.Select(id => _ProductDal.GetByID(id)).ToList();
+
+            return products;
+       
+        }
 
     }
 }

@@ -15,6 +15,8 @@ namespace FlicoProject.BusinessLayer.Abstract
 
         ProductFiltersDto FormatProductFilters(string? category, string? subcategory, string? sizes, string? brand,  string? color, int? min, int? max, int? id, string productName);
 
-       List<ProductWithDetailsDto> GetListByFilters(ProductFiltersDto filters);
+        List<ProductWithDetailsDto> GetListByFilters(ProductFiltersDto filters);
+
+        List<Product> GetMostBoughtProducts(int productId);
     }
 }

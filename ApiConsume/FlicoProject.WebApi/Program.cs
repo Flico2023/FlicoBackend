@@ -48,6 +48,9 @@ builder.Services.AddScoped<ICartService, CartManager>();
 builder.Services.AddScoped<IContactMessageDal, EFContactMessageDal>();
 builder.Services.AddScoped<IContactMessageService, ContactMessageManager>();
 builder.Services.AddScoped<IFavouriteDal, EFFavouriteDal>();
+
+builder.Services.AddScoped<IOrderProductDal, EFOrderProductDal>();
+
 builder.Services.AddCors(opt =>
 {
     opt.AddPolicy("FlicoApiCors", opts =>
