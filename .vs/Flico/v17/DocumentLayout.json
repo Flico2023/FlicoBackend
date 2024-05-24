@@ -3,12 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\Bilge\\Desktop\\Flico\\FlicoBackend\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Bilge\\Desktop\\Flico\\FlicoBackend\\ApiConsume\\FlicoProject.DataAccessLayer\\Migrations\\20240524143605_orderproduct_warehouse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:ApiConsume\\FlicoProject.DataAccessLayer\\Migrations\\20240524143605_orderproduct_warehouse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{621154FA-D0AD-4634-98C0-4573385878A8}|ApiConsume\\FlicoProject.WebApi\\FlicoProject.WebApi.csproj|c:\\users\\bilge\\desktop\\flico\\flicobackend\\apiconsume\\flicoproject.webapi\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{621154FA-D0AD-4634-98C0-4573385878A8}|ApiConsume\\FlicoProject.WebApi\\FlicoProject.WebApi.csproj|solutionrelative:apiconsume\\flicoproject.webapi\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A36AB5F3-D025-47A7-B59C-590501E1CD97}|ApiConsume\\FlicoProject.BusinessLayer\\FlicoProject.BusinessLayer.csproj|c:\\users\\bilge\\desktop\\flico\\flicobackend\\apiconsume\\flicoproject.businesslayer\\concrete\\ordermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A36AB5F3-D025-47A7-B59C-590501E1CD97}|ApiConsume\\FlicoProject.BusinessLayer\\FlicoProject.BusinessLayer.csproj|solutionrelative:apiconsume\\flicoproject.businesslayer\\concrete\\ordermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9C2C26C3-2F6B-405D-8515-560403C47066}|ApiConsume\\FlicoProject.DtoLayer\\FlicoProject.DtoLayer.csproj|c:\\users\\bilge\\desktop\\flico\\flicobackend\\apiconsume\\flicoproject.dtolayer\\orderwithproductsdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9C2C26C3-2F6B-405D-8515-560403C47066}|ApiConsume\\FlicoProject.DtoLayer\\FlicoProject.DtoLayer.csproj|solutionrelative:apiconsume\\flicoproject.dtolayer\\orderwithproductsdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A36AB5F3-D025-47A7-B59C-590501E1CD97}|ApiConsume\\FlicoProject.BusinessLayer\\FlicoProject.BusinessLayer.csproj|c:\\users\\bilge\\desktop\\flico\\flicobackend\\apiconsume\\flicoproject.businesslayer\\concrete\\stockdetailmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A36AB5F3-D025-47A7-B59C-590501E1CD97}|ApiConsume\\FlicoProject.BusinessLayer\\FlicoProject.BusinessLayer.csproj|solutionrelative:apiconsume\\flicoproject.businesslayer\\concrete\\stockdetailmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{621154FA-D0AD-4634-98C0-4573385878A8}|ApiConsume\\FlicoProject.WebApi\\FlicoProject.WebApi.csproj|c:\\users\\bilge\\desktop\\flico\\flicobackend\\apiconsume\\flicoproject.webapi\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -29,14 +37,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{07EAB095-AF6F-47B0-81F2-5622CA8892D5}|ApiConsume\\FlicoProject.EntityLayer\\FlicoProject.EntityLayer.csproj|c:\\users\\bilge\\desktop\\flico\\flicobackend\\apiconsume\\flicoproject.entitylayer\\concrete\\warehouse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{07EAB095-AF6F-47B0-81F2-5622CA8892D5}|ApiConsume\\FlicoProject.EntityLayer\\FlicoProject.EntityLayer.csproj|solutionrelative:apiconsume\\flicoproject.entitylayer\\concrete\\warehouse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{07EAB095-AF6F-47B0-81F2-5622CA8892D5}|ApiConsume\\FlicoProject.EntityLayer\\FlicoProject.EntityLayer.csproj|c:\\users\\bilge\\desktop\\flico\\flicobackend\\apiconsume\\flicoproject.entitylayer\\concrete\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{07EAB095-AF6F-47B0-81F2-5622CA8892D5}|ApiConsume\\FlicoProject.EntityLayer\\FlicoProject.EntityLayer.csproj|solutionrelative:apiconsume\\flicoproject.entitylayer\\concrete\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A36AB5F3-D025-47A7-B59C-590501E1CD97}|ApiConsume\\FlicoProject.BusinessLayer\\FlicoProject.BusinessLayer.csproj|c:\\users\\bilge\\desktop\\flico\\flicobackend\\apiconsume\\flicoproject.businesslayer\\concrete\\ordermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A36AB5F3-D025-47A7-B59C-590501E1CD97}|ApiConsume\\FlicoProject.BusinessLayer\\FlicoProject.BusinessLayer.csproj|solutionrelative:apiconsume\\flicoproject.businesslayer\\concrete\\ordermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{621154FA-D0AD-4634-98C0-4573385878A8}|ApiConsume\\FlicoProject.WebApi\\FlicoProject.WebApi.csproj|c:\\users\\bilge\\desktop\\flico\\flicobackend\\apiconsume\\flicoproject.webapi\\controllers\\closetcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -68,17 +68,17 @@
         },
         {
           "DockedWidth": 217,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "OrderController.cs",
               "DocumentMoniker": "C:\\Users\\Bilge\\Desktop\\Flico\\FlicoBackend\\ApiConsume\\FlicoProject.WebApi\\Controllers\\OrderController.cs",
               "RelativeDocumentMoniker": "ApiConsume\\FlicoProject.WebApi\\Controllers\\OrderController.cs",
               "ToolTip": "C:\\Users\\Bilge\\Desktop\\Flico\\FlicoBackend\\ApiConsume\\FlicoProject.WebApi\\Controllers\\OrderController.cs",
               "RelativeToolTip": "ApiConsume\\FlicoProject.WebApi\\Controllers\\OrderController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAFMAAABKAAAA",
+              "ViewState": "AQIAAI8AAAAAAAAAAAAuwK0AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-20T18:00:37.548Z",
               "IsPinned": true,
@@ -86,15 +86,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "20240524143605_orderproduct_warehouse.cs",
-              "DocumentMoniker": "C:\\Users\\Bilge\\Desktop\\Flico\\FlicoBackend\\ApiConsume\\FlicoProject.DataAccessLayer\\Migrations\\20240524143605_orderproduct_warehouse.cs",
-              "RelativeDocumentMoniker": "ApiConsume\\FlicoProject.DataAccessLayer\\Migrations\\20240524143605_orderproduct_warehouse.cs",
-              "ToolTip": "C:\\Users\\Bilge\\Desktop\\Flico\\FlicoBackend\\ApiConsume\\FlicoProject.DataAccessLayer\\Migrations\\20240524143605_orderproduct_warehouse.cs",
-              "RelativeToolTip": "ApiConsume\\FlicoProject.DataAccessLayer\\Migrations\\20240524143605_orderproduct_warehouse.cs",
+              "DocumentIndex": 2,
+              "Title": "OrderWithProductsDto.cs",
+              "DocumentMoniker": "C:\\Users\\Bilge\\Desktop\\Flico\\FlicoBackend\\ApiConsume\\FlicoProject.DtoLayer\\OrderWithProductsDto.cs",
+              "RelativeDocumentMoniker": "ApiConsume\\FlicoProject.DtoLayer\\OrderWithProductsDto.cs",
+              "ToolTip": "C:\\Users\\Bilge\\Desktop\\Flico\\FlicoBackend\\ApiConsume\\FlicoProject.DtoLayer\\OrderWithProductsDto.cs",
+              "RelativeToolTip": "ApiConsume\\FlicoProject.DtoLayer\\OrderWithProductsDto.cs",
               "ViewState": "AQIAAAYAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-24T14:36:05.317Z",
+              "WhenOpened": "2024-05-24T15:18:35.063Z",
               "EditorCaption": ""
             },
             {
@@ -103,7 +103,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "StockDetailController.cs",
               "DocumentMoniker": "C:\\Users\\Bilge\\Desktop\\Flico\\FlicoBackend\\ApiConsume\\FlicoProject.WebApi\\Controllers\\StockDetailController.cs",
               "RelativeDocumentMoniker": "ApiConsume\\FlicoProject.WebApi\\Controllers\\StockDetailController.cs",
@@ -116,7 +116,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 1,
+              "Title": "OrderManager.cs",
+              "DocumentMoniker": "C:\\Users\\Bilge\\Desktop\\Flico\\FlicoBackend\\ApiConsume\\FlicoProject.BusinessLayer\\Concrete\\OrderManager.cs",
+              "RelativeDocumentMoniker": "ApiConsume\\FlicoProject.BusinessLayer\\Concrete\\OrderManager.cs",
+              "ToolTip": "C:\\Users\\Bilge\\Desktop\\Flico\\FlicoBackend\\ApiConsume\\FlicoProject.BusinessLayer\\Concrete\\OrderManager.cs",
+              "RelativeToolTip": "ApiConsume\\FlicoProject.BusinessLayer\\Concrete\\OrderManager.cs",
+              "ViewState": "AQIAACwAAAAAAAAAAAAqwEwAAAAoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-03T10:16:07.551Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "StockDetailManager.cs",
+              "DocumentMoniker": "C:\\Users\\Bilge\\Desktop\\Flico\\FlicoBackend\\ApiConsume\\FlicoProject.BusinessLayer\\Concrete\\StockDetailManager.cs",
+              "RelativeDocumentMoniker": "ApiConsume\\FlicoProject.BusinessLayer\\Concrete\\StockDetailManager.cs",
+              "ToolTip": "C:\\Users\\Bilge\\Desktop\\Flico\\FlicoBackend\\ApiConsume\\FlicoProject.BusinessLayer\\Concrete\\StockDetailManager.cs",
+              "RelativeToolTip": "ApiConsume\\FlicoProject.BusinessLayer\\Concrete\\StockDetailManager.cs",
+              "ViewState": "AQIAAEQAAAAAAAAAAAAawFUAAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-24T15:03:24.845Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "StockDetail.cs",
               "DocumentMoniker": "C:\\Users\\Bilge\\Desktop\\Flico\\FlicoBackend\\ApiConsume\\FlicoProject.EntityLayer\\Concrete\\StockDetail.cs",
               "RelativeDocumentMoniker": "ApiConsume\\FlicoProject.EntityLayer\\Concrete\\StockDetail.cs",
@@ -129,7 +155,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "Warehouse.cs",
               "DocumentMoniker": "C:\\Users\\Bilge\\Desktop\\Flico\\FlicoBackend\\ApiConsume\\FlicoProject.EntityLayer\\Concrete\\Warehouse.cs",
               "RelativeDocumentMoniker": "ApiConsume\\FlicoProject.EntityLayer\\Concrete\\Warehouse.cs",
@@ -142,7 +168,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "OrderProduct.cs",
               "DocumentMoniker": "C:\\Users\\Bilge\\Desktop\\Flico\\FlicoBackend\\ApiConsume\\FlicoProject.EntityLayer\\Concrete\\OrderProduct.cs",
               "RelativeDocumentMoniker": "ApiConsume\\FlicoProject.EntityLayer\\Concrete\\OrderProduct.cs",
@@ -151,32 +177,6 @@
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAsAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-22T15:31:51.589Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Order.cs",
-              "DocumentMoniker": "C:\\Users\\Bilge\\Desktop\\Flico\\FlicoBackend\\ApiConsume\\FlicoProject.EntityLayer\\Concrete\\Order.cs",
-              "RelativeDocumentMoniker": "ApiConsume\\FlicoProject.EntityLayer\\Concrete\\Order.cs",
-              "ToolTip": "C:\\Users\\Bilge\\Desktop\\Flico\\FlicoBackend\\ApiConsume\\FlicoProject.EntityLayer\\Concrete\\Order.cs",
-              "RelativeToolTip": "ApiConsume\\FlicoProject.EntityLayer\\Concrete\\Order.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-22T15:28:57.775Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "OrderManager.cs",
-              "DocumentMoniker": "C:\\Users\\Bilge\\Desktop\\Flico\\FlicoBackend\\ApiConsume\\FlicoProject.BusinessLayer\\Concrete\\OrderManager.cs",
-              "RelativeDocumentMoniker": "ApiConsume\\FlicoProject.BusinessLayer\\Concrete\\OrderManager.cs",
-              "ToolTip": "C:\\Users\\Bilge\\Desktop\\Flico\\FlicoBackend\\ApiConsume\\FlicoProject.BusinessLayer\\Concrete\\OrderManager.cs",
-              "RelativeToolTip": "ApiConsume\\FlicoProject.BusinessLayer\\Concrete\\OrderManager.cs",
-              "ViewState": "AQIAABkAAAAAAAAAAAAiwE8AAABJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-03T10:16:07.551Z",
               "EditorCaption": ""
             }
           ]
@@ -187,7 +187,7 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "ProductController.cs",
               "DocumentMoniker": "C:\\Users\\Bilge\\Desktop\\Flico\\FlicoBackend\\ApiConsume\\FlicoProject.WebApi\\Controllers\\ProductController.cs",
               "RelativeDocumentMoniker": "ApiConsume\\FlicoProject.WebApi\\Controllers\\ProductController.cs",

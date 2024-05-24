@@ -21,16 +21,18 @@ namespace FlicoProject.WebApi.Controllers
         private readonly IOrderProductService _OrderProductservice;
         private readonly IClosetService _closetService;
         private readonly IStockDetailService _stockDetailService;
+        private readonly IAirportService _airportService;
         private readonly IMapper _mapper;
 
 
-        public OrderController(IOrderService orderService, IOrderProductService OrderProductservice, IClosetService closetService, IStockDetailService stockDetailService, IMapper mapper)
+        public OrderController(IOrderService orderService, IOrderProductService OrderProductservice, IClosetService closetService, IStockDetailService stockDetailService, IAirportService airportService, IMapper mapper)
         {
             _orderService = orderService;
             _OrderProductservice = OrderProductservice;
             _mapper = mapper;
             _closetService = closetService;
             _stockDetailService = stockDetailService;
+            _airportService = airportService;
         }
 
 
@@ -92,6 +94,15 @@ namespace FlicoProject.WebApi.Controllers
                 }
             }
 
+            //closet
+            string status = "Empty";
+            var closet = new Closet();
+            closet = _closetService.TGetList().FirstOrDefault(x => x.Status == status && x.AirportID == order.AirportID);
+            order.ClosetID = closet.ClosetID;
+            closet.Status = "Taken";
+            closet.OrderID = order.Id;
+            _closetService.TUpdate(closet);
+
             //Insert order and order products
             if (_orderService.TInsert(order) == 0)
             {
@@ -104,14 +115,7 @@ namespace FlicoProject.WebApi.Controllers
                 orderProducts.ForEach(x => _OrderProductservice.TInsert(x));
             }
 
-            //closet
-            string status = "Empty";
-            var closet = new Closet();
-            closet = _closetService.TGetList().FirstOrDefault(x => x.Status == status && x.AirportID == order.AirportID);
-            order.ClosetID = closet.ClosetID;
-            closet.Status = "Taken";
-            closet.OrderID = order.Id;
-            _closetService.TUpdate(closet);
+            
 
             return Ok(new ResultDTO<Order>(order));
 
@@ -161,7 +165,12 @@ namespace FlicoProject.WebApi.Controllers
             var orderProducts = _OrderProductservice.GetOrderProductsByOrderId(id);
 
             var orderwithProducts = _mapper.Map<OrderWithProductsDto>(order);
+
+            orderwithProducts.AirportName = _airportService.TGetByID(order.AirportID).AirportName;
+            orderwithProducts.ClosetNo = _closetService.TGetByID(order.ClosetID).ClosetNo;
+            orderwithProducts.ClosetPassword = _closetService.TGetByID(order.ClosetID).Password;
             orderwithProducts.OrderProducts = orderProducts;
+            
 
             return Ok(orderwithProducts);
         }

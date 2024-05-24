@@ -81,7 +81,7 @@ namespace FlicoProject.BusinessLayer.Concrete
             var isused = isused1.Find(x => x.Size == t.Size);
             var isvalid = _StockDetailDal.GetList().FirstOrDefault(x => x.StockDetailID == t.StockDetailID);
 
-            if (IsNullOrWhiteSpace(t.Size) || isused != null || isvalid == null)
+            if (IsNullOrWhiteSpace(t.Size) || isused == null || isvalid == null)
             {
                 return 0;
             }
