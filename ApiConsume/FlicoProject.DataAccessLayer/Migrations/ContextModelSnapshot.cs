@@ -90,8 +90,9 @@ namespace FlicoProject.DataAccessLayer.Migrations
                     b.Property<int>("OrderID")
                         .HasColumnType("int");
 
-                    b.Property<int>("Password")
-                        .HasColumnType("int");
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Status")
                         .IsRequired()
@@ -237,6 +238,9 @@ namespace FlicoProject.DataAccessLayer.Migrations
                     b.Property<string>("Size")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Warehouses")
+                        .HasColumnType("int");
 
                     b.HasKey("OrderProductId");
 

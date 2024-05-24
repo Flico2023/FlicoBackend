@@ -9,7 +9,6 @@ namespace FlicoProject.DtoLayer
     public class OrderDto
     {
         public int AirportID { get; set; }
-        public int ClosetID { get; set; }
         public int UserID { get; set; }
         public int StuffID { get; set; }
         public string OrderStatus { get; set; }

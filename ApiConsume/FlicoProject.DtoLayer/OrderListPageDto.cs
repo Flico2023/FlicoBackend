@@ -8,10 +8,10 @@ using System.Threading.Tasks;
 namespace FlicoProject.DtoLayer
 {
     public class OrderListPageDto
-    {
-        public List<OrderWithProductsDto> Orders { get; set; }
+    {        
         public int TotalCount { get; set; }
         public int PageIndex { get; set; }
         public int PageSize { get; set; }
+        public List<OrderWithProductsDto> Orders { get; set; }
     }
 }

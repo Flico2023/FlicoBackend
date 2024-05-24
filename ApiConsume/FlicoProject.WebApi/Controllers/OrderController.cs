@@ -5,6 +5,7 @@ using FlicoProject.DtoLayer.ProductDTOs;
 using FlicoProject.EntityLayer.Concrete;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
 using NanoidDotNet;
 using System.Drawing;
 using System.Xml.Linq;
@@ -18,14 +19,18 @@ namespace FlicoProject.WebApi.Controllers
     {
         private readonly IOrderService _orderService;
         private readonly IOrderProductService _OrderProductservice;
+        private readonly IClosetService _closetService;
+        private readonly IStockDetailService _stockDetailService;
         private readonly IMapper _mapper;
 
 
-        public OrderController(IOrderService orderService, IOrderProductService OrderProductservice, IMapper mapper)
+        public OrderController(IOrderService orderService, IOrderProductService OrderProductservice, IClosetService closetService, IStockDetailService stockDetailService, IMapper mapper)
         {
             _orderService = orderService;
             _OrderProductservice = OrderProductservice;
             _mapper = mapper;
+            _closetService = closetService;
+            _stockDetailService = stockDetailService;
         }
 
 
@@ -38,7 +43,7 @@ namespace FlicoProject.WebApi.Controllers
 
 
             var totalCount = FilteredOrder.Count;
-            FilteredOrder = FilteredOrder.Skip(pageSize * (pageIndex - 1)).Take(pageSize).ToList();
+           // FilteredOrder = FilteredOrder.Skip(pageSize * (pageIndex - 1)).Take(pageSize).ToList();
             var OrderListPageDto = new OrderListPageDto();
             OrderListPageDto.Orders = FilteredOrder;
             OrderListPageDto.TotalCount = totalCount;
@@ -59,13 +64,35 @@ namespace FlicoProject.WebApi.Controllers
                 return BadRequest(new ResultDTO<OrderDto>(result.Message));
             }
 
-
+            
             var order = new Order();
             order = _mapper.Map<Order>(OrderPostWithProductsDto.Order);
             order.OrderID = Nanoid.Generate(size:8);
             var orderProducts = OrderPostWithProductsDto.OrderProducts.Select(x => _mapper.Map<OrderProduct>(x)).ToList();
 
+            //to see if there is stock for those products or not
+            if (orderProducts.Any())
+            {
+                //orderProducts.ForEach(x => _stockDetailService.TGetList().FirstOrDefault(y => y.ProductID == x.ProductId && y.VariationActiveAmount == x.Amount ));
+                foreach(var product in orderProducts)
+                {
+                   var stockdetail = _stockDetailService.TGetList().FirstOrDefault(y => y.ProductID == product.ProductId && y.VariationActiveAmount >= product.Amount);
+                   if(stockdetail != null)
+                    {
+                        product.Warehouses = stockdetail.WarehouseID;
+                        stockdetail.VariationActiveAmount -= product.Amount;
+                        if (_stockDetailService.TUpdate(stockdetail) == 0)
+                            throw new("Stock is not updated");
 
+                    }
+                    else
+                    {
+                        throw new Exception("Stock is not insufficent.");
+                    }
+                }
+            }
+
+            //Insert order and order products
             if (_orderService.TInsert(order) == 0)
             {
                 return BadRequest(new ResultDTO<Order>("Form values are not valid."));
@@ -76,6 +103,15 @@ namespace FlicoProject.WebApi.Controllers
                 orderProducts.ForEach(x => x.OrderId = order.Id);
                 orderProducts.ForEach(x => _OrderProductservice.TInsert(x));
             }
+
+            //closet
+            string status = "Empty";
+            var closet = new Closet();
+            closet = _closetService.TGetList().FirstOrDefault(x => x.Status == status && x.AirportID == order.AirportID);
+            order.ClosetID = closet.ClosetID;
+            closet.Status = "Taken";
+            closet.OrderID = order.Id;
+            _closetService.TUpdate(closet);
 
             return Ok(new ResultDTO<Order>(order));
 

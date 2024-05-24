@@ -4,6 +4,7 @@ using FlicoProject.DtoLayer;
 using FlicoProject.EntityLayer.Concrete;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using NanoidDotNet;
 using static System.String;
 
 namespace FlicoProject.WebApi.Controllers
@@ -48,6 +49,8 @@ namespace FlicoProject.WebApi.Controllers
             {
                 return BadRequest(new ResultDTO<Closet>("Enter a valid airport id."));
             }
+            string alphabet = "0123456789";
+            closet.Password = Nanoid.Generate(alphabet,4);
             closet.Airport = airport;
             if (_closetService.TInsert(closet) == 1)
             {
@@ -81,14 +84,18 @@ namespace FlicoProject.WebApi.Controllers
             closet = _mapper.Map<Closet>(closetDto);
             closet.ClosetID = id;
             var airport = _airportService.TGetByID(closet.AirportID);
+            
             if (airport == null)
             {
                 return BadRequest(new ResultDTO<Closet>("Enter valid an airport id."));
             }
-            var closetWithAirport = new ClosetWithAirportDto();
+           /* var closetWithAirport = new ClosetWithAirportDto();
             closetWithAirport = _mapper.Map<ClosetWithAirportDto>(closet);
-            closetWithAirport.AirportName = airport.AirportName;
+            closetWithAirport.AirportName = airport.AirportName;*/
             closet.Airport = airport;
+            string alphabet = "0123456789";
+            closet.Password = Nanoid.Generate(alphabet, 4);
+            closet.OrderID = 0;
             int result = _closetService.TUpdate(closet);
             if (result == 0)
             {

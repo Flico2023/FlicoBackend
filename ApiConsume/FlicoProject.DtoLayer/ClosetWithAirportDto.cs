@@ -11,7 +11,7 @@ namespace FlicoProject.DtoLayer
         public int ClosetNo { get; set; }
         public int AirportID { get; set; }
         public int OrderID { get; set; }
-        public int Password { get; set; }
+        public string Password { get; set; }
         public string Status { get; set; }
         public string AirportName { get; set; }
     }

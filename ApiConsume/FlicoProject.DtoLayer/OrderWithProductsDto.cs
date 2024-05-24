@@ -21,6 +21,12 @@ namespace FlicoProject.DtoLayer
         public DateTime EndDate { get; set; }
         public DateTime CreatedAt { get; set; }
 
+        public string AirportName { get; set; }
+        public int ClosetNo { get; set; }
+        public string ClosetPassword { get; set; }
+
+
+
         public List<OrderProduct> OrderProducts { get; set; }
 
     }

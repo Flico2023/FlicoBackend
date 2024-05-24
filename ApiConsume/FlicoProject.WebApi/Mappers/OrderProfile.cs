@@ -15,10 +15,11 @@ namespace FlicoProject.WebApi.Mappers
             CreateMap<OrderDto, Order>()
                            .ForMember(dest => dest.CreatedAt, opt => opt.MapFrom(src => DateTime.Now));
             CreateMap<Order, OrderWithProductsDto>();
-            CreateMap<OrderWithProductsDto, Order>()
-                           .ForMember(dest => dest.CreatedAt, opt => opt.MapFrom(src => DateTime.Now));
+            CreateMap<OrderWithProductsDto, Order>();
+                           
             CreateMap<Order, OrderPostWithProductsDto>();
-            CreateMap<OrderPostWithProductsDto, Order>();
+            CreateMap<OrderPostWithProductsDto, Order>()
+                .ForMember(dest => dest.CreatedAt, opt => opt.MapFrom(src => DateTime.Now));
 
         }
     }

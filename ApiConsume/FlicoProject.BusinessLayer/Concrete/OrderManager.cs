@@ -21,13 +21,17 @@ namespace FlicoProject.BusinessLayer.Concrete
     {
         private readonly IOrderDal _orderDal;
         private IOrderProductDal _orderProductDal;
+        private IAirportDal _airportDal;
+        private IClosetDal _closetDal;
         private readonly IUserDal _userDal;
         private readonly IValidator<OrderPostWithProductsDto> _validator;
 
-        public OrderManager(IOrderDal orderDal, IOrderProductDal orderProductDal,  IUserDal userDal, IValidator<OrderPostWithProductsDto> validator)
+        public OrderManager(IOrderDal orderDal, IOrderProductDal orderProductDal, IAirportDal airportDal, IClosetDal closetDal, IUserDal userDal, IValidator<OrderPostWithProductsDto> validator)
         {
             _orderDal = orderDal;
             _orderProductDal = orderProductDal;
+            _airportDal = airportDal;
+            _closetDal = closetDal;
             _validator = validator;
             _userDal = userDal;
         }
@@ -71,6 +75,9 @@ namespace FlicoProject.BusinessLayer.Concrete
                 StartDate = x.StartDate,
                 EndDate = x.EndDate,
                 CreatedAt = x.CreatedAt,
+                AirportName = _airportDal.GetByID(x.AirportID).AirportName,
+                ClosetNo = _closetDal.GetByID(x.ClosetID).ClosetNo,
+                ClosetPassword = _closetDal.GetByID(x.ClosetID).Password,
                 OrderProducts = _orderProductDal.GetOrderProductsByOrderId(x.Id)
             }).ToList();
 
