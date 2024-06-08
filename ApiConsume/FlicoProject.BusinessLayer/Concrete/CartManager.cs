@@ -75,6 +75,17 @@ namespace FlicoProject.BusinessLayer.Concrete
             }
         }
 
+        public void DeleteCartProductsByUserID(int userID)
+        {
+            var carts = _CartDal.GetList().Where(x => x.UserID == userID).Where(x => x.Status == "Checkout").ToList();
+
+            foreach (var cart in carts)
+            {
+                _CartDal.Delete(cart);
+            }
+
+        }
+
         public Cart TGetByID(int id)
         {
             return _CartDal.GetByID(id);

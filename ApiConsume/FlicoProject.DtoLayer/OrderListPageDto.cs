@@ -9,12 +9,12 @@ namespace FlicoProject.DtoLayer
 {
     public class OrderListPageDto
     {
-        public List<OrderWithProductsDto> Orders { get; set; }
+        public List<SingleOrderInfoDto> Orders { get; set; }
         public int TotalCount { get; set; }
         public int PageIndex { get; set; }
         public int PageSize { get; set; }
 
-        public OrderListPageDto(List<OrderWithProductsDto> orders, int totalCount, int pageIndex, int pageSize)
+        public OrderListPageDto(List<SingleOrderInfoDto> orders, int totalCount, int pageIndex, int pageSize)
         {
             Orders = orders;
             TotalCount = totalCount;

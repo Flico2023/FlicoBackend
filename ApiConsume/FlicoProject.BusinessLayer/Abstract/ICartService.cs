@@ -19,5 +19,7 @@ namespace FlicoProject.BusinessLayer.Abstract
         ResultDTO<PostCartDto> FluentValidatePostCartDto(PostCartDto dto);
 
         ResultDTO<PostCartDto> ValidatePostCartDto(PostCartDto dto);
+
+        void DeleteCartProductsByUserID(int userID);
     }
 }

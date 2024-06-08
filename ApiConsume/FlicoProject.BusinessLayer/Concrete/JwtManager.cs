@@ -19,7 +19,7 @@ namespace FlicoProject.BusinessLayer.Concrete
             claims.Add(new Claim(ClaimTypes.Role,role));
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("FlicoIsAwesomeFlicoIsAwesomeFlicoIsAwesome"));
             var SigninCredentials = new SigningCredentials(key,SecurityAlgorithms.HmacSha256);
-            var expireDate = DateTime.UtcNow.AddMinutes(2);
+            var expireDate = DateTime.UtcNow.AddMinutes(300);
             JwtSecurityToken token = new JwtSecurityToken(issuer: "http://localhost",audience: "http://localhost",claims:claims,
                 notBefore:DateTime.UtcNow,expires:expireDate,signingCredentials:SigninCredentials);
             JwtSecurityTokenHandler tokenHandler = new JwtSecurityTokenHandler();

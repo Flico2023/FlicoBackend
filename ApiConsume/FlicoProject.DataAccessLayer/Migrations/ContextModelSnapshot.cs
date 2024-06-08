@@ -307,14 +307,36 @@ namespace FlicoProject.DataAccessLayer.Migrations
                     b.Property<int>("AirportID")
                         .HasColumnType("int");
 
+                    b.Property<string>("CardNumber")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int>("ClosetID")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ClosetNo")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ClosetPassword")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("Cvv")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<DateTime>("EndDate")
                         .HasColumnType("datetime2");
+
+                    b.Property<string>("ExpiryDate")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("NameOnCart")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("OrderID")
                         .IsRequired()
@@ -326,9 +348,6 @@ namespace FlicoProject.DataAccessLayer.Migrations
 
                     b.Property<DateTime>("StartDate")
                         .HasColumnType("datetime2");
-
-                    b.Property<int>("StuffID")
-                        .HasColumnType("int");
 
                     b.Property<float>("TotalPrice")
                         .HasColumnType("real");

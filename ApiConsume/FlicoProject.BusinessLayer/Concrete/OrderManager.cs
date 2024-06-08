@@ -22,24 +22,74 @@ namespace FlicoProject.BusinessLayer.Concrete
         private readonly IOrderDal _orderDal;
         private IOrderProductDal _orderProductDal;
         private readonly IUserDal _userDal;
-        private readonly IValidator<OrderPostWithProductsDto> _validator;
+        // private readonly IValidator<OrderPostWithProductsDto> _validator;
 
         private readonly IClosetService _closetManager;
 
-        public OrderManager(IOrderDal orderDal, IOrderProductDal orderProductDal,  IUserDal userDal, IValidator<OrderPostWithProductsDto> validator, IClosetService closetManager)
+        private readonly IAirportService _airportManager;
+
+        private readonly IProductService _productService;
+        private readonly  IStockDetailService _stockDetailService;
+
+
+        public OrderManager(IOrderDal orderDal, IOrderProductDal orderProductDal, IUserDal userDal,
+            IStockDetailService stockDetailService,
+            //IValidator<OrderPostWithProductsDto> validator, 
+            IClosetService closetManager, IAirportService airportManager,
+            IProductService productService)
         {
             _orderDal = orderDal;
             _orderProductDal = orderProductDal;
-            _validator = validator;
+            // _validator = validator;
             _userDal = userDal;
             _closetManager = closetManager;
+            _airportManager = airportManager;
+            _productService = productService;
+            _stockDetailService = stockDetailService;
         }
 
-        public List<OrderWithProductsDto> FilterOrderList(List<Order> orders, string status, string email, string fullname, DateTime endDate, DateTime startDate, int? id, int? UserID)
+        public ResultDTO<Product> isAllProductsAvailable(List<OrderProductDto> orderProducts, DateTime startDate, DateTime endDate)
+        {
+
+            //fetch all orders in the given date range
+            var ordersInDateRange = _orderDal.GetList().Where(x => !(endDate <= x.StartDate || startDate >= x.EndDate)).ToList();
+
+            foreach (var orderProduct in orderProducts)
+            {
+                var product = _productService.TGetByID(orderProduct.ProductId);
+                if (product == null)
+                {
+                    return new ResultDTO<Product>("Product not found");
+                }
+
+                //bir ürünün bir bedenine ait toplam stok miktarı
+                var stockDetails = _stockDetailService.GetStockDetailsByProductId(product.ProductID);
+                var totalAmountOfProductGivenSize = stockDetails.Where(x => x.Size == orderProduct.Size).Sum(x => x.VariationAmount);
+
+
+                //bir ürünün bir bedenine ait toplam sipariş miktarı
+                var orderedProducts = _orderProductDal.GetList().Where(x => x.ProductId == product.ProductID).ToList();
+                var totalAmountOfProductGivenSizeInOrders = orderedProducts.Where(x => x.Size == orderProduct.Size).Sum(x => x.Amount);
+
+                if (totalAmountOfProductGivenSize - totalAmountOfProductGivenSizeInOrders < orderProduct.Amount)
+                {   
+                    ResultDTO<Product> result = new ResultDTO<Product>("ProductNotAvailable");
+                    result.Data = product;
+                    return result;
+                }
+
+            }
+
+            return new ResultDTO<Product>();
+
+
+        }
+
+        public List<SingleOrderInfoDto> FilterOrderList(List<Order> orders, string status, string email, string fullname, DateTime endDate, DateTime startDate, string? id, int? UserID)
         {
             if (id != null)
             {
-                orders = orders.Where(x => x.Id == id).ToList();
+                orders = orders.Where(x => x.OrderID == id).ToList();
             }
             if (!IsNullOrWhiteSpace(email))
             {
@@ -57,73 +107,66 @@ namespace FlicoProject.BusinessLayer.Concrete
             {
                 orders = orders.Where(x => x.OrderStatus == status).ToList();
             }
-            if ((!IsNullOrWhiteSpace(endDate.ToString()) && !IsNullOrWhiteSpace(startDate.ToString())) && endDate >= startDate && endDate>DateTime.MinValue)
+            if ((!IsNullOrWhiteSpace(endDate.ToString()) && !IsNullOrWhiteSpace(startDate.ToString())) && endDate >= startDate && endDate > DateTime.MinValue)
             {
                 orders = orders.Where(x => x.CreatedAt >= startDate && x.CreatedAt <= endDate).ToList();
             }
 
-            var result = orders.Select(x => new OrderWithProductsDto
+            List<SingleOrderInfoDto> orderList = new List<SingleOrderInfoDto>();
+            foreach (var order in orders)
             {
-                Id = x.Id,
-                OrderID = x.OrderID,
-                AirportID = x.AirportID,
-                ClosetID = x.ClosetID,
-                UserID = x.UserID,
-                StuffID = x.StuffID,
-                OrderStatus = x.OrderStatus,
-                TotalPrice = x.TotalPrice,
-                StartDate = x.StartDate,
-                EndDate = x.EndDate,
-                CreatedAt = x.CreatedAt,
-                OrderProducts = _orderProductDal.GetOrderProductsByOrderId(x.Id)
-            }).ToList();
+                var closet = _closetManager.TGetList().FirstOrDefault(x => x.ClosetID == order.ClosetID);
+                var airport = _airportManager.TGetList().FirstOrDefault(x => x.AirportID == order.AirportID);
+                var orderProducts = _orderProductDal.GetList().Where(x => x.OrderId == order.Id).ToList();
+                List<OrderProductDtoWithProductEntityDto> orderProductDtos = new List<OrderProductDtoWithProductEntityDto>();
+                foreach (var orderProduct in orderProducts)
+                {
+                    var product = _productService.TGetByID(orderProduct.ProductId);
+                    orderProductDtos.Add(new OrderProductDtoWithProductEntityDto
+                    {
+                        product = product,
+                        Size = orderProduct.Size,
+                        Amount = orderProduct.Amount
+                    });
+                }
+                orderList.Add(new SingleOrderInfoDto(order, closet, airport, orderProductDtos));
+            }
 
 
-            return result;
-            
+            return orderList;
+
         }
-        public ResultDTO<OrderPostWithProductsDto> ValidatePostOrderDto(OrderPostWithProductsDto order)
-        {
-            var result = _validator.Validate(order);
-            if(result.IsValid)
-            {
-                return new ResultDTO<OrderPostWithProductsDto>(order);
-            }
-            else
-            {
-                var errors = result.Errors.Select(x => x.ErrorMessage).ToList();
-                var error = errors[0] ?? "Something went wrong";
-                return new ResultDTO<OrderPostWithProductsDto>(errors[0]);
-            }
-        }
+
         public int TDelete(int id)
         {
             var order = _orderDal.GetByID(id);
             if (order == null)
             {
                 return 0;
-            } else
+            }
+            else
             {
                 _orderDal.Delete(order);
                 return 1;
             }
         }
-        public Order TGetByID(int id) 
+        public Order TGetByID(int id)
         {
             return _orderDal.GetByID(id);
         }
 
-        public List<Order> TGetList() 
+        public List<Order> TGetList()
         {
             return _orderDal.GetList();
         }
         public int TInsert(Order t)
         {
             var a = _orderDal.GetList().Find(x => x.Id == t.Id);
-            if(a != null )
+            if (a != null)
             {
                 return 0;
-            } else
+            }
+            else
             {
                 _orderDal.Insert(t);
                 return 1;
@@ -132,7 +175,7 @@ namespace FlicoProject.BusinessLayer.Concrete
         public int TUpdate(Order t)
         {
             var isvalid = _orderDal.GetList().FirstOrDefault(x => x.Id == t.Id);
-            if (isvalid == null )
+            if (isvalid == null)
             {
                 return 0;
             }
@@ -147,12 +190,11 @@ namespace FlicoProject.BusinessLayer.Concrete
         {
             var closets = _closetManager.TGetList().Where(x => x.AirportID == AirportID).ToList();
             var orders = _orderDal.GetList().Where(x => x.AirportID == AirportID).ToList();
-            
-            //bu fonksiyon çok daha geliştirilebilir.  gibi
-            /*arama işlemi konusunda havalimanı dolabı sayısı - order sayısı işlemi yapılır bu sayılar Count ile elde edilir. En azından aklıma gelen bu*/
+
             foreach (var closet in closets)
             {
-                var isOccupied = orders.Any(x => x.ClosetID == closet.ClosetID && x.EndDate >= StartDate && x.StartDate <= EndDate);
+                // if closet is not occupied
+                var isOccupied = orders.Any(x => x.ClosetID == closet.ClosetID && !(EndDate <= x.StartDate || StartDate >= x.EndDate));
                 if (!isOccupied)
                 {
                     return closet;
@@ -160,6 +202,7 @@ namespace FlicoProject.BusinessLayer.Concrete
             }
             return null;
         }
+
 
 
     }

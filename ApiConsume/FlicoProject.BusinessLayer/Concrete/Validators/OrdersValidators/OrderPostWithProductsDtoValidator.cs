@@ -25,12 +25,12 @@ namespace FlicoProject.BusinessLayer.Concrete.Validators.OrdersValidators
         {
             RuleFor(order => order.AirportID)
                                 .GreaterThanOrEqualTo(0).WithMessage("Airport id must be 0 or positive.");
-            RuleFor(order => order.ClosetID)
-                                .GreaterThanOrEqualTo(0).WithMessage("Clsoet id must be 0 or positive.");
+           // RuleFor(order => order.ClosetID)
+                               // .GreaterThanOrEqualTo(0).WithMessage("Clsoet id must be 0 or positive.");
             RuleFor(order => order.UserID)
                                 .GreaterThanOrEqualTo(0).WithMessage("User id must be 0 or positive.");
-            RuleFor(order => order.StuffID)
-                                .GreaterThanOrEqualTo(0).WithMessage("Stuff id must be 0 or positive.");
+           // RuleFor(order => order.StuffID)
+                             //   .GreaterThanOrEqualTo(0).WithMessage("Stuff id must be 0 or positive.");
             RuleFor(order => order.OrderStatus)
                                 .NotEmpty().WithMessage("Status cannot be empty.")
                                 .Must(orderstatus => IsOneofOrderStatus(orderstatus)).WithMessage("Order status must be one of; Closet, Progress, Customer");

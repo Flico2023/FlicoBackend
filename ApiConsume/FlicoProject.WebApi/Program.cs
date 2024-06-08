@@ -48,6 +48,10 @@ builder.Services.AddScoped<ICartService, CartManager>();
 builder.Services.AddScoped<IContactMessageDal, EFContactMessageDal>();
 builder.Services.AddScoped<IContactMessageService, ContactMessageManager>();
 builder.Services.AddScoped<IFavouriteDal, EFFavouriteDal>();
+builder.Services.AddScoped<IOrderDal, EFOrderDal>();
+builder.Services.AddScoped<IOrderService, OrderManager>();
+builder.Services.AddScoped<IOrderProductDal, EFOrderProductDal>();
+builder.Services.AddScoped<IOrderProductService, OrderProductManager>();
 
 builder.Services.AddScoped<IOrderProductDal, EFOrderProductDal>();
 
