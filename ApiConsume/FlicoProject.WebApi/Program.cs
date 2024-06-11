@@ -16,8 +16,10 @@ using FluentValidation;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.Extensions.Caching.Distributed;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using StackExchange.Redis;
 using Swashbuckle.AspNetCore.Filters;
 using System.Text;
 
@@ -31,7 +33,12 @@ builder.Services.AddScoped<IAirportDal, EFAirportDal>();
 builder.Services.AddScoped<IAirportService, AirportManager>();
 builder.Services.AddScoped<IWarehouseDal, EFWarehouseDal>();
 builder.Services.AddScoped<IWarehouseService, WarehouseManager>();
-builder.Services.AddScoped<IProductDal, EFProductDal>();
+builder.Services.AddScoped<IProductDal, EFProductDal>(sp =>
+{
+    var context = sp.GetRequiredService<Context>();
+    var cache = sp.GetRequiredService<IDistributedCache>();
+    return new EFProductDal(context, cache);
+});
 builder.Services.AddScoped<IProductService, ProductManager>();
 builder.Services.AddScoped<IStockDetailDal, EFStockDEtailDal>();
 builder.Services.AddScoped<IStockDetailService, StockDetailManager>();
@@ -93,6 +100,25 @@ builder.Services.AddSwaggerGen(options =>
     options.OperationFilter<SecurityRequirementsOperationFilter>();
 
 });
+
+
+builder.Services.AddSingleton<IConnectionMultiplexer>(sp =>
+{
+    var configuration = ConfigurationOptions.Parse("localhost:6379", true);
+    configuration.ResolveDns = true;
+    return ConnectionMultiplexer.Connect(configuration);
+});
+
+// Adding Redis distributed cache
+builder.Services.AddStackExchangeRedisCache(options =>
+{
+    options.Configuration = "localhost:6379";
+    options.InstanceName = "SampleInstance";
+});
+
+// Adding caching capabilities
+builder.Services.AddMemoryCache();
+
 
 
 //AUTO MAPPER

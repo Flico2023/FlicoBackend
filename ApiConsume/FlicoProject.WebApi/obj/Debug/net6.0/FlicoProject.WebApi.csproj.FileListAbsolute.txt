@@ -901,3 +901,6 @@ C:\Users\Emre\Desktop\FLICO\FlicoBackend\ApiConsume\FlicoProject.WebApi\bin\Debu
 C:\Users\Emre\Desktop\FLICO\FlicoBackend\ApiConsume\FlicoProject.WebApi\bin\Debug\net6.0\Swashbuckle.AspNetCore.Annotations.dll
 C:\Users\Emre\Desktop\FLICO\FlicoBackend\ApiConsume\FlicoProject.WebApi\bin\Debug\net6.0\Swashbuckle.AspNetCore.Filters.dll
 C:\Users\Emre\Desktop\FLICO\FlicoBackend\ApiConsume\FlicoProject.WebApi\bin\Debug\net6.0\Nanoid.dll
+C:\Users\Emre\Desktop\FLICO\FlicoBackend\ApiConsume\FlicoProject.WebApi\bin\Debug\net6.0\Microsoft.Extensions.Caching.StackExchangeRedis.dll
+C:\Users\Emre\Desktop\FLICO\FlicoBackend\ApiConsume\FlicoProject.WebApi\bin\Debug\net6.0\Pipelines.Sockets.Unofficial.dll
+C:\Users\Emre\Desktop\FLICO\FlicoBackend\ApiConsume\FlicoProject.WebApi\bin\Debug\net6.0\StackExchange.Redis.dll
